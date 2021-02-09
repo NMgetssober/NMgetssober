@@ -1,5 +1,6 @@
 import React from "react"
-import {NavBar} from "react-boot"
+import 'bootstrap/dist/css/bootstrap.css';
+import {N}
 
 export const Home = () => {
     return (
