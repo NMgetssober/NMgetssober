@@ -5,6 +5,7 @@ import { FourOhFour } from './FourOhFour'
 import React from 'react'
 import { MainNav } from './NavBar'
 import { Footer } from './Footer'
+import { AboutUs } from './AboutUs'
 
 export const App = () => (
     <>
