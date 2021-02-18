@@ -1,15 +1,22 @@
 import React from "react"
-import {Button, Container} from "react-bootstrap";
-
+import './Home.css'
+import logo from './nmgetssoberlogo.png'
+import {Container, Image, Row, Button} from "react-bootstrap";
 export const Home = () => {
     return(
         <>
-            <div>
-                <Container>
-                    <Button>Treatment Centers</Button>
-                    <Button>Community Activities</Button>
-                </Container>
-            </div>
+            <Container fluid className="mask justify-content-center">
+                <Row className="justify-content-center">
+                    <Image id={"logo"} src={logo}
+                           alt="NMgetsSoberlogo"/>
+                </Row>
+            </Container>
+            <Container fluid>
+                <Row className="justify-content-center">
+                    <Button id="largeButton" size="lg" variant="outline-light" className="m-3 text-danger btn btn-warning font-weight-bold">Treatment Centers</Button>
+                    <Button id="largeButton" size="lg" variant="outline-light" className="m-3 text-danger btn btn-warning font-weight-bold">Community Activities</Button>
+                </Row>
+            </Container>
         </>
     )
 }

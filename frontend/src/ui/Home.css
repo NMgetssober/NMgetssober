@@ -1,0 +1,28 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2020/04/20/07/00/road-5066641_1280.jpg");
+    background-size: 100%;
+    background-position: center;
+}
+
+.mask {
+    top: 30%;
+    left: 40%;
+    position: relative;
+    height: 250px;
+    width: 250px;
+    opacity: 0.3;
+}
+
+.footer {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgb(235, 195, 64);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#logo {
+    height: 350px;
+    width: 350px;
+}
