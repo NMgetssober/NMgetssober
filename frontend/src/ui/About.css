@@ -1,10 +1,11 @@
-h1 {
+.jumbotron {
+    color: #0057B3;
     text-align: center;
-    color: red;
+    background-image: url("./images/jumbotron_back.jpg");
+    background-size: cover;
 
 }
 
-.jumbotron {
-    color: red;
-
+.title {
+    font-size: 50px;
 }
