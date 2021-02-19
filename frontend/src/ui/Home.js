@@ -1,6 +1,6 @@
 import React from "react"
 import './Home.css'
-import logo from './nmgetssoberlogo.png'
+import logo from './nmgslogo.png'
 import {Container, Image, Row, Button} from "react-bootstrap";
 export const Home = () => {
     return(
@@ -8,7 +8,7 @@ export const Home = () => {
             <Container fluid className="mask justify-content-center">
                 <Row className="justify-content-center">
                     <Image id={"logo"} src={logo}
-                           alt="NMgetsSoberlogo"/>
+                           alt="nmgslogo"/>
                 </Row>
             </Container>
             <Container fluid>

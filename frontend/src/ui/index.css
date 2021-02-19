@@ -1,12 +1,15 @@
 #yellow {
     background-color: rgb(235, 195, 64);
 }
-
 .footer {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: rgb(235, 195, 64);
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0;
+    background-color: #FFC00C;
+    position: absolute;
+    bottom: -155px;
+}
+#largeButton {
+    height: 110px;
+    width: 250px;
+    border: 2px white solid;
 }
