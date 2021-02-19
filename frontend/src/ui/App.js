@@ -5,14 +5,15 @@ import { FourOhFour } from './FourOhFour'
 import React from 'react'
 import {NavBar} from './NavBar'
 import { Footer } from './Footer'
-import {Navbar} from "react-bootstrap";
 import {AboutUs} from "./AboutUs";
 
 
 export const App = () => (
     <>
         <BrowserRouter>
-            <Navbar/>
+
+            <NavBar/>
+
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/AboutUs' component={AboutUs} />
