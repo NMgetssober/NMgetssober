@@ -1,0 +1,23 @@
+body {
+    background: url("https://cdn.pixabay.com/photo/2020/04/20/07/00/road-5066641_1280.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#logo {
+    height: 250px;
+    width: 250px;
+}
+#largeButton {
+    height: 100px;
+    width: 240px;
+    border: 2px white solid;
+    background-color: #FFF206;
+}
+#words {
+    color: #8dfffb;
+    font-size: 40px;
+    margin: 49px;
+}
