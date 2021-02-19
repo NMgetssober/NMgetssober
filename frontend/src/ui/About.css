@@ -1,11 +1,18 @@
 .jumbotron {
-    color: #0057B3;
-    text-align: center;
     background-image: url("./images/jumbotron_back.jpg");
     background-size: cover;
-
 }
 
-.title {
-    font-size: 50px;
+.profilepicture {
+    padding: 20px;
+}
+
+ .header {
+    text-align: center;
+}
+
+.jumbotext {
+    color: #0057B3;
+    text-align: center;
+
 }
