@@ -3,8 +3,18 @@ body {
     background-size: 100%;
     background-position: center;
 }
-
-#Image {
-    height: 200px;
-    width: 200px;
+#logo {
+    height: 250px;
+    width: 250px;
+}
+#largeButton {
+    height: 100px;
+    width: 240px;
+    border: 2px white solid;
+    background-color: #FFF206;
+}
+#words {
+    color: #8dfffb;
+    font-size: 40px;
+    margin: 49px;
 }

@@ -1,15 +1,13 @@
-#yellow {
-    background-color: rgb(235, 195, 64);
+.navbar {
+    background-color: #FFF206;
+}
+#black {
+    color: black;
 }
 .footer {
     padding-top: 0.75rem;
     padding-bottom: 0;
-    background-color: #FFC00C;
+    background-color: #FFF206;
     position: absolute;
-    bottom: -155px;
-}
-#largeButton {
-    height: 110px;
-    width: 250px;
-    border: 2px white solid;
+    bottom: -165px;
 }
