@@ -1,12 +1,13 @@
-#yellow {
-    background-color: rgb(235, 195, 64);
+.navbar {
+    background-color: #FFF206;
 }
-
+#black {
+    color: black;
+}
 .footer {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: rgb(235, 195, 64);
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0;
+    background-color: #FFF206;
+    position: absolute;
+    bottom: -165px;
 }
