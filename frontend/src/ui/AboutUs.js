@@ -68,15 +68,6 @@ export const AboutUs = () => {
                     </Row>
                 </Container>
             </Container>
-
-
-
-
-
-
-
         </>
-
-
     )
 }
