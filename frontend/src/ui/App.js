@@ -16,7 +16,7 @@ export const App = () => (
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/AboutUs' component={AboutUs} />
-                <Route exact path='/navbar' component={NavBar}></Route>
+                <Route exact path='/navbar' component={NavBar}/>
                 <Route exact path='/footer' component={Footer}/>
                 <Route component={FourOhFour} />
             </Switch>
