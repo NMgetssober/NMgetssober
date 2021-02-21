@@ -1,14 +1,16 @@
 import React from 'react'
-import {Card, Container, Col, Row, Image, Jumbotron} from "react-bootstrap";
+import {Card, Container, Col, Row, Image, Jumbotron, Nav} from "react-bootstrap";
 import './About.css'
 import newlogo from './images/new_logo.png';
 import victorprofile from './images/victor_profile.png';
 import cindyprofile from './images/cindy_profile.jpg';
 import brandonprofile from './images/brandon_profile.jpg';
 
+
 export const AboutUs = () => {
     return(
         <>
+
 {/*Jumbotron*/}
             <Jumbotron fluid>
                 <Container>
@@ -68,6 +70,7 @@ export const AboutUs = () => {
                     </Row>
                 </Container>
             </Container>
+
         </>
     )
 }

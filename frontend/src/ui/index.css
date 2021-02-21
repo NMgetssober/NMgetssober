@@ -1,13 +1,12 @@
-.navbar {
+#navbar {
     background-color: #FFF206;
 }
 #black {
     color: black;
 }
 .footer {
-    padding-top: 0.75rem;
+    padding-top: 1rem;
     padding-bottom: 0;
     background-color: #FFF206;
-    position: absolute;
-    bottom: -165px;
+
 }
