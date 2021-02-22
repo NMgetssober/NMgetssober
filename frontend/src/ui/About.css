@@ -1,6 +1,11 @@
-.jumbotron {
-    background-image: url("./images/jumbotron_back.jpg");
-    background-size: cover;
+.banner {
+    /*background-image: url("./images/jumbotron_back.jpg");*/
+    /*background-size: cover;*/
+    background-color: #0690ff;
+}
+
+.bgcolor {
+    background-color: #0690ff;
 }
 
 .profilepicture {
@@ -9,10 +14,13 @@
 
  .header {
     text-align: center;
+     color: #7606ff;
 }
 
-.jumbotext {
-    color: #0057B3;
-    text-align: center;
+ p {
+     color: white;
+ }
 
-}
+.caption {
+    color: white;
+ }

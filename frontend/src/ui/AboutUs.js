@@ -12,22 +12,16 @@ export const AboutUs = () => {
         <>
 
 {/*Jumbotron*/}
-            <Jumbotron fluid>
-                <Container>
-                     <Row>
-                        <Col xs={11} md={2}>
-                            <Image src={newlogo} alt='logo' fluid/>
-                        </Col>
-                        <Col className='jumbotext'>
-                            <h1 className='display-1'><strong>NM Gets Sober</strong></h1>
-                        </Col>
+                <Container fluid className="banner">
+                     <Row className="text-center">
+                            <Image fluid src={newlogo} alt='logo' id="newlogo" className="w-25 h-25 mx-auto"/>
                     </Row>
                 </Container>
-            </Jumbotron>
 
+<Container fluid className="bgcolor">
  {/*Header*/}
             <Container fluid className='header'>
-                <h1>Meet The Team</h1>
+                <h1 className="py-4">Meet The Team</h1>
             </Container>
 
 {/*About Me Cards */}
@@ -36,7 +30,7 @@ export const AboutUs = () => {
                     <Row>
                         <Col>
                             <Image src={victorprofile} alt="man" fluid/>
-                        <Card.Title>Victor Chavez</Card.Title>
+                        <Card.Title className="caption">Victor Chavez</Card.Title>
                     </Col>
                         <Col md="10">
                            <p>
@@ -70,7 +64,7 @@ export const AboutUs = () => {
                     </Row>
                 </Container>
             </Container>
-
+</Container>
         </>
     )
 }
