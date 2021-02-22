@@ -1,11 +1,11 @@
 .banner {
     /*background-image: url("./images/jumbotron_back.jpg");*/
     /*background-size: cover;*/
-    background-color: #0690ff;
+    /*background-color: #e0dede;*/
 }
 
 .bgcolor {
-    background-color: #0690ff;
+    background-color: #e0dede;
 }
 
 .profilepicture {
@@ -14,13 +14,9 @@
 
  .header {
     text-align: center;
-     color: #7606ff;
 }
 
- p {
-     color: white;
- }
-
-.caption {
-    color: white;
- }
+#newlogo {
+    width: 250px;
+    height: 250px;
+}

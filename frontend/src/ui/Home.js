@@ -1,7 +1,7 @@
 import React from "react"
 import './Home.css'
 import logo from './nmgslogo.png'
-import {Container, Image, Row, Button, Col} from "react-bootstrap";
+import {Container, Image, Row, Button} from "react-bootstrap";
 
 export const Home = () => {
     return(

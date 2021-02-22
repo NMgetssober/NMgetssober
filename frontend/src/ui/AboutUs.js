@@ -10,18 +10,18 @@ import brandonprofile from './images/brandon_profile.jpg';
 export const AboutUs = () => {
     return(
         <>
-
+            <Container fluid className="bgcolor">
 {/*Jumbotron*/}
                 <Container fluid className="banner">
                      <Row className="text-center">
-                            <Image fluid src={newlogo} alt='logo' id="newlogo" className="w-25 h-25 mx-auto"/>
+                            <Image fluid src={newlogo} alt='logo' id="newlogo" className=" mx-auto"/>
                     </Row>
                 </Container>
 
-<Container fluid className="bgcolor">
+
  {/*Header*/}
             <Container fluid className='header'>
-                <h1 className="py-4">Meet The Team</h1>
+                <h1 className="py-4 font-weight-bold">Meet the Team</h1>
             </Container>
 
 {/*About Me Cards */}
