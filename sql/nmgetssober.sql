@@ -14,7 +14,6 @@ CREATE TABLE profile (
     profileEmail VARCHAR(128) NOT NULL,
     profilePassword CHAR(97) NOT NULL,
     profileUsername VARCHAR(32) NOT NULL,
-    INDEX(profileId),
     UNIQUE(profileEmail),
     UNIQUE(profileUsername),
     PRIMARY KEY(profileId)
@@ -29,7 +28,6 @@ CREATE TABLE treatmentCenter (
     treatmentCenterStreet2 VARCHAR(255),
     treatmentCenterWebsite VARCHAR(255),
     treatmentCenterZipCode VARCHAR(16) NOT NULL,
-    INDEX(treatmentCenterId),
     PRIMARY KEY(treatmentCenterId)
 );
 
@@ -43,7 +41,6 @@ CREATE TABLE activity (
     activityTime VARCHAR(255),
     activityWebsite VARCHAR(255),
     activityZipCode VARCHAR(16) NOT NULL,
-    INDEX(activityId),
     PRIMARY KEY(activityId)
 );
 
@@ -65,6 +62,8 @@ CREATE TABLE serviceProvided (
     serviceProvidedFacilityCodeCategoryId BINARY(16) NOT NULL,
     serviceProvidedTreatmentCenterId BINARY(16) NOT NULL,
     PRIMARY KEY(serviceProvidedFacilityCodeCategoryId, serviceProvidedTreatmentCenterId),
+    INDEX(serviceProvidedFacilityCodeCategoryId),
+    INDEX(serviceProvidedTreatmentCenterId),
     FOREIGN KEY(serviceProvidedFacilityCodeCategoryId) REFERENCES facilityCodeCategory(facilityCodeCategoryId),
     FOREIGN KEY(serviceProvidedTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId)
 );
@@ -73,6 +72,8 @@ CREATE TABLE activityFilter (
     activityFilterActivityId BINARY(16) NOT NULL,
     activityFilterActivityTypeId BINARY(16) NOT NULL,
     PRIMARY KEY(activityFilterActivityId, activityFilterActivityTypeId),
+    INDEX(activityFilterActivityId),
+    INDEX(activityFilterActivityTypeId),
     FOREIGN KEY(activityFilterActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFilterActivityTypeId) REFERENCES activityType(activityTypeId)
 );
@@ -81,6 +82,8 @@ CREATE TABLE treatmentFavorite (
     treatmentFavoriteTreatmentCenterId BINARY(16) NOT NULL,
     treatmentFavoriteProfileId BINARY(16) NOT NULL,
     PRIMARY KEY(treatmentFavoriteTreatmentCenterId, treatmentFavoriteProfileId),
+    INDEX(treatmentFavoriteTreatmentCenterId),
+    INDEX(treatmentFavoriteProfileId),
     FOREIGN KEY(treatmentFavoriteTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId),
     FOREIGN KEY(treatmentFavoriteProfileId) REFERENCES profile(profileId)
 );
@@ -89,6 +92,8 @@ CREATE TABLE activityFavorite (
     activityFavoriteActivityId BINARY(16) NOT NULL,
     activityFavoriteProfileId BINARY(16) NOT NULL,
     PRIMARY KEY(activityFavoriteActivityId, activityFavoriteProfileId),
+    INDEX(activityFavoriteActivityId),
+    INDEX(activityFavoriteProfileId),
     FOREIGN KEY(activityFavoriteActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFavoriteProfileId) REFERENCES profile(profileId)
 );
