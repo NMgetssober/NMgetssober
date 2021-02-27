@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import {setAuthenticationKey, setHash} from "../../utils/auth.utils";
-import {Profile} from '../../utils/interfaces/Profile';
+import {Profile} from "../../utils/interfaces/Profile";
 import {insertProfile} from "../../utils/profile/insertProfile";
 import MailComposer from "nodemailer/lib/mail-composer";
 import {Status} from "../../utils/interfaces/Status";
@@ -12,10 +12,10 @@ export async function signupProfileController(request: Request, response: Respon
         const {profileEmail, profilePassword, profileUsername} = request.body;
         const profileHash = await setHash(profilePassword);
         const profileAuthenticationKey = setAuthenticationKey();
-        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}authentication/${profileAuthenticationKey}`
+        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${profileAuthenticationKey}`
         console.log(profileAuthenticationKey)
 
-        const message = `<h2>Welcometo NM Gets Sober.</h2>
+        const message = `<h2>Welcome to NM Gets Sober.</h2>
         <p>In order to bookmark your favorites you must confirm your account</p>
         <p><a href="${basePath}">${basePath}</a></p>
     `
@@ -32,7 +32,7 @@ export async function signupProfileController(request: Request, response: Respon
             profileAuthenticationKey,
             profileEmail,
             profilePassword,
-            profileUsername
+            profileUsername,
         };
 
         const result = await insertProfile(profile)
@@ -55,7 +55,11 @@ export async function signupProfileController(request: Request, response: Respon
             };
             mg.messages().sendMime(compiledEmail, (sendError: any, body: any) => {
                 if (sendError) {
-                    return response.json({status:418, data: null, message:"error sending email"})
+                    return response.json({
+                        status:418,
+                        data: null,
+                        message:"error sending email"
+                    })
                 }
                 return response.json(status);
             });

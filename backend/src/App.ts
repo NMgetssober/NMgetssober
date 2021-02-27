@@ -1,8 +1,9 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import morgan from 'morgan';
+
 // Routes
-import { indexRoute } from './apis/index.route';
-import SignUpRoute from './apis/sign-up/signup.route';
+import {indexRoute} from './apis/index.route';
+import {signupRoute} from './apis/sign-up/signup.route';
 
 
 // The following class creates the app and instantiates the server
@@ -33,7 +34,7 @@ export class App {
     private routes () {
         // TODO add "/apis"
         this.app.use('/apis', indexRoute)
-        this.app.use('/apis/sign-up', SignUpRoute)
+        this.app.use('/apis/sign-up', signupRoute)
 
     }
 
