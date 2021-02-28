@@ -1,6 +1,6 @@
 import { createPool, Pool } from 'mysql2/promise'
 
-require('dotenv').config()
+require('dotenv').config();
 
 // Database connection. Can use config from .env file (based on example.env) or the defaults
 
