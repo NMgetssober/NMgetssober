@@ -22,6 +22,8 @@ CREATE TABLE profile (
 CREATE TABLE treatmentCenter (
     treatmentCenterId BINARY(16) NOT NULL,
     treatmentCenterCity VARCHAR(32)NOT NULL,
+    treatmentCenterLat FLOAT,
+    treatmentCenterLong FLOAT,
     treatmentCenterName VARCHAR (255) NOT NULL,
     treatmentCenterPhone VARCHAR(32),
     treatmentCenterStreet1 VARCHAR(255) NOT NULL,
@@ -36,6 +38,8 @@ CREATE TABLE activity (
     activityCity VARCHAR(255) NOT NULL,
     activityDescription BLOB NOT NULL,
     activityGroupName VARCHAR(255) NOT NULL,
+    activityLat FLOAT,
+    activityLong FLOAT,
     activityStreet1 VARCHAR(255) NOT NULL,
     activityStreet2 VARCHAR(255),
     activityTime VARCHAR(255),
