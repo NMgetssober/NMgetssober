@@ -12,3 +12,18 @@ export async function getActivityByProfileId(profileId: string) {
         return undefined
     }
 }
+
+# getActivityByProfileId
+SELECT profile.profileId,
+    activity.activityId,
+    activity.activityCity,
+    activity.activityDescription,
+    activity.activityGroupName,
+    activity.activityStreet1,
+    activity.activityStreet2,
+    activity.activityTime,
+    activity.activityWebsite
+FROM activityFavorite
+INNER JOIN profile ON activityFavorite.activityFavoriteProfileId = profile.profileId
+INNER JOIN activity ON activityFavorite.activityFavoriteActivityId = activity.activityId
+WHERE profileId = UUID_TO_BIN(:profileId);

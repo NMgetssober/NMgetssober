@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
-import {selectPartialProfileByProfileId} from "../../utils/profile/selectPartialProfileByProfileId";
 import {Status} from "../../utils/interfaces/Status";
+import {getActivityByProfileId} from "../../utils/activity/getActivityByProfileId";
 
 export async function activityController(request: Request, response: Response) : Promise<Response> {
     return response.json('Activity route works!')
