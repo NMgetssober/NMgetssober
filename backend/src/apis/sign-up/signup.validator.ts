@@ -28,5 +28,5 @@ export const signupValidator = {
         },
         trim: true,
         escape: true
-    },
-}
+    }
+};

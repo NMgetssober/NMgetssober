@@ -27,6 +27,9 @@ export async function activationController(request: Request, response: Response)
         profile ? await activationSucceeded(profile) : activationFailed()
 
     } catch (error) {
-        return response.json({status: 500, data: null, message: error.message})
+        return response.json({
+            status: 500,
+            data: null,
+            message: error.message})
     }
 }

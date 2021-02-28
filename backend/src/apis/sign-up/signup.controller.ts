@@ -10,7 +10,7 @@ const mailgun = require("mailgun-js")
 export async function signupProfileController(request: Request, response: Response) : Promise<Response|undefined> {
     try {
         const {profileEmail, profilePassword, profileUsername} = request.body;
-        const profileHash = await setHash(profilePassword);
+        const profileHash= await setHash(profilePassword);
         const profileAuthenticationKey = setAuthenticationKey();
         const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${profileAuthenticationKey}`
         console.log(profileAuthenticationKey)
@@ -31,7 +31,7 @@ export async function signupProfileController(request: Request, response: Respon
             profileId: null,
             profileAuthenticationKey,
             profileEmail,
-            profilePassword,
+            profileHash,
             profileUsername,
         };
 

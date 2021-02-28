@@ -3,7 +3,7 @@ import {param} from "express-validator";
 import {activationController} from "./activation.controller";
 import {signupProfileController} from "./signup.controller";
 import {signupValidator} from "./signup.validator";
-import {asyncValidatorController} from "../../utils/controllers/asyncValidatorController";
+import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 
 const {checkSchema} = require('express-validator');
 
