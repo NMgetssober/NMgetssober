@@ -5,6 +5,8 @@ import morgan from 'morgan';
 import {indexRoute} from './apis/index.route';
 import {signupRoute} from './apis/sign-up/signup.route';
 import {profileRoute} from "./apis/profile/profile.route";
+import {signinRoute} from "./apis/sign-in/sign-in.route";
+
 const session = require("express-session")
 const MemoryStore = require('memorystore')(session);
 
@@ -50,7 +52,8 @@ export class App {
         // TODO add "/apis"
         this.app.use('/apis', indexRoute)
         this.app.use('/apis/sign-up', signupRoute)
-        this.app.use('/apis/profile', profileRoute)
+        // this.app.use('/apis/profile', profileRoute)
+        this.app.use('/apis/sign-in', signinRoute)
 
     }
 
