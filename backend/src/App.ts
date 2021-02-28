@@ -10,6 +10,7 @@ import session from "express-session";
 import passport from "passport";
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {activityRoute} from "./apis/activity/activity.route";
+import {activityTypeRoute} from "./apis/activity-type/activity-type.route";
 
 const MemoryStore = require('memorystore')(session);
 
