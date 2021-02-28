@@ -25,7 +25,6 @@ function dataDownloader () : Promise<any> {
                 const profile: Profile = {
                     profileId: null,
                     profileEmail: user.email,
-                    profilePhone: user.phone,
                     profileUsername: user.username
                 }
             await insertProfile(profile)

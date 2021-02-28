@@ -7,8 +7,8 @@ export function generateJwt (payload: object, signature: string): any {
     const setExpInSecondsSinceEpoch = (currentTimestamp: number): number => {
         const oneHourInMilliseconds: number = 3600000 * 3
         const futureTimestamp: number = Math.round(currentTimestamp) + oneHourInMilliseconds
-        const futureTimestampInseconds: number = futureTimestamp / 1000
-        return Math.round(futureTimestampInseconds)
+        const futureTimestampInSeconds: number = futureTimestamp / 1000
+        return Math.round(futureTimestampInSeconds)
     }
     const iat = new Date().getTime()
     const exp = setExpInSecondsSinceEpoch(iat)

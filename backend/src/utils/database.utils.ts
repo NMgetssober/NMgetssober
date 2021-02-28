@@ -12,6 +12,6 @@ export async function connect (): Promise<Pool> {
         database: process.env.MYSQL_DATABASE,
         connectionLimit: 10,
         namedPlaceholders: true
-    })
+    });
     return connection
 }

@@ -6,8 +6,10 @@ import {indexRoute} from './apis/index.route';
 import {signupRoute} from './apis/sign-up/signup.route';
 import {profileRoute} from "./apis/profile/profile.route";
 import {signinRoute} from "./apis/sign-in/sign-in.route";
+import session from "express-session";
+import passport from "passport";
+import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 
-const session = require("express-session")
 const MemoryStore = require('memorystore')(session);
 
 
@@ -18,10 +20,10 @@ export class App {
     constructor (
         private port?: number | string
     ) {
-        this.app = express()
-        this.settings()
-        this.middlewares()
-        this.routes()
+        this.app = express();
+        this.settings();
+        this.middlewares();
+        this.routes();
     }
 
     // private method that sets the port for the sever, to one from index.route.ts, and external .env file or defaults to 3000
@@ -39,12 +41,15 @@ export class App {
             secret: "secret",
             saveUninitialized: true,
             resave: true,
-            maxAge: "3hr"
+            maxAge: "3h"
         };
 
         this.app.use(morgan('dev'));
         this.app.use(express.json());
         this.app.use(session(sessionConfig));
+        this.app.use(passport.initialize());
+        this.app.use(passport.session());
+        passport.use(passportStrategy)
     }
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
@@ -52,7 +57,7 @@ export class App {
         // TODO add "/apis"
         this.app.use('/apis', indexRoute)
         this.app.use('/apis/sign-up', signupRoute)
-        // this.app.use('/apis/profile', profileRoute)
+        this.app.use('/apis/profile', profileRoute)
         this.app.use('/apis/sign-in', signinRoute)
 
     }
