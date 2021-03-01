@@ -6,4 +6,4 @@ export const activityTypeRoute = Router();
 
 activityTypeRoute.route('/')
     .get(activityTypeController)
-    .post(getActivityByZipCodeAndCategory);
+    // .post(getActivityByZipCodeAndCategory);

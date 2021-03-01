@@ -1,6 +1,6 @@
 import {connect} from "../database.utils";
 
-export async function getActivityByProfileId(profileId: string) {
+export async function selectActivityByProfileId(profileId: string) {
     try {
         const mysqlConnection = await connect();
 
@@ -13,9 +13,8 @@ export async function getActivityByProfileId(profileId: string) {
     }
 }
 
-# getActivityByProfileId
-SELECT profile.profileId,
-    activity.activityId,
+// getActivityByProfileId
+SELECT activity.activityId,
     activity.activityCity,
     activity.activityDescription,
     activity.activityGroupName,
@@ -24,6 +23,5 @@ SELECT profile.profileId,
     activity.activityTime,
     activity.activityWebsite
 FROM activityFavorite
-INNER JOIN profile ON activityFavorite.activityFavoriteProfileId = profile.profileId
 INNER JOIN activity ON activityFavorite.activityFavoriteActivityId = activity.activityId
-WHERE profileId = UUID_TO_BIN(:profileId);
+WHERE activityFavorite.activityFavoriteActivityIdProfileId = UUID_TO_BIN(:profileId);

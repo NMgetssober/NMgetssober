@@ -6,8 +6,10 @@ import {Profile} from "../interfaces/Profile";
 
 export function isLoggedIn(request: Request, response: Response, next: NextFunction): any {
     let status: Status = {status: 400, message: "Please log in", data: null};
+    //@ts-ignore mismatch with express session typing
     const sessionProfile = (request : Request): Profile | undefined => request.session?.profile ?? undefined;
     console.log(request.sessionID)
+    //@ts-ignore mismatch with express session typing
     const signature = (request : Request) : string => request.session?.signature ?? "no signature"
     const isSessionActive = (isProfileActive: Profile | undefined) : boolean => isProfileActive ? true : false;
     const getJwtTokenFromHeader = (headers: any): string => {

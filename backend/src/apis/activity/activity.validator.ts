@@ -1,0 +1,1 @@
+check if activity attributes are UUID

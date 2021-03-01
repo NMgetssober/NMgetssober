@@ -15,7 +15,7 @@ signupRoute.route('/')
         signupProfileController
     );
 
-signupRoute.route('activation/:activation')
+signupRoute.route('/activation/:activation')
     .get(
         asyncValidatorController([param("activation", "invalid activation link").isHexadecimal().notEmpty()]), activationController
     )

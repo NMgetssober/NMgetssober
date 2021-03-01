@@ -12,8 +12,7 @@ export async function signupProfileController(request: Request, response: Respon
         const {profileEmail, profilePassword, profileUsername} = request.body;
         const profileHash= await setHash(profilePassword);
         const profileAuthenticationKey = setAuthenticationKey();
-        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${profileAuthenticationKey}`
-        console.log(profileAuthenticationKey)
+        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}/activation/${profileAuthenticationKey}`
 
         const message = `<h2>Welcome to NM Gets Sober.</h2>
         <p>In order to bookmark your favorites you must confirm your account</p>
@@ -31,7 +30,7 @@ export async function signupProfileController(request: Request, response: Respon
             profileId: null,
             profileAuthenticationKey,
             profileEmail,
-            profileHash,
+            profilePassword: profileHash,
             profileUsername,
         };
 
@@ -42,7 +41,6 @@ export async function signupProfileController(request: Request, response: Respon
         emailComposer.compile().build((error: any, message: Buffer) => {
             const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN});
 
-            console.log(message.toString("ascii"))
             const compiledEmail = {
                 to: profileEmail,
                 message: message.toString("ascii")

@@ -6,7 +6,7 @@ import {indexRoute} from './apis/index.route';
 import {signupRoute} from './apis/sign-up/signup.route';
 import {profileRoute} from "./apis/profile/profile.route";
 import {signinRoute} from "./apis/sign-in/sign-in.route";
-import session from "express-session";
+const session = require('express-session');
 import passport from "passport";
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {activityRoute} from "./apis/activity/activity.route";
@@ -59,10 +59,11 @@ export class App {
         // TODO add "/apis"
         this.app.use('/apis', indexRoute)
         this.app.use('/apis/sign-up', signupRoute)
-        // this.app.use('/apis/profile', profileRoute)
-        // this.app.use('/apis/sign-in', signinRoute)
-        this.app.use('/apis/activity', activityRoute)
-        this.app.use('/apis/activity-type', activityTypeRoute)
+        this.app.use('/apis/profile', profileRoute)
+        this.app.use('/apis/sign-in', signinRoute)
+
+        // this.app.use('/apis/activity', activityRoute)
+        // this.app.use('/apis/activity-type', activityTypeRoute)
 
     }
 

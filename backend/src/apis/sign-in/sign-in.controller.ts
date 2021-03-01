@@ -32,10 +32,12 @@ export async function signinController(request: Request, response: Response, nex
                     if (passportUser.profileAuthenticationKey !== null) {
                         signInFailed("Please activate your account")
                     }
-
                     if (request.session) {
+                        //@ts-ignore mismatch with express session typing
                         request.session.profile = passportUser;
+                        //@ts-ignore mismatch with express session typing
                         request.session.jwt = authorization;
+                        //@ts-ignore mismatch with express session typing
                         request.session.signature = signature;
                     }
 
@@ -50,7 +52,7 @@ export async function signinController(request: Request, response: Response, nex
                     })
                 };
 
-                const isPasswordValid: boolean = passportUser && await validatePassword(passportUser.profileHash, profilePassword);
+                const isPasswordValid: boolean = passportUser && await validatePassword(passportUser.profileEmail, profilePassword);
                 return isPasswordValid ? signInSuccessful() : signInFailed("Invalid email or password");
             })(request, response, nextFunction)
     } catch (error) {

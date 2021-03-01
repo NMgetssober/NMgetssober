@@ -6,6 +6,9 @@ import axios from "axios";
 import {Profile} from "../interfaces/Profile";
 import {insertProfile} from "../profile/insertProfile";
 
+
+//datadownloaderActivity
+//datadownloaderTreatmentCenter
 function dataDownloader () : Promise<any> {
     async function main() {
         try{
@@ -16,6 +19,8 @@ function dataDownloader () : Promise<any> {
 
     }
     return main()
+
+
 
     async function downloadUsers() {
         try {
