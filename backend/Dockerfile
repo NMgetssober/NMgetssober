@@ -16,9 +16,9 @@ RUN mkdir /home/node/app
 WORKDIR ./home/node/app
 
 
-RUN chown node:node ./
+#RUN chown node:node ./
 
-USER node
+#USER node
 
 COPY package.json package-lock.json ./
 RUN npm install --no-optional && npm cache clean --force
