@@ -1,46 +1,11 @@
-//using this file to create data downloader
-//axios is from the express spin up
+import {activities} from "./activity";
 
 
-import axios from "axios";
-import {Profile} from "../interfaces/Profile";
-import {insertProfile} from "../profile/insertProfile";
-
-
-//datadownloaderActivity
-//datadownloaderTreatmentCenter
-function dataDownloader () : Promise<any> {
-    async function main() {
-        try{
-            await downloadUsers()
-        } catch (error) {
-            console.error(error)
-        }
-
-    }
-    return main()
-
-
-
-    async function downloadUsers() {
-        try {
-            const userRequest = await axios.get("http://jsonplaceholder.typicode.com/users")
-            const users = userRequest.data
-            for (let user of users) {
-                const profile: Profile = {
-                    profileId: null,
-                    profileEmail: user.email,
-                    profileUsername: user.username
-                }
-            await insertProfile(profile)
-            }
-        } catch (error) {
-            throw new Error(error)
-        }
-
+function getGroupNames() {
+    let groupName = {}
+    for (let i = 0; i < activities.length; i++) {
+        groupName = activities.groupName
     }
 }
 
-dataDownloader().catch(error => {
-    console.error(error)
-})
+function

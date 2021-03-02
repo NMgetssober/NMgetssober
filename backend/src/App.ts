@@ -11,6 +11,7 @@ import passport from "passport";
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {activityRoute} from "./apis/activity/activity.route";
 import {activityTypeRoute} from "./apis/activity-type/activity-type.route";
+import {activityFavoriteRoute} from "./apis/activity-favorite/activity-favorite.route";
 
 const MemoryStore = require('memorystore')(session);
 
@@ -61,9 +62,9 @@ export class App {
         this.app.use('/apis/sign-up', signupRoute)
         this.app.use('/apis/profile', profileRoute)
         this.app.use('/apis/sign-in', signinRoute)
-
-        // this.app.use('/apis/activity', activityRoute)
-        // this.app.use('/apis/activity-type', activityTypeRoute)
+        this.app.use('/apis/activity', activityRoute)
+        this.app.use('/apis/activity-type', activityTypeRoute)
+        this.app.use('/apis/activity-favorite', activityFavoriteRoute)
 
     }
 

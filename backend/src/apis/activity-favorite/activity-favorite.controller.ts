@@ -1,11 +1,11 @@
 import {Request, Response} from "express";
 import {Status} from "../../utils/interfaces/Status";
-import {selectActivityByZipCodeAndCategory} from "../../utils/activity/selectActivityByZipCodeAndCategory";
+import {selectActivityByProfileId} from "../../utils/activity/selectActivityByProfileId";
 
-export async function activityTypeController(request: Request, response: Response) : Promise<Response> {
+export async function activityFavoriteController(request: Request, response: Response) : Promise<Response> {
     try {
-        const {zipCode} = request.params;
-        const mySqlResult = await selectActivityByZipCodeAndCategory(zipCode);
+        const {profileId} = request.params;
+        const mySqlResult = await selectActivityByProfileId(profileId);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
