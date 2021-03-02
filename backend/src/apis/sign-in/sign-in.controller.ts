@@ -52,7 +52,7 @@ export async function signinController(request: Request, response: Response, nex
                     })
                 };
 
-                const isPasswordValid: boolean = passportUser && await validatePassword(passportUser.profileEmail, profilePassword);
+                const isPasswordValid: boolean = passportUser && await validatePassword(passportUser.profilePassword, profilePassword);
                 return isPasswordValid ? signInSuccessful() : signInFailed("Invalid email or password");
             })(request, response, nextFunction)
     } catch (error) {
@@ -65,7 +65,7 @@ export async function signinController(request: Request, response: Response, nex
 }
 
 const LocalStrategy = passportLocal.Strategy;
-
+console.log('end')
 export const passportStrategy: Strategy = new LocalStrategy(
     {
         usernameField: 'profileEmail',
