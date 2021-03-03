@@ -50,9 +50,7 @@ CREATE TABLE activity (
 
 CREATE TABLE facilityCodeCategory (
     facilityCodeCategoryId BINARY(16) NOT NULL,
-    facilityCodeCategoryAcronym VARCHAR(6) NOT NULL,
-    facilityCodeCategoryGroupName VARCHAR(255) NOT NULL,
-    facilityCodeCategoryName VARCHAR(255) NOT NULL,
+    facilityCodeCategoryName VARCHAR(40) NOT NULL,
     PRIMARY KEY(facilityCodeCategoryId)
 );
 

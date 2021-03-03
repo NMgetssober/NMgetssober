@@ -2,6 +2,7 @@ export interface Activity {
     activityId: string|null;
     activityCity: string;
     activityDescription: string;
+    activityGroupName: string;
     activityStreet1: string;
     activityStreet2: string|null;
     activityTime: string|null;
