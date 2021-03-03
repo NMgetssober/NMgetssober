@@ -63,9 +63,10 @@ export async function signupProfileController(request: Request, response: Respon
             });
         })
     } catch (error) {
+        console.log(error)
         const status: Status = {
             status: 500,
-            message: error.message,
+            message: error,
             data: null
         };
         return response.json(status);

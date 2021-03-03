@@ -11,7 +11,7 @@ export async function insertProfile(profile: Profile) : Promise<string>{
         return "profile successfully inserted"
     } catch (error) {
         console.error(error)
-        return error.msg
+        throw error.message
     }
 
 }

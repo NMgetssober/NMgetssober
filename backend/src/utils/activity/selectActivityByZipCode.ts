@@ -1,6 +1,6 @@
 import {connect} from "../database.utils";
 
-export async function selectActivityByZipCodeAndCategory(profileId: string) {
+export async function selectActivityByZipCode(profileId: string) {
     try {
         const mysqlConnection = await connect();
 
