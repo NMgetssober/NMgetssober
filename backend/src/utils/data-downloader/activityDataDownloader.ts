@@ -29,7 +29,10 @@ function activityDataDownloader() : Promise<any> {
                 }
                 await insertActivity(activity)
                 //todo check what activity types this activity has; create activity filter insertActivityFilter
-
+                // const dict = { isFitness : activityType,
+                //     isWomenFocused : activityType ,
+                //     isSobrietyRelated:
+                // };
             }
         } catch (error) {
             throw new Error(error)
