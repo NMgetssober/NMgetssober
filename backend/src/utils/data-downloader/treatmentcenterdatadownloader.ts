@@ -20,6 +20,8 @@ function treatmentcenterdatadownloader () : Promise<any> {
     async function downtreatmentcenter() {
         try {
             console.log(treatmentCenterFinal)
+ // loop over
+ //            for loop
 
         } catch (error) {
             throw new Error(error)
@@ -27,6 +29,9 @@ function treatmentcenterdatadownloader () : Promise<any> {
 
     }
 }
+
+// create objects
+
 
 treatmentcenterdatadownloader().catch(error => {
     console.error(error)

@@ -8,91 +8,105 @@ DROP TABLE IF EXISTS activity;
 DROP TABLE IF EXISTS treatmentCenter;
 DROP TABLE IF EXISTS profile;
 
-CREATE TABLE profile (
-    profileId BINARY(16) NOT NULL,
+CREATE TABLE profile
+(
+    profileId                BINARY(16)   NOT NULL,
     profileAuthenticationKey CHAR(32),
-    profileEmail VARCHAR(128) NOT NULL,
-    profilePassword CHAR(97) NOT NULL,
-    profileUsername VARCHAR(32) NOT NULL,
-    UNIQUE(profileEmail),
-    UNIQUE(profileUsername),
-    PRIMARY KEY(profileId)
+    profileEmail             VARCHAR(128) NOT NULL,
+    profilePassword          CHAR(97)     NOT NULL,
+    profileUsername          VARCHAR(32)  NOT NULL,
+    UNIQUE (profileEmail),
+    UNIQUE (profileUsername),
+    PRIMARY KEY (profileId)
 );
 
-CREATE TABLE treatmentCenter (
-    treatmentCenterId BINARY(16) NOT NULL,
-    treatmentCenterCity VARCHAR(32)NOT NULL,
-    treatmentCenterName VARCHAR (255) NOT NULL,
-    treatmentCenterPhone VARCHAR(32),
+CREATE TABLE treatmentCenter
+(
+    treatmentCenterId      BINARY(16)   NOT NULL,
+    treatmentCenterCity    VARCHAR(32)  NOT NULL,
+    treatmentCenterLat     FLOAT,
+    treatmentCenterLong    FLOAT,
+    treatmentCenterName    VARCHAR(255) NOT NULL,
+    treatmentCenterPhone   VARCHAR(32),
     treatmentCenterStreet1 VARCHAR(255) NOT NULL,
     treatmentCenterStreet2 VARCHAR(255),
     treatmentCenterWebsite VARCHAR(255),
-    treatmentCenterZipCode VARCHAR(16) NOT NULL,
-    PRIMARY KEY(treatmentCenterId)
+    treatmentCenterZipCode VARCHAR(16)  NOT NULL,
+    PRIMARY KEY (treatmentCenterId)
+);
+CREATE TABLE activity
+(
+    activityId          BINARY(16)   NOT NULL,
+    activityCity        VARCHAR(255) NOT NULL,
+    activityDescription BLOB         NOT NULL,
+    activityGroupName   VARCHAR(255) NOT NULL,
+    activityLat         FLOAT,
+    activityLong        FLOAT,
+    activityStreet1     VARCHAR(255) NOT NULL,
+    activityStreet2     VARCHAR(255),
+    activityTime        VARCHAR(255),
+    activityWebsite     VARCHAR(255),
+    activityZipCode     VARCHAR(16)  NOT NULL,
+    PRIMARY KEY (activityId)
 );
 
-CREATE TABLE activity (
-    activityId BINARY(16) NOT NULL,
-    activityCity VARCHAR(255) NOT NULL,
-    activityDescription BLOB NOT NULL,
-    activityGroupName VARCHAR(255) NOT NULL,
-    activityStreet1 VARCHAR(255) NOT NULL,
-    activityStreet2 VARCHAR(255),
-    activityTime VARCHAR(255),
-    activityWebsite VARCHAR(255),
-    activityZipCode VARCHAR(16) NOT NULL,
-    PRIMARY KEY(activityId)
+CREATE TABLE facilityCodeCategory
+(
+    facilityCodeCategoryId   BINARY(16)  NOT NULL,
+    facilityCodeCategoryName VARCHAR(40) NOT NULL,
+    PRIMARY KEY (facilityCodeCategoryId)
 );
 
-CREATE TABLE facilityCodeCategory (
-    facilityCodeCategoryId BINARY(16) NOT NULL,
-    facilityCodeCategoryAcronym VARCHAR(6) NOT NULL,
-    facilityCodeCategoryGroupName VARCHAR(255) NOT NULL,
-    facilityCodeCategoryName VARCHAR(255) NOT NULL,
-    PRIMARY KEY(facilityCodeCategoryId)
-);
-
-CREATE TABLE activityType (
-    activityTypeId BINARY(16) NOT NULL,
+CREATE TABLE activityType
+(
+    activityTypeId   BINARY(16)   NOT NULL,
     activityTypeName VARCHAR(255) NOT NULL,
-    PRIMARY KEY(activityTypeId)
+    PRIMARY KEY (activityTypeId)
 );
 
-CREATE TABLE serviceProvided (
+CREATE TABLE serviceProvided
+(
     serviceProvidedFacilityCodeCategoryId BINARY(16) NOT NULL,
-    serviceProvidedTreatmentCenterId BINARY(16) NOT NULL,
-    PRIMARY KEY(serviceProvidedFacilityCodeCategoryId, serviceProvidedTreatmentCenterId),
-    INDEX(serviceProvidedFacilityCodeCategoryId),
+    serviceProvidedTreatmentCenterId      BINARY(16) NOT NULL,
+    PRIMARY KEY (serviceProvidedFacilityCodeCategoryId, serviceProvidedTreatmentCenterId),
+    INDEX(serviceProvidedFacilityCodeCategoryId
+) ,
     INDEX(serviceProvidedTreatmentCenterId),
     FOREIGN KEY(serviceProvidedFacilityCodeCategoryId) REFERENCES facilityCodeCategory(facilityCodeCategoryId),
     FOREIGN KEY(serviceProvidedTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId)
 );
 
-CREATE TABLE activityFilter (
-    activityFilterActivityId BINARY(16) NOT NULL,
+CREATE TABLE activityFilter
+(
+    activityFilterActivityId     BINARY(16) NOT NULL,
     activityFilterActivityTypeId BINARY(16) NOT NULL,
-    PRIMARY KEY(activityFilterActivityId, activityFilterActivityTypeId),
-    INDEX(activityFilterActivityId),
+    PRIMARY KEY (activityFilterActivityId, activityFilterActivityTypeId),
+    INDEX(activityFilterActivityId
+) ,
     INDEX(activityFilterActivityTypeId),
     FOREIGN KEY(activityFilterActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFilterActivityTypeId) REFERENCES activityType(activityTypeId)
 );
 
-CREATE TABLE treatmentFavorite (
+CREATE TABLE treatmentFavorite
+(
     treatmentFavoriteTreatmentCenterId BINARY(16) NOT NULL,
-    treatmentFavoriteProfileId BINARY(16) NOT NULL,
-    PRIMARY KEY(treatmentFavoriteTreatmentCenterId, treatmentFavoriteProfileId),
-    INDEX(treatmentFavoriteTreatmentCenterId),
+    treatmentFavoriteProfileId         BINARY(16) NOT NULL,
+    PRIMARY KEY (treatmentFavoriteTreatmentCenterId, treatmentFavoriteProfileId),
+    INDEX(treatmentFavoriteTreatmentCenterId
+) ,
     INDEX(treatmentFavoriteProfileId),
     FOREIGN KEY(treatmentFavoriteTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId),
     FOREIGN KEY(treatmentFavoriteProfileId) REFERENCES profile(profileId)
 );
 
-CREATE TABLE activityFavorite (
+CREATE TABLE activityFavorite
+(
     activityFavoriteActivityId BINARY(16) NOT NULL,
-    activityFavoriteProfileId BINARY(16) NOT NULL,
-    PRIMARY KEY(activityFavoriteActivityId, activityFavoriteProfileId),
-    INDEX(activityFavoriteActivityId),
+    activityFavoriteProfileId  BINARY(16) NOT NULL,
+    PRIMARY KEY (activityFavoriteActivityId, activityFavoriteProfileId),
+    INDEX(activityFavoriteActivityId
+) ,
     INDEX(activityFavoriteProfileId),
     FOREIGN KEY(activityFavoriteActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFavoriteProfileId) REFERENCES profile(profileId)
