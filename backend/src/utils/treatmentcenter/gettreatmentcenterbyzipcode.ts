@@ -1,7 +1,7 @@
 import {treatmentcenterfinal} from "../database/treatmentcenterfinal"
 import {connect} from "../database.utils";
 
-export async function insertTreatmentcenterByZipCode(gettreatmentcenterbyzipcode: treatmentcenterfinal) {
+export async function insertTreatmentcenter(gettreatmentcenterbyzipcode: treatmentcenterfinal) {
 
     try {
         const mySqlConnetion = await connect()
