@@ -1,15 +1,14 @@
 //using this file to create data downloader
 //axios is from the express spin up
 
-
-
-
 import {treatmentCenterFinal} from "../database/treatmentcenterfinal"
+import {treatmentCenter} from "../interfaces/Treatmentcenter";
+import {insertTreatmentCenter} from "../treatmentcenter/insertTreatmentCenter";
 
 function treatmentcenterdatadownloader () : Promise<any> {
     async function main() {
         try{
-            await downtreatmentcenter()
+            await gettreatmentcenter()
         } catch (error) {
             console.error(error)
         }
@@ -17,21 +16,27 @@ function treatmentcenterdatadownloader () : Promise<any> {
     }
     return main()
 
-    async function downtreatmentcenter() {
+    async function gettreatmentcenter() {
         try {
-            console.log(treatmentCenterFinal)
- // loop over
- //            for loop
-
+            for (let currentTreatmentCenter of treatmentCenterFinal){
+                    const treatmentcenter : treatmentCenter = {
+                    treatmentCenterId: null,
+                    treatmentCenterName: currentTreatmentCenter.city,
+                    treatmentCenterStreet1: currentTreatmentCenter.street1,
+                    treatmentCenterStreet2: currentTreatmentCenter.street2,
+                    treatmentCenterCity: currentTreatmentCenter.city,
+                    treatmentCenterZipCode: currentTreatmentCenter.zipcode,
+                    treatmentCenterWebsite: currentTreatmentCenter.website
+                }
+                await insertTreatmentCenter(treatmentcenter)
+                // console.log(treatmentcenter)
+            }
         } catch (error) {
             throw new Error(error)
         }
 
     }
 }
-
-// create objects
-
 
 treatmentcenterdatadownloader().catch(error => {
     console.error(error)
