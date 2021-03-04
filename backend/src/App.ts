@@ -64,7 +64,7 @@ export class App {
         this.app.use('/apis/sign-in', signinRoute)
         this.app.use('/apis/activity', activityRoute)
         // this.app.use('/apis/activity-type', activityTypeRoute)
-        this.app.use('/apis/activity-favorite', activityFavoriteRoute)
+        // this.app.use('/apis/activity-favorite', activityFavoriteRoute)
 
     }
 

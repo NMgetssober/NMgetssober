@@ -1,6 +1,8 @@
 import {activities} from "./activity";
 import {Activity} from "../interfaces/Activity";
 import {insertActivity} from "../activity/insertActivity";
+import {ActivityType} from "../interfaces/ActivityType";
+import {insertActivityFilter} from "../activity/insertActivityFilter";
 
 function activityDataDownloader() : Promise<any> {
     async function main() {
@@ -28,11 +30,21 @@ function activityDataDownloader() : Promise<any> {
                     activityZipCode: currentActivity.zipCode
                 }
                 await insertActivity(activity)
+                // if is (isFitness)
+                //    await insertActivityFilter (activityId, activityTypeId)
+                // if is (isWomenFocused)
+                //    await insertActivityFilter (activityId, activityTypeId)
+                // if is (isSobrietyRelated)
+                //    await insertActivityFilter (activityId, activityTypeId)
                 //todo check what activity types this activity has; create activity filter insertActivityFilter
-                // const dict = { isFitness : activityType,
-                //     isWomenFocused : activityType ,
-                //     isSobrietyRelated:
-                // };
+                // const dict : ActivityType = {
+                //     isFitness: activities.isFitness,
+                //     isWomenFocused: activities.isWomenFocused,
+                //     isSobrietyRelated:  activities.isSobrietyRelated
+                // }
+                // await insertActivityFilter(dict)
+                // console.log(dict)
+
             }
         } catch (error) {
             throw new Error(error)

@@ -5,7 +5,7 @@ import {selectActivityByZipCode} from "../../utils/activity/selectActivityByZipC
 export async function activityTypeController(request: Request, response: Response) : Promise<Response> {
     try {
         const {zipCode} = request.params;
-        const mySqlResult = await selectActivityByZipCode(zipCode);
+        const mySqlResult = await selectAllActivityType();
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
