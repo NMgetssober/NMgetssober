@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS treatmentFavorite;
 DROP TABLE IF EXISTS activityFilter;
 DROP TABLE IF EXISTS serviceProvided;
 DROP TABLE IF EXISTS activityType;
-DROP TABLE IF EXISTS facilityCodeCategory;
+DROP TABLE IF EXISTS facilityCategory;
 DROP TABLE IF EXISTS activity;
 DROP TABLE IF EXISTS treatmentCenter;
 DROP TABLE IF EXISTS profile;
@@ -23,15 +23,15 @@ CREATE TABLE profile
 CREATE TABLE treatmentCenter
 (
     treatmentCenterId      BINARY(16)   NOT NULL,
-    treatmentCenterCity    VARCHAR(32)  NOT NULL,
-    treatmentCenterLat     FLOAT,
-    treatmentCenterLong    FLOAT,
     treatmentCenterName    VARCHAR(255) NOT NULL,
-    treatmentCenterPhone   VARCHAR(32),
     treatmentCenterStreet1 VARCHAR(255) NOT NULL,
     treatmentCenterStreet2 VARCHAR(255),
-    treatmentCenterWebsite VARCHAR(255),
+    treatmentCenterLat     FLOAT,
+    treatmentCenterLong    FLOAT,
+    treatmentCenterCity    VARCHAR(32)  NOT NULL,
     treatmentCenterZipCode VARCHAR(16)  NOT NULL,
+    treatmentCenterPhone   VARCHAR(32),
+    treatmentCenterWebsite VARCHAR(255),
     PRIMARY KEY (treatmentCenterId)
 );
 CREATE TABLE activity
@@ -50,11 +50,13 @@ CREATE TABLE activity
     PRIMARY KEY (activityId)
 );
 
-CREATE TABLE facilityCodeCategory
+CREATE TABLE facilityCategory
 (
-    facilityCodeCategoryId   BINARY(16)  NOT NULL,
-    facilityCodeCategoryName VARCHAR(40) NOT NULL,
-    PRIMARY KEY (facilityCodeCategoryId)
+    facilityCategoryId   BINARY(16)  NOT NULL,
+    facilityCategoryName VARCHAR(40) NOT NULL,
+#     will manually come back and set group name using webstorm database integration
+    facilityCategoryGroupName VARCHAR(40),
+    PRIMARY KEY (facilityCategoryId)
 );
 
 CREATE TABLE activityType
@@ -66,13 +68,13 @@ CREATE TABLE activityType
 
 CREATE TABLE serviceProvided
 (
-    serviceProvidedFacilityCodeCategoryId BINARY(16) NOT NULL,
+    serviceProvidedFacilityCategoryId BINARY(16) NOT NULL,
     serviceProvidedTreatmentCenterId      BINARY(16) NOT NULL,
-    PRIMARY KEY (serviceProvidedFacilityCodeCategoryId, serviceProvidedTreatmentCenterId),
-    INDEX(serviceProvidedFacilityCodeCategoryId
+    PRIMARY KEY (serviceProvidedFacilityCategoryId, serviceProvidedTreatmentCenterId),
+    INDEX(serviceProvidedFacilityCategoryId
 ) ,
     INDEX(serviceProvidedTreatmentCenterId),
-    FOREIGN KEY(serviceProvidedFacilityCodeCategoryId) REFERENCES facilityCodeCategory(facilityCodeCategoryId),
+    FOREIGN KEY(serviceProvidedFacilityCategoryId) REFERENCES facilityCategory(facilityCategoryId),
     FOREIGN KEY(serviceProvidedTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId)
 );
 

@@ -1,7 +1,7 @@
 //using this file to create data downloader
 //axios is from the express spin up
 
-import {treatmentCenterFinal} from "../database/treatmentcenterfinal"
+import {treatmentCenterJson} from "../database/treatmentcenterjson"
 import {treatmentCenter} from "../interfaces/Treatmentcenter";
 import {insertTreatmentCenter} from "../treatmentcenter/insertTreatmentCenter";
 
@@ -18,18 +18,29 @@ function treatmentcenterdatadownloader () : Promise<any> {
 
     async function gettreatmentcenter() {
         try {
-            for (let currentTreatmentCenter of treatmentCenterFinal){
+            for (let currentTreatmentCenter of treatmentcenterjson){
                     const treatmentcenter : treatmentCenter = {
                     treatmentCenterId: null,
                     treatmentCenterName: currentTreatmentCenter.city,
                     treatmentCenterStreet1: currentTreatmentCenter.street1,
                     treatmentCenterStreet2: currentTreatmentCenter.street2,
+                    treatmentCenterLat: currentTreatmentCenter.latitude,
+                    treatmentCenterLong: currentTreatmentCenter.longitude,
                     treatmentCenterCity: currentTreatmentCenter.city,
                     treatmentCenterZipCode: currentTreatmentCenter.zipcode,
+                    treatmentCenterPhone: currentTreatmentCenter.phone,
                     treatmentCenterWebsite: currentTreatmentCenter.website
                 }
                 await insertTreatmentCenter(treatmentcenter)
-                // console.log(treatmentcenter)
+
+
+                // for (each of the categories),
+                    // check to see this treatment center has this available
+                    // if so then
+            //            check to see if this category has been inserted into the database; is not insert
+                    //     then insert  service with our current treatment id or into facility category
+
+
             }
         } catch (error) {
             throw new Error(error)

@@ -6,7 +6,7 @@ export async function insertTreatmentCenter(treatmentcenter: treatmentCenter): P
     try {
         console.log("treatmentCenter", treatmentcenter)
         const mysqlConnection = await connect()
-        const query: string = "INSERT INTO treatmentCenter (treatmentCenterId, treatmentCenterName, treatmentCenterStreet1, treatmentCenterStreet2, treatmentCenterCity, treatmentCenterZipCode, treatmentCenterWebsite) VALUES (UUID_TO_BIN(UUID()), :treatmentCenterName, :treatmentCenterStreet1, :treatmentCenterStreet2, :treatmentCenterCity, :treatmentCenterZipCode, :treatmentCenterWebsite)"
+        const query: string = "INSERT INTO treatmentCenter (treatmentCenterId, treatmentCenterName, treatmentCenterStreet1, treatmentCenterStreet2, treatmentCenterLat, treatmentCenterLong, treatmentCenterCity, treatmentCenterZipCode, treatmentCenterPhone, treatmentCenterWebsite) VALUES (UUID_TO_BIN(UUID()), :treatmentCenterName, :treatmentCenterStreet1, :treatmentCenterStreet2, :treatmentCenterLat, :treatmentCenterLong, :treatmentCenterCity, :treatmentCenterZipCode, :treatmentCenterPhone, :treatmentCenterWebsite)"
         const [rows] = await mysqlConnection.execute(query, treatmentcenter)
         console.log("resultfrommysql", rows)
         return "treatmentcenter successfully inserted"

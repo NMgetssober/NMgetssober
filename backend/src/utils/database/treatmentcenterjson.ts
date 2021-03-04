@@ -1,7 +1,11 @@
-export const treatmentCenterFinal: any = [
+export const treatmentCenterJson: any = [
+
+
+    // declare array of all categories
+
   {
-    "name": "CanyonLightInc",
-    "street1": "1301CubaAvenue",
+    "name": "Canyon Light Inc",
+    "street1": "1301 Cuba Avenue",
     "street2": "",
     "city": "Alamogordo",
     "zipcode": 88310,
@@ -31,8 +35,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalService",
-    "street1": "1900East10thStreet",
+    "name": "Presbyterian Medical Service",
+    "street1": "1900 East 10th Street",
     "street2": "",
     "city": "Alamogordo",
     "zipcode": 88310,
@@ -62,8 +66,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "AgeToAgeCounselingPC",
-    "street1": "5916AnaheimAvenueNE",
+    "name": "Age To Age Counseling PC",
+    "street1": "5916 Anaheim Avenue NE",
     "street2": "SuiteA",
     "city": "Albuquerque",
     "zipcode": 87113,
@@ -93,9 +97,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "AlbuquerqueBehavioralHealth",
-    "street1": "8200MountainRoadNE",
-    "street2": "Suite106",
+    "name": "Albuquerque Behavioral Health",
+    "street1": "8200 Mountain Road NE",
+    "street2": "Suite 106",
     "city": "Albuquerque",
     "zipcode": 87110,
     "phone": "505-830-6500",
@@ -124,8 +128,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "AlbuquerqueHealthServicesNE",
-    "street1": "112MonroeStreetNE",
+    "name": "Albuquerque Health Services NE",
+    "street1": "112 Monroe Street NE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87108,
@@ -155,8 +159,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "AlbuquerqueHealthServicesNW",
-    "street1": "172MontanoRoad",
+    "name": "Albuquerque Health Services NW",
+    "street1": "172 Montano Road",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87108,
@@ -186,8 +190,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "AliviarCounselingServicesInc",
-    "street1": "1611CentralNW",
+    "name": "Aliviar Counseling Services Inc",
+    "street1": "1611 Central NW",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87104,
@@ -217,9 +221,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ANewAwakeningCounselingAgency",
-    "street1": "6001stStreetNW",
-    "street2": "Suite200",
+    "name": "A New Awakening Counseling Agency",
+    "street1": "600 1st Street NW",
+    "street2": "Suite 200",
     "city": "Albuquerque",
     "zipcode": 87102,
     "phone": "505-224-9124 x1002",
@@ -248,8 +252,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "BernalilloCountyDepartmentOf",
-    "street1": "5901ZuniRoadSE",
+    "name": "Bernalillo County Department Of",
+    "street1": "5901 Zuni Road SE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87108,
@@ -279,8 +283,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "CentralNewMexicoTreatmentCtr",
-    "street1": "630HainesAvenueNW",
+    "name": "Central New Mexico Treatment Ctr",
+    "street1": "630 Haines Avenue NW",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87102,
@@ -310,8 +314,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "CounselingWorldLLC",
-    "street1": "1600SanPedroDriveNE",
+    "name": "Counseling World LLC",
+    "street1": "1600 San Pedro Drive NE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87110,
@@ -341,8 +345,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "CourageousTransformationsInc",
-    "street1": "3301LosArbolesNE",
+    "name": "Courageous Transformations Inc",
+    "street1": "3301 Los Arboles NE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87107,
@@ -372,9 +376,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "DragonflyCounselingAssociates",
-    "street1": "1610SanPedroDriveNE",
-    "street2": "SuiteA",
+    "name": "Dragonfly Counseling Associates",
+    "street1": "1610 San Pedro Drive NE",
+    "street2": "Suite A",
     "city": "Albuquerque",
     "zipcode": 87110,
     "phone": "505-265-0753",
@@ -403,8 +407,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "DukeCityRecoveryToolboxLLC",
-    "street1": "912FirstStreetNW",
+    "name": "Duke City Recovery Toolbox LLC",
+    "street1": "912 First Street NW",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87102,
@@ -434,8 +438,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "EvolutionGroupInc",
-    "street1": "218BroadwayBoulevardSE",
+    "name": "Evolution Group Inc",
+    "street1": "218 Broadway Boulevard SE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87102,
@@ -465,9 +469,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "FamilyWorkshopLLC",
-    "street1": "7027MontgomeryBoulevardNE",
-    "street2": "SuiteF",
+    "name": "Family Workshop LLC",
+    "street1": "7027 Montgomery Boulevard NE",
+    "street2": "Suite F",
     "city": "Albuquerque",
     "zipcode": 87109,
     "phone": "505-880-0100",
@@ -496,8 +500,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "FirstChoiceCommunityHlthcareInc",
-    "street1": "2001ElCentroFamiliarBoulevardSW",
+    "name": "First Choice Community Hlthcare Inc",
+    "street1": "2001 El Centro Familiar Boulevard SW",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87105,
@@ -527,8 +531,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "FirstNationsCommunityHlthsource",
-    "street1": "5608ZuniRoadSE",
+    "name": "First Nations Community Hlthsource",
+    "street1": "5608 Zuni Road SE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87108,
@@ -558,8 +562,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "FrazierCWilsonLISW",
-    "street1": "2418MilesRoadSE",
+    "name": "Frazier C Wilson LISW",
+    "street1": "2418 Miles Road SE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87106,
@@ -589,8 +593,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "HavenBehavioralOutpatientProgram",
-    "street1": "5400GibsonBoulevardSE",
+    "name": "Haven Behavioral Outpatient Program",
+    "street1": "5400 Gibson Boulevard SE",
     "street2": "3rdFloor",
     "city": "Albuquerque",
     "zipcode": 87108,
@@ -620,8 +624,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "HealingAddictionInOurCommunity",
-    "street1": "3701CondershireDriveSW",
+    "name": "Healing Addiction In Our Community",
+    "street1": "3701 Condershire Drive SW",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87121,
@@ -651,8 +655,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "HopeWorks",
-    "street1": "12013rdStreetNW",
+    "name": "Hope Works",
+    "street1": "1201 3rd Street NW",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87102,
@@ -682,8 +686,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "NewMexicoVeteransIntegrationCenter",
-    "street1": "1301-1OrtizDriveSE",
+    "name": "New Mexico Veterans Integration Center",
+    "street1": "1301-1 Ortiz Drive SE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87108,
@@ -713,9 +717,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "NMDepartmentOfHealth",
-    "street1": "5400GibsonBoulevardSE",
-    "street2": "Box13",
+    "name": "NM Department Of Health",
+    "street1": "5400 Gibson Boulevard SE",
+    "street2": "Box 13",
     "city": "Albuquerque",
     "zipcode": 87108,
     "phone": "505-841-8978",
@@ -744,8 +748,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "PerfectlyImperfectLLC",
-    "street1": "146 QuincyStreetNE",
+    "name": "Perfectly Imperfect LLC",
+    "street1": "146 Quincy Street NE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87108,
@@ -775,8 +779,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "RecoveryServicesOfNewMexico",
-    "street1": "1528FivePointsRoad",
+    "name": "Recovery Services Of New Mexico",
+    "street1": "1528 Five Points Road",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87105,
@@ -806,9 +810,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "SageNeuroscienceCenter",
-    "street1": "7850JeffersonStreetNE",
-    "street2": "Suite300",
+    "name": "Sage Neuroscience Center",
+    "street1": "7850 Jefferson Street NE",
+    "street2": "Suite 300",
     "city": "Albuquerque",
     "zipcode": 87109,
     "phone": "505-884-1114 x764",
@@ -837,8 +841,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "SequoyahAdolescentTreatmentCenter",
-    "street1": "3405WestPanAmericanFreeway",
+    "name": "Sequoyah Adolescent Treatment Center",
+    "street1": "3405 West Pan American Freeway",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87107,
@@ -868,8 +872,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "StreetwiseInc",
-    "street1": "3232CandelariaRoadNE",
+    "name": "Streetwise Inc",
+    "street1": "3232 Candelaria Road NE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87107,
@@ -899,9 +903,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "SusansLegacy",
-    "street1": "11005SpainRoadNE",
-    "street2": "Suite22",
+    "name": "Susans Legacy",
+    "street1": "11005 Spain Road NE",
+    "street2": "Suite 22",
     "city": "Albuquerque",
     "zipcode": 87111,
     "phone": "505-843-8450",
@@ -930,9 +934,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "TurningPointRecoveryCenterInc",
-    "street1": "9201MontgomeryBoulevard",
-    "street2": "SuiteV",
+    "name": "Turning Point Recovery Center Inc",
+    "street1": "9201 Montgomery Boulevard",
+    "street2": "Suite V",
     "city": "Albuquerque",
     "zipcode": 87111,
     "phone": "505-217-1717",
@@ -961,8 +965,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "UniversityOfNewMexicoHospital",
-    "street1": "2600YaleBoulevardSE",
+    "name": "University Of New Mexico Hospital",
+    "street1": "2600 Yale Boulevard SE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87106,
@@ -992,8 +996,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "UniversityOfNewMexicoHospital",
-    "street1": "2400TuckerAvenueNE",
+    "name": "University Of New Mexico Hospital",
+    "street1": "2400 Tucker Avenue NE",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87131,
@@ -1023,8 +1027,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "UTurnForChristNewMexico",
-    "street1": "205CaminoCuatroSW",
+    "name": "U Turn For Christ New Mexico",
+    "street1": "205 Camino Cuatro SW",
     "street2": "",
     "city": "Albuquerque",
     "zipcode": 87105,
@@ -1054,8 +1058,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "LaClinicaDeFamilia",
-    "street1": "826AnthonyDrive",
+    "name": "La Clinica De Familia",
+    "street1": "826 Anthony Drive",
     "street2": "",
     "city": "Anthony",
     "zipcode": 88021,
@@ -1085,8 +1089,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "1105MemorialDrive",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "1105 Memorial Drive",
     "street2": "",
     "city": "Artesia",
     "zipcode": 88210,
@@ -1116,8 +1120,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "RecoveryServiceOfNewMexico",
-    "street1": "2443Highway47",
+    "name": "Recovery Service Of NewMexico",
+    "street1": "2443 Highway 47",
     "street2": "",
     "city": "Belen",
     "zipcode": 87002,
@@ -1147,8 +1151,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "301SouthCaminoDelPueblo",
+    "name": "Valle Del Sol Of NewMexico",
+    "street1": "301 South Camino Del Pueblo",
     "street2": "",
     "city": "Bernalillo",
     "zipcode": 87004,
@@ -1178,8 +1182,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "CarlsbadFamilyHealthCenter",
-    "street1": "914NorthCanalStreet",
+    "name": "Carlsbad Family Health Center",
+    "street1": "914 North Canal Street",
     "street2": "",
     "city": "Carlsbad",
     "zipcode": 88220,
@@ -1209,8 +1213,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "GoldenServices",
-    "street1": "611WestStevens",
+    "name": "Golden Services",
+    "street1": "611 West Stevens",
     "street2": "",
     "city": "Carlsbad",
     "zipcode": 88220,
@@ -1240,8 +1244,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "3000WestChurchStreet",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "3000 West Church Street",
     "street2": "",
     "city": "Carlsbad",
     "zipcode": 88220,
@@ -1271,8 +1275,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "834MainStreet",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "834 Main Street",
     "street2": "",
     "city": "Clayton",
     "zipcode": 88415,
@@ -1302,8 +1306,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "MentalHealthResourcesInc",
-    "street1": "1100West21stStreet",
+    "name": "Mental Health Resources Inc",
+    "street1": "1100 West 21st Street",
     "street2": "",
     "city": "Clovis",
     "zipcode": 88101,
@@ -1333,8 +1337,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "CrownpointHealthcareFacility",
-    "street1": "HighwayJunction57Route9",
+    "name": "Crownpoint Healthcare Facility",
+    "street1": "Highway Junction 57 Route 9",
     "street2": "",
     "city": "Crownpoint",
     "zipcode": 87313,
@@ -1364,8 +1368,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "DivisionOfBehavioralAndMental",
-    "street1": "2314SWHighlandDrive",
+    "name": "Division Of Behavioral And Mental",
+    "street1": "2314 SW Highland Drive",
     "street2": "",
     "city": "Crownpoint",
     "zipcode": 87313,
@@ -1395,8 +1399,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "901WestHickoryStreet",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "901 West Hickory Street",
     "street2": "",
     "city": "Deming",
     "zipcode": 88030,
@@ -1426,10 +1430,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "VistaTaosRenewalCenter",
-    "street1": "259BlueberryHillRoad",
+    "name": "Vista Taos Renewal Center",
+    "street1": "259 Blueberry HillRoad",
     "street2": "",
-    "city": "ElPrado",
+    "city": "El Prado",
     "zipcode": 87529,
     "phone": "575-758-5858",
     "website": "http://www.vistataos.com",
@@ -1457,8 +1461,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ElCentroFamilyHealth",
-    "street1": "2010IndustrialParkRoad",
+    "name": "El Centro Family Health",
+    "street1": "2010 Industrial Park Road",
     "street2": "",
     "city": "Espanola",
     "zipcode": 87532,
@@ -1488,9 +1492,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "HoyRecoveryProgramInc",
-    "street1": "710LaJoyaStreet",
-    "street2": "SuiteA",
+    "name": "Hoy Recovery Program Inc",
+    "street1": "710 La Joya Street",
+    "street2": "Suite A",
     "city": "Espanola",
     "zipcode": 87532,
     "phone": "505-753-2203",
@@ -1519,9 +1523,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "HumanResourcesDevAssociatesInc",
-    "street1": "1114PlazaDelNorte",
-    "street2": "SuiteB",
+    "name": "Human Resources Dev Associates Inc",
+    "street1": "1114 Plaza Del Norte",
+    "street2": "Suite B",
     "city": "Espanola",
     "zipcode": 87532,
     "phone": "505-753-8933",
@@ -1550,9 +1554,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "835SpruceStreet",
-    "street2": "SuitesC&D",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "835 Spruce Street",
+    "street2": "Suites C & D",
     "city": "Espanola",
     "zipcode": 87532,
     "phone": "505-747-7400",
@@ -1581,8 +1585,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "SantaClaraPuebloBehavioralHealth",
-    "street1": "360FogRoad",
+    "name": "Santa Clara Pueblo Behavioral Health",
+    "street1": "360 Fog Road",
     "street2": "",
     "city": "Espanola",
     "zipcode": 87532,
@@ -1612,8 +1616,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "SantaFeRecoveryCenter",
-    "street1": "1302CalleDeLaMerced",
+    "name": "Santa Fe Recovery Center",
+    "street1": "1302 Calle De La Merced",
     "street2": "",
     "city": "Espanola",
     "zipcode": 87532,
@@ -1643,8 +1647,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "904EastFairviewLane",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "904 East Fairview Lane",
     "street2": "",
     "city": "Espanola",
     "zipcode": 87532,
@@ -1674,8 +1678,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "CottonwoodClinicalServiceInc",
-    "street1": "653WestArringtonStreet",
+    "name": "Cottonwood Clinical Service Inc",
+    "street1": "653 West Arrington Street",
     "street2": "",
     "city": "Farmington",
     "zipcode": 87401,
@@ -1705,8 +1709,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "DesertViewFamilyCounselingServices",
-    "street1": "6100EastMainStreet",
+    "name": "Desert View Family Counseling Services",
+    "street1": "6100 East Main Street",
     "street2": "",
     "city": "Farmington",
     "zipcode": 87402,
@@ -1736,8 +1740,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "FourWindsRecoveryCenterInc",
-    "street1": "1313MissionAvenue",
+    "name": "Four Winds Recovery Center Inc",
+    "street1": "1313 Mission Avenue",
     "street2": "",
     "city": "Farmington",
     "zipcode": 87499,
@@ -1767,8 +1771,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "NewMexicoTreatmentServicesLLC",
-    "street1": "607EastApacheStreet",
+    "name": "New Mexico Treatment Services LLC",
+    "street1": "607 East Apache Street",
     "street2": "",
     "city": "Farmington",
     "zipcode": 87401,
@@ -1798,8 +1802,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "744WestAnimas",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "744 West Animas",
     "street2": "",
     "city": "Farmington",
     "zipcode": 87401,
@@ -1829,8 +1833,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "1615OjoCourt",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "1615 Ojo Court",
     "street2": "",
     "city": "Farmington",
     "zipcode": 87401,
@@ -1860,8 +1864,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "NaNizhoozhiCenterInc(NCI)",
-    "street1": "506FrancesStreet",
+    "name": "Na Nizhoozhi Center Inc (NCI)",
+    "street1": "506 Frances Street",
     "street2": "",
     "city": "Gallup",
     "zipcode": 87301,
@@ -1891,9 +1895,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "NavajoNationDBMHS",
-    "street1": "300WestNizhoniBoulevard",
-    "street2": "SuiteA",
+    "name": "Navajo Nation DBMHS",
+    "street1": "300 West Nizhoni Boulevard",
+    "street2": "Suite A",
     "city": "Gallup",
     "zipcode": 87301,
     "phone": "505-722-9470",
@@ -1922,8 +1926,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "2025EastAztecRoad",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "2025 East Aztec Road",
     "street2": "",
     "city": "Gallup",
     "zipcode": 87301,
@@ -1953,8 +1957,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "PresbyterianMedicalService",
-    "street1": "1040SakelaresBoulevard",
+    "name": "Presbyterian Medical Service",
+    "street1": "1040 Sakelares Boulevard",
     "street2": "",
     "city": "Grants",
     "zipcode": 87020,
@@ -1984,8 +1988,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "906North1stStreet",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "906 North 1st Street",
     "street2": "",
     "city": "Grants",
     "zipcode": 87020,
@@ -2015,8 +2019,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "GuidanceCenterOf",
-    "street1": "920WestBroadway",
+    "name": "Guidance Center Of",
+    "street1": "920 West Broadway",
     "street2": "",
     "city": "Hobbs",
     "zipcode": 88240,
@@ -2046,8 +2050,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "HumphreyHouse",
-    "street1": "3821WestCollegeLane",
+    "name": "Humphrey House",
+    "street1": "3821 West College Lane",
     "street2": "",
     "city": "Hobbs",
     "zipcode": 88242,
@@ -2077,8 +2081,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PalmerDrugAbuseProgOfLeaCounty",
-    "street1": "200EastSnyderStreet",
+    "name": "Palmer Drug Abuse Prog Of Lea County",
+    "street1": "200 East Snyder Street",
     "street2": "",
     "city": "Hobbs",
     "zipcode": 88240,
@@ -2108,8 +2112,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "PuebloOfLaguna",
-    "street1": "7RioSanJose",
+    "name": "Pueblo Of Laguna",
+    "street1": "7 Rio San Jose",
     "street2": "",
     "city": "Laguna",
     "zipcode": 87026,
@@ -2139,10 +2143,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ALTRecoveryGroup",
-    "street1": "1141MallDrive",
-    "street2": "SuiteE",
-    "city": "LasCruces",
+    "name": "ALT Recovery Group",
+    "street1": "1141 Mall Drive",
+    "street2": "Suite E",
+    "city": "Las Cruces",
     "zipcode": 88011,
     "phone": "575-522-0660",
     "website": "http://www.altrecoverygroup.com",
@@ -2170,10 +2174,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "BHCMesillaValleyHospital",
-    "street1": "3751DelReyBoulevard",
+    "name": "BHC Mesilla Valley Hospital",
+    "street1": "3751 Del Rey Boulevard",
     "street2": "",
-    "city": "LasCruces",
+    "city": "Las Cruces",
     "zipcode": 88012,
     "phone": "575-382-3500",
     "website": "http://www.mesillavalleyhospital.com",
@@ -2201,10 +2205,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "EsperanzaGuidanceServicesInc",
-    "street1": "250SouthMainStreet",
+    "name": "Esperanza Guidance Services Inc",
+    "street1": "250 South Main Street",
     "street2": "",
-    "city": "LasCruces",
+    "city": "Las Cruces",
     "zipcode": 88001,
     "phone": "575-522-5144",
     "website": "http://www.esperanzaguidanceservices.com/",
@@ -2232,10 +2236,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "LaClinicaDeFamilia(LCDF)",
-    "street1": "100WestGriggsStreet",
+    "name": "La Clinica De Familia(LCDF)",
+    "street1": "100 West Griggs Street",
     "street2": "",
-    "city": "LasCruces",
+    "city": "Las Cruces",
     "zipcode": 88011,
     "phone": "575-647-2800",
     "website": "http://www.lcdfnm.org",
@@ -2263,10 +2267,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "LaClinicaDeFamilia(LCDF)",
-    "street1": "575SouthAlamedaBoulevard",
+    "name": "La Clinica De Familia(LCDF)",
+    "street1": "575 South Alameda Boulevard",
     "street2": "",
-    "city": "LasCruces",
+    "city": "Las Cruces",
     "zipcode": 88005,
     "phone": "575-528-6400",
     "website": "http://www.lcdfnm.org",
@@ -2294,10 +2298,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "RioGrandeATPInc",
-    "street1": "23017thStreet",
-    "street2": "SuiteA",
-    "city": "LasVegas",
+    "name": "Rio Grande ATP Inc",
+    "street1": "2301 7th Street",
+    "street2": "Suite A",
+    "city": "Las Vegas",
     "zipcode": 87701,
     "phone": "505-454-9611",
     "website": "http://www.riograndeatp.org",
@@ -2325,10 +2329,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "LosAlamosFamilyCouncilInc",
-    "street1": "150515thStreet",
-    "street2": "SuiteC",
-    "city": "LosAlamos",
+    "name": "Los Alamos Family CouncilInc",
+    "street1": "1505 15th Street",
+    "street2": "Suite C",
+    "city": "Los Alamos",
     "zipcode": 87544,
     "phone": "505-662-4160",
     "website": "http://www.lafamilycouncil.org",
@@ -2356,10 +2360,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "CentralNewMexicoCounselingService",
-    "street1": "475CourthouseRoad",
+    "name": "Central New Mexico Counseling Service",
+    "street1": "475 Courthouse Road",
     "street2": "",
-    "city": "LosLunas",
+    "city": "Los Lunas",
     "zipcode": 87031,
     "phone": "505-565-9496",
     "website": "http://www.centralnmcounseling.com",
@@ -2387,10 +2391,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "428LosLentesSoutheast",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "428 Los Lentes Southeast",
     "street2": "",
-    "city": "LosLunas",
+    "city": "Los Lunas",
     "zipcode": 87031,
     "phone": "505-865-3350",
     "website": "http://www.valledelsolofnewmexico.com",
@@ -2418,10 +2422,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "VillageOfLosLunas",
-    "street1": "3445LambrosLoop",
+    "name": "Village Of Los Lunas",
+    "street1": "3445 Lambros Loop",
     "street2": "",
-    "city": "LosLunas",
+    "city": "Los Lunas",
     "zipcode": 87031,
     "phone": "505-352-7611",
     "website": "https://www.loslunasnm.gov/96/Valencia-County-DWI-Program",
@@ -2449,8 +2453,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "AlamoNavajoSchoolBoardInc",
-    "street1": "Highway169MileMarker29",
+    "name": "Alamo Navajo School BoardInc",
+    "street1": "Highway 169 Mile Marker 29",
     "street2": "",
     "city": "Magdalena",
     "zipcode": 87825,
@@ -2480,8 +2484,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "FourDirectionsTreatmentAnd",
-    "street1": "107SunsetLoop",
+    "name": "Four Directions Treatment And",
+    "street1": "107 Sunset Loop",
     "street2": "",
     "city": "Mescalero",
     "zipcode": 88340,
@@ -2511,9 +2515,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "717WestAbrahamesRoad",
-    "street2": "SuiteD",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "717 West Abrahames Road",
+    "street2": "Suite D",
     "city": "Moriarty",
     "zipcode": 87035,
     "phone": "505-384-0220",
@@ -2542,10 +2546,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "NewMoonLodge",
-    "street1": "579WhiteSwanRoad",
+    "name": "New Moon Lodge",
+    "street1": "579 White Swan Road",
     "street2": "",
-    "city": "OhkayOwingeh",
+    "city": "Ohkay Owingeh",
     "zipcode": 87566,
     "phone": "505-852-2788",
     "website": "http://newmoonlodge.org/",
@@ -2573,8 +2577,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "RamahNavajo",
-    "street1": "BiaRoute125",
+    "name": "Ramah Navajo",
+    "street1": "Bia Route 125",
     "street2": "",
     "city": "Pinehill",
     "zipcode": 87357,
@@ -2604,8 +2608,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "MentalHealthResourcesInc",
-    "street1": "300East1stStreet",
+    "name": "Mental Health Resources Inc",
+    "street1": "300 East 1st Street",
     "street2": "",
     "city": "Portales",
     "zipcode": 88130,
@@ -2635,8 +2639,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "2573StateHighway522",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "2573 State Highway 522",
     "street2": "",
     "city": "Questa",
     "zipcode": 87556,
@@ -2666,8 +2670,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "HumanResourcesDevAssociatesInc",
-    "street1": "130South3rdStreet",
+    "name": "Human Resources Dev Associates Inc",
+    "street1": "130 South 3rd Street",
     "street2": "",
     "city": "Raton",
     "zipcode": 87740,
@@ -2697,8 +2701,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "101LettonDrive",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "101 Letton Drive",
     "street2": "",
     "city": "Raton",
     "zipcode": 87740,
@@ -2728,10 +2732,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "AlbuquerqueBehavioralHealth",
-    "street1": "4351JagerDriveNE",
-    "street2": "SuiteE",
-    "city": "RioRancho",
+    "name": "Albuquerque Behavioral Health",
+    "street1": "4351 Jager Drive NE",
+    "street2": "Suite E",
+    "city": "Rio Rancho",
     "zipcode": 87144,
     "phone": "505-830-6500",
     "website": "http://albuquerquebehavioralhealth.com/",
@@ -2759,10 +2763,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "FiveSandovalIndianPueblosInc",
-    "street1": "4321FulcrumWayNE",
-    "street2": "SuiteB",
-    "city": "RioRancho",
+    "name": "Five Sandoval Indian Pueblos Inc",
+    "street1": "4321 Fulcrum Way NE",
+    "street2": "Suite B",
+    "city": "Rio Rancho",
     "zipcode": 87144,
     "phone": "505-867-3351",
     "website": "http://www.fsipinc.org",
@@ -2790,10 +2794,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "GuidanceFoundationInc",
-    "street1": "4011BarbaraLoopSE",
-    "street2": "Suite108",
-    "city": "RioRancho",
+    "name": "Guidance Foundation Inc",
+    "street1": "4011 Barbara Loop SE",
+    "street2": "Suite 108",
+    "city": "Rio Rancho",
     "zipcode": 87124,
     "phone": "505-892-3639",
     "website": "http://www.guidancefoundation.net/",
@@ -2821,10 +2825,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "184UnserBoulevardNE",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "184 Unser Boulevard NE",
     "street2": "",
-    "city": "RioRancho",
+    "city": "Rio Rancho",
     "zipcode": 87124,
     "phone": "505-896-0928",
     "website": "http://www.pmsnm.org",
@@ -2852,10 +2856,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ReCycledManLLC",
-    "street1": "1207GolfCourseRoad",
-    "street2": "SuiteC",
-    "city": "RioRancho",
+    "name": "ReCycled Man LLC",
+    "street1": "1207 Golf Course Road",
+    "street2": "Suite C",
+    "city": "Rio Rancho",
     "zipcode": 87124,
     "phone": "505-994-4100",
     "website": "http://rioawakening.com/",
@@ -2883,10 +2887,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "RioRanchoHealthServices",
-    "street1": "1558StephanieRoadSE",
+    "name": "Rio Rancho Health Services",
+    "street1": "1558 Stephanie Road SE",
     "street2": "",
-    "city": "RioRancho",
+    "city": "Rio Rancho",
     "zipcode": 87124,
     "phone": "505-896-5517",
     "website": "https://www.abqhealthservices.com/rrclinicinfo/",
@@ -2914,8 +2918,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "LaCasaCommunityBehavioralHealthSE",
-    "street1": "110EastMescaleroStreet",
+    "name": "La Casa Community Behavioral Health SE",
+    "street1": "110 East Mescalero Street",
     "street2": "",
     "city": "Roswell",
     "zipcode": 88201,
@@ -2945,8 +2949,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "RecoveryServicesOfSouthernNMLLC",
-    "street1": "1107SouthAtkinsonStreet",
+    "name": "Recovery Services Of Southern NM LLC",
+    "street1": "1107 South Atkinson Street",
     "street2": "",
     "city": "Roswell",
     "zipcode": 88203,
@@ -2976,8 +2980,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalService",
-    "street1": "1400SudderthDrive",
+    "name": "Presbyterian Medical Service",
+    "street1": "1400 Sudderth Drive",
     "street2": "",
     "city": "Ruidoso",
     "zipcode": 88345,
@@ -3007,10 +3011,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "DaybreakCounseling",
-    "street1": "4001OfficeCourtDrive",
-    "street2": "Suite403",
-    "city": "SantaFe",
+    "name": "Daybreak Counseling",
+    "street1": "4001 Office Court Drive",
+    "street2": "Suite 403",
+    "city": "Santa Fe",
     "zipcode": 87507,
     "phone": "505-395-9456",
     "website": "",
@@ -3038,10 +3042,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "LifeLink",
+    "name": "Life Link",
     "street1": "2325 Cerrillos Road",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87505,
     "phone": "505-438-0010",
     "website": "http://www.thelifelink.org",
@@ -3069,10 +3073,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "MesaVistaWellness",
-    "street1": "4001OfficeCourtRoad",
-    "street2": "Suite102",
-    "city": "SantaFe",
+    "name": "Mesa Vista Wellness",
+    "street1": "4001 Office Court Road",
+    "street2": "Suite 102",
+    "city": "Santa Fe",
     "zipcode": 87507,
     "phone": "505-983-8225",
     "website": "http://www.mesavistawellness.com",
@@ -3100,10 +3104,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "NambePueblo/SAP",
-    "street1": "15ANP102West",
+    "name": "Nambe Pueblo/SAP",
+    "street1": "15 ANP 102 West",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87506,
     "phone": "505-455-5591",
     "website": "http://nambepueblo.org",
@@ -3131,10 +3135,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "NewMexicoTreatmentServicesLLC",
-    "street1": "1264RodeoDrive",
+    "name": "New Mexico Treatment Services LLC",
+    "street1": "1264 Rodeo Drive",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87505,
     "phone": "505-982-2129",
     "website": "http://nmts.us/",
@@ -3162,10 +3166,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "2960RodeoParkDriveWest",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "2960 Rodeo Park Drive West",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87505,
     "phone": "505-986-9633",
     "website": "http://www.pmsnm.org",
@@ -3193,10 +3197,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "PresbyterianMedicalServices(PMS)",
-    "street1": "2504CaminoEntrada",
+    "name": "Presbyterian Medical Services(PMS)",
+    "street1": "2504 Camino Entrada",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87507,
     "phone": "505-471-5006",
     "website": "http://www.pmsnm.org/locations/santa-fe-family-wellness-center",
@@ -3224,10 +3228,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "SantaFeHealthServices",
-    "street1": "1549SouthSaintFrancisDrive",
+    "name": "Santa Fe Health Services",
+    "street1": "1549 South Saint Francis Drive",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87505,
     "phone": "505-820-9970",
     "website": "https://www.abqhealthservices.com/sfclinicinfo/",
@@ -3255,10 +3259,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "SantaFeRecoveryCenter",
-    "street1": "5312JaguarDrive",
+    "name": "Santa Fe Recovery Center",
+    "street1": "5312 Jaguar Drive",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87507,
     "phone": "505-471-4985",
     "website": "http://www.sfrecovery.org",
@@ -3286,10 +3290,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "SantaFeRecoveryCenter",
-    "street1": "4100LuciaLane",
+    "name": "Santa Fe Recovery Center",
+    "street1": "4100 Lucia Lane",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87507,
     "phone": "505-471-4939",
     "website": "http://www.sfrecovery.org",
@@ -3317,10 +3321,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ThomasEWelter",
-    "street1": "1474SouthSaintFrancisDrive",
+    "name": "Thomas E Welter",
+    "street1": "1474 South Saint Francis Drive",
     "street2": "",
-    "city": "SantaFe",
+    "city": "Santa Fe",
     "zipcode": 87505,
     "phone": "505-988-5504",
     "website": "",
@@ -3348,10 +3352,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "NewMexicoBehavHealthInstitute",
-    "street1": "8014thStreet",
+    "name": "New Mexico Behavioral Health Institute",
+    "street1": "80 14th Street",
     "street2": "",
-    "city": "SantaRosa",
+    "city": "Santa Rosa",
     "zipcode": 88435,
     "phone": "575-472-3768",
     "website": "https://www.nmhealth.org/about/ofm/ltcf/nmbhi/",
@@ -3379,10 +3383,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "501South4thStreet",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "501 South 4th Street",
     "street2": "",
-    "city": "SantaRosa",
+    "city": "Santa Rosa",
     "zipcode": 88435,
     "phone": "505-472-0745",
     "website": "http://valledelsolofnewmexico.com/",
@@ -3410,10 +3414,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "KewaFamilyWellnessCenter",
-    "street1": "18EagleStreet",
+    "name": "Kewa Family Wellness Center",
+    "street1": "18 Eagle Street",
     "street2": "",
-    "city": "SantoDomingoPueblo",
+    "city": "Santo Domingo Pueblo",
     "zipcode": 87052,
     "phone": "505-465-2733",
     "website": "https://santodomingotribe.org/kewa-family-wellness-center/",
@@ -3441,9 +3445,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "NavajoRegional",
-    "street1": "North491Highway",
-    "street2": "PinonCottonwoodDrive",
+    "name": "Navajo Regional",
+    "street1": "North 491 Highway",
+    "street2": "Pinon Cottonwood Drive",
     "city": "Shiprock",
     "zipcode": 87420,
     "phone": "505-368-1050 x1438",
@@ -3472,8 +3476,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "SocorroCommunityHealthCenter",
-    "street1": "1300EnterpriseRoad",
+    "name": "Socorro Community Health Center",
+    "street1": "1300 Enterprise Road",
     "street2": "",
     "city": "Socorro",
     "zipcode": 87801,
@@ -3503,8 +3507,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "SocorroMentalHealth",
-    "street1": "1200Highway60West",
+    "name": "Socorro Mental Health",
+    "street1": "1200 Highway 60 West",
     "street2": "",
     "city": "Socorro",
     "zipcode": 87801,
@@ -3534,10 +3538,10 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "SunlandParkBehavioralHealth",
-    "street1": "2625McNuttRoad",
-    "street2": "BuildingB",
-    "city": "SunlandPark",
+    "name": "Sunland Park Behavioral Health",
+    "street1": "2625 McNutt Road",
+    "street2": "Building B",
+    "city": "Sunland Park",
     "zipcode": 88063,
     "phone": "575-589-6540",
     "website": "http://www.lcdfnm.org",
@@ -3565,8 +3569,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ButterflyHealingCenter",
-    "street1": "1130ButterflyRoad",
+    "name": "Butterfly Healing Center",
+    "street1": "1130 Butterfly Road",
     "street2": "",
     "city": "Taos",
     "zipcode": 87571,
@@ -3596,9 +3600,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "HumanResourcesDevAssociatesInc",
-    "street1": "1335GusdorfRoad",
-    "street2": "BuildingE",
+    "name": "Human Resources Dev Associates Inc",
+    "street1": "1335 Gusdorf Road",
+    "street2": "Building E",
     "city": "Taos",
     "zipcode": 87571,
     "phone": "575-758-0670 x209",
@@ -3627,9 +3631,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "RioGrandeATPInc",
-    "street1": "224CruzAltaRoad",
-    "street2": "SuiteJ",
+    "name": "Rio Grande ATP Inc",
+    "street1": "224 Cruz Alta Road",
+    "street2": "Suite J",
     "city": "Taos",
     "zipcode": 87571,
     "phone": "575-737-5533",
@@ -3658,9 +3662,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ShadowMountainRecovery/Taos",
-    "street1": "250ShadowMountainRoad",
-    "street2": "P.O.Box65",
+    "name": "Shadow Mountain Recovery/Taos",
+    "street1": "250 Shadow Mountain Road",
+    "street2": "P.O.Box 65",
     "city": "Taos",
     "zipcode": 87571,
     "phone": "575-758-1630",
@@ -3689,8 +3693,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ValleDelSolOfNewMexico",
-    "street1": "314DonFernandoStreet",
+    "name": "Valle Del Sol Of New Mexico",
+    "street1": "314 Don Fernando Street",
     "street2": "",
     "city": "Taos",
     "zipcode": 87571,
@@ -3720,8 +3724,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "VistaTaosRenewalCenter",
-    "street1": "137BentStreet",
+    "name": "Vista Taos Renewal Center",
+    "street1": "137 Bent Street",
     "street2": "",
     "city": "Taos",
     "zipcode": 87571,
@@ -3751,8 +3755,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "WNMMGThoreau",
-    "street1": "15NavarreBoulevard",
+    "name": "WNMMG Thoreau",
+    "street1": "15 Navarre Boulevard",
     "street2": "",
     "city": "Thoreau",
     "zipcode": 87323,
@@ -3782,8 +3786,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "MentalHealthResourcesInc",
-    "street1": "1005SouthMonroeStreet",
+    "name": "Mental Health Resources Inc",
+    "street1": "1005 South Monroe Street",
     "street2": "",
     "city": "Tucumcari",
     "zipcode": 88401,
@@ -3813,9 +3817,9 @@ export const treatmentCenterFinal: any = [
     "Spanish": ""
   },
   {
-    "name": "HoyRecoveryProgramInc",
-    "street1": "CountyRoad49",
-    "street2": "PrivateDrive1098",
+    "name": "Hoy Recovery Program Inc",
+    "street1": "County Road 49",
+    "street2": "Private Drive 1098",
     "city": "Velarde",
     "zipcode": 87582,
     "phone": "505-852-2580",
@@ -3844,8 +3848,8 @@ export const treatmentCenterFinal: any = [
     "Spanish": 1
   },
   {
-    "name": "ZuniRecoveryCenter",
-    "street1": "101DAvenue",
+    "name": "Zuni Recovery Center",
+    "street1": "101 D Avenue",
     "street2": "",
     "city": "Zuni",
     "zipcode": 87327,
