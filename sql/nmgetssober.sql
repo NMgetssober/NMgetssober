@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS treatmentFavorite;
 DROP TABLE IF EXISTS activityFilter;
 DROP TABLE IF EXISTS serviceProvided;
 DROP TABLE IF EXISTS activityType;
-DROP TABLE IF EXISTS facilityCodeCategory;
+DROP TABLE IF EXISTS facilityCategory;
 DROP TABLE IF EXISTS activity;
 DROP TABLE IF EXISTS treatmentCenter;
 DROP TABLE IF EXISTS profile;
