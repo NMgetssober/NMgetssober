@@ -1,5 +1,10 @@
 export const treatmentCenterJson: any = [
 
+  {
+
+   let category = ["Detoxification", "SAMHSA-certifiedOpioidTreatmentProgram", "HospitalInpatient", "Residential", "Outpatient", "NoPaymentAccepted", "CashOrSelf-payment", "Medicaid", "Medicare", "StateFinancedInsurance_OtherThanMedicaid", "PrivateHealthInsurance", "MilitaryInsurance", "Veterans", "ActiveDutyMilitary", "MilitaryFamilies", "AdultWomen", "AdultMen", "Female", "Male", "LesbianGayBisexualTransgender(LGBT)", "Navajo", "Spanish"]
+
+  },
 
     // declare array of all categories
 

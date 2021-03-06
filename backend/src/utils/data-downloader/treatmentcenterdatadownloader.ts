@@ -18,14 +18,14 @@ function treatmentcenterdatadownloader () : Promise<any> {
 
     async function gettreatmentcenter() {
         try {
-            for (let currentTreatmentCenter of treatmentcenterjson){
+            for (let currentTreatmentCenter of treatmentCenterJson){
                     const treatmentcenter : treatmentCenter = {
                     treatmentCenterId: null,
                     treatmentCenterName: currentTreatmentCenter.city,
                     treatmentCenterStreet1: currentTreatmentCenter.street1,
                     treatmentCenterStreet2: currentTreatmentCenter.street2,
-                    treatmentCenterLat: currentTreatmentCenter.latitude,
-                    treatmentCenterLong: currentTreatmentCenter.longitude,
+                    treatmentCenterLat: 89.89,
+                    treatmentCenterLong: 89.89,
                     treatmentCenterCity: currentTreatmentCenter.city,
                     treatmentCenterZipCode: currentTreatmentCenter.zipcode,
                     treatmentCenterPhone: currentTreatmentCenter.phone,
@@ -34,11 +34,13 @@ function treatmentcenterdatadownloader () : Promise<any> {
                 await insertTreatmentCenter(treatmentcenter)
 
 
+                for ()
+
                 // for (each of the categories),
                     // check to see this treatment center has this available
                     // if so then
-            //            check to see if this category has been inserted into the database; is not insert
-                    //     then insert  service with our current treatment id or into facility category
+                            //check to see if this category has been inserted into the database; is not insert
+                            // then insert  service with our current treatment id or into facility category
 
 
             }

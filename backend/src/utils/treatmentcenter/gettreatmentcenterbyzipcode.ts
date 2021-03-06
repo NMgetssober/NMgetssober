@@ -1,4 +1,4 @@
-import {treatmentcenterfinal} from "../database/treatmentcenterfinal"
+import {treatmentcenterjson} from "../database/treatmentcenterjson"
 import {connect} from "../database.utils";
 
 export async function insertTreatmentCenter(gettreatmentcenterbyzipcode: treatmentcenterfinal) {
