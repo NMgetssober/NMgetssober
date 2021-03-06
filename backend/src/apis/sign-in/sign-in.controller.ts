@@ -65,7 +65,7 @@ export async function signinController(request: Request, response: Response, nex
 }
 
 const LocalStrategy = passportLocal.Strategy;
-console.log('end')
+
 export const passportStrategy: Strategy = new LocalStrategy(
     {
         usernameField: 'profileEmail',

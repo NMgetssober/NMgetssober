@@ -1,24 +1,19 @@
 import {connect} from "../database.utils";
-import {Activity} from "../interfaces/Activity";
-import {ActivityType} from "../interfaces/ActivityType";
+import {ActivityFilter} from "../interfaces/ActivityFilter";
 
-export async function insertActivityFilter(activityType: ActivityType) : Promise<string>{
+export async function insertActivityFilter(activityFilter: ActivityFilter) : Promise<string>{
+
     try {
-        console.log("activitytpye", activityType)
         const mysqlConnection = await connect()
-        const query : string='SELECT activity.activityId, activity.activityCity, activity.activityDescription, activity.activityGroupName, activity.activityStreet1, activity.activityStreet2, activity.activityTime, activity.activityWebsite FROM activityFavorite INNER JOIN activity ON activity.activityId = activityFavorite.activityFavoriteActivityId WHERE activityFavoriteProfileId = UUID_TO_BIN(:profileId)', {profileId});'
-        const [rows] = await mysqlConnection.execute(query, activityType)
+        console.log('start')
+        const query : string="INSERT INTO activityFilter (activityFilterActivityId,activityFilterActivityTypeId) VALUES (UUID_TO_BIN(:activityFilterActivityId), UUID_TO_BIN(:activityFilterActivityTypeId))"
+        console.log('middle')
+
+        const [rows] = await mysqlConnection.execute(query, activityFilter)
         console.log("resultfrommysql",rows)
-        return "activity successfully inserted"
+        return "activityfilter successfully inserted"
     } catch (error) {
         console.error(error)
         throw error.message
     }
 }
-
-// SELECT activityType.activityTypeId,
-//        activityId
-
-SELECT activity.activityCity, activity.activityDescription, activityGroupName, activityStreet1, activityStreet2, activityTime, activityWebsite, activityZipCode
-FROM activityFilter
-INNER JOIN activity
