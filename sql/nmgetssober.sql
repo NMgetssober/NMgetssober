@@ -103,10 +103,12 @@ CREATE TABLE activityFavorite (
 );
 
 INSERT INTO activityType (activityTypeId, activityTypeName)
-VALUES (UUID_TO_BIN('7d33b74b-ebc1-4db4-8088-1e279630cbd5'), 'isFitness');
+VALUES (UUID_TO_BIN('7d33b74b-ebc1-4db4-8088-1e279630cbd5'), 'Fitness');
 
 INSERT INTO activityType (activityTypeId, activityTypeName)
-VALUES (UUID_TO_BIN('e07f978c-bbf0-44e5-b38c-c562d597fc83'), 'isSobrietyRelated');
+VALUES (UUID_TO_BIN('e07f978c-bbf0-44e5-b38c-c562d597fc83'), 'Sobriety Related');
 
 INSERT INTO activityType (activityTypeId, activityTypeName)
-VALUES (UUID_TO_BIN('3eb2bd46-ef8f-44c2-b2b2-87e300cd6bc5'), 'isWomenFocused');
+VALUES (UUID_TO_BIN('3eb2bd46-ef8f-44c2-b2b2-87e300cd6bc5'), 'Women Focused');
+
+SELECT * FROM activityType;
