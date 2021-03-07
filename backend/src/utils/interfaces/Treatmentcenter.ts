@@ -1,4 +1,4 @@
-export interface treatmentCenter {
+export interface TreatmentCenter {
     treatmentCenterId: string|null;
     treatmentCenterName: string;
     treatmentCenterStreet1: string;

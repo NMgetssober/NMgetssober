@@ -1,8 +1,8 @@
-import {treatmentCenter} from "../interfaces/Treatmentcenter";
+import {TreatmentCenter} from "../interfaces/Treatmentcenter";
 import {connect} from "../database.utils";
 
 
-export async function insertTreatmentCenter(treatmentcenter: treatmentCenter): Promise<string> {
+export async function insertTreatmentCenter(treatmentcenter: TreatmentCenter): Promise<string> {
     try {
         console.log("treatmentCenter", treatmentcenter)
         const mysqlConnection = await connect()

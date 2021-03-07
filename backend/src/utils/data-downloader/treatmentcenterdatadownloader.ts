@@ -2,12 +2,14 @@
 //axios is from the express spin up
 
 import {treatmentCenterJson} from "../database/treatmentcenterjson"
-import {treatmentCenter} from "../interfaces/Treatmentcenter";
+import {TreatmentCenter} from "../interfaces/Treatmentcenter";
 import {insertTreatmentCenter} from "../treatmentcenter/insertTreatmentCenter";
+import {TreatmentCenterCategory} from "../interfaces/TreatmentCenterCategory";
 
 function treatmentcenterdatadownloader () : Promise<any> {
     async function main() {
         try{
+            await createcategories()
             await gettreatmentcenter()
         } catch (error) {
             console.error(error)
@@ -18,8 +20,8 @@ function treatmentcenterdatadownloader () : Promise<any> {
 
     async function gettreatmentcenter() {
         try {
-            for (let currentTreatmentCenter of treatmentCenterJson){
-                    const treatmentcenter : treatmentCenter = {
+            for (let currentTreatmentCenter of treatmentCenterJson.data) {
+                const treatmentcenter: TreatmentCenter = {
                     treatmentCenterId: null,
                     treatmentCenterName: currentTreatmentCenter.city,
                     treatmentCenterStreet1: currentTreatmentCenter.street1,
@@ -33,20 +35,63 @@ function treatmentcenterdatadownloader () : Promise<any> {
                 }
                 await insertTreatmentCenter(treatmentcenter)
 
-
-                for ()
-
-                // for (each of the categories),
-                    // check to see this treatment center has this available
-                    // if so then
-                            //check to see if this category has been inserted into the database; is not insert
-                            // then insert  service with our current treatment id or into facility category
-
-
             }
-        } catch (error) {
+            //notes from paul
+            // for (each of the categories),
+            // check to see this treatment center has this available
+            // if so then
+           // then insert  service with our current treatment id or into facility category
+
+
+
+
+            // if (currentTreatmentCenter.Detoxification === 1) {
+
+
+
+            //Select category by category name (Like 35)
+
+
+
+            //create insert service provided(weak enitity)
+            // }
+        }
+        catch (error) {
             throw new Error(error)
         }
+
+
+    }
+
+
+
+
+            async function createcategories() {
+                try {
+                    for (let currentTreatmentCenterCategory of treatmentCenterJson.categories){
+                         const category : TreatmentCenterCategory = {
+                             facilityCategoryGroupName: "update later",
+                             facilityCategoryId: null,
+                             facilityCategoryName: currentTreatmentCenterCategory,
+
+                            }
+                        // Insert Category
+                //     }
+                //     await insertTreatmentCenter(treatmentcenter)----example
+                //
+                // }
+                        }
+                    }
+
+
+
+                catch (error) {
+                    throw new Error(error)
+                }
+
+
+
+
 
     }
 }

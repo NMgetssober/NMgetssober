@@ -1,13 +1,8 @@
-export const treatmentCenterJson: any = [
+export const treatmentCenterJson: any = {
 
-  {
+  "categories" : ["Detoxification", "SAMHSA-certifiedOpioidTreatmentProgram", "HospitalInpatient", "Residential", "Outpatient", "NoPaymentAccepted", "CashOrSelf-payment", "Medicaid", "Medicare", "StateFinancedInsurance_OtherThanMedicaid", "PrivateHealthInsurance", "MilitaryInsurance", "Veterans", "ActiveDutyMilitary", "MilitaryFamilies", "AdultWomen", "AdultMen", "Female", "Male", "LesbianGayBisexualTransgender(LGBT)", "Navajo", "Spanish"],
 
-   let category = ["Detoxification", "SAMHSA-certifiedOpioidTreatmentProgram", "HospitalInpatient", "Residential", "Outpatient", "NoPaymentAccepted", "CashOrSelf-payment", "Medicaid", "Medicare", "StateFinancedInsurance_OtherThanMedicaid", "PrivateHealthInsurance", "MilitaryInsurance", "Veterans", "ActiveDutyMilitary", "MilitaryFamilies", "AdultWomen", "AdultMen", "Female", "Male", "LesbianGayBisexualTransgender(LGBT)", "Navajo", "Spanish"]
-
-  },
-
-    // declare array of all categories
-
+ "data" : [
   {
     "name": "Canyon Light Inc",
     "street1": "1301 Cuba Avenue",
@@ -3883,4 +3878,4 @@ export const treatmentCenterJson: any = [
     "Navajo": 1,
     "Spanish": ""
   }
-]
+] }
