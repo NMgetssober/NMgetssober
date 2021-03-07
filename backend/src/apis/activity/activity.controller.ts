@@ -6,7 +6,7 @@ import {selectActivityByActivityId} from "../../utils/activity/selectActivityByA
 export async function activityController(request: Request, response: Response) : Promise<Response> {
     try {
         const {profileId} = request.params;
-        const mySqlResult = await selectActivityByActivityId(profileId);
+        const mySqlResult = await selectActivityByProfileId(profileId);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
@@ -19,18 +19,18 @@ export async function activityController(request: Request, response: Response) :
     }
 }
 
-// export async function activityController(request: Request, response: Response) : Promise<Response> {
-//     try {
-//         const {profileId} = request.params;
-//         const mySqlResult = await selectActivityByProfileId(profileId);
-//         const data = mySqlResult ?? null
-//         const status: Status = {status: 200, data, message: null}
-//         return response.json(status)
-//     } catch (error) {
-//         return(response.json({
-//             status: 400,
-//             data: null,
-//             message: error.message
-//         }))
-//     }
-// }
+export async function getActivityByActivityId(request: Request, response: Response) : Promise<Response> {
+    try {
+        const {activityId} = request.params;
+        const mySqlResult = await selectActivityByActivityId(activityId);
+        const data = mySqlResult ?? null
+        const status: Status = {status: 200, data, message: null}
+        return response.json(status)
+    } catch (error) {
+        return(response.json({
+            status: 400,
+            data: null,
+            message: error.message
+        }))
+    }
+}

@@ -1,7 +1,10 @@
 import {Router} from "express";
-import {activityController} from "./activity.controller";
+import {activityController, getActivityByActivityId} from "./activity.controller";
 
 export const activityRoute = Router();
 
 activityRoute.route('/')
     .post(activityController)
+
+activityRoute.route('/:activityId')
+    .get(getActivityByActivityId)
