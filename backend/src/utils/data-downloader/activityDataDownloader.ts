@@ -29,6 +29,7 @@ function activityDataDownloader() : Promise<any> {
                 console.log(address)
                 const response = await geocoder.geocode(address)
                 console.log("geocoderresponse", response.results[0]['location'])
+                // "name" "address" zip "city" "state" ?"type"
 
                 const activity : Activity = {
                     activityId: uuidv1(),
