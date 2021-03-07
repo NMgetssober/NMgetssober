@@ -4,6 +4,9 @@ import {insertActivity} from "../activity/insertActivity";
 import {insertActivityFilter} from "../activity/insertActivityFilter";
 import {v1 as uuidv1} from "uuid";
 import {ActivityFilter} from "../interfaces/ActivityFilter";
+const Geocodio = require('geocodio-library-node');
+
+
 function activityDataDownloader() : Promise<any> {
 
     async function main() {
@@ -19,9 +22,14 @@ function activityDataDownloader() : Promise<any> {
     async function getActivities() {
         try{
             for (let currentActivity of activities) {
-                //geocoding
-                //,
-                // const geocoder = new Geocodio(process.env.GEOCODE_KEY);
+
+                // geocoding
+                const address = currentActivity.street1 + currentActivity.street2 + ',' + currentActivity.city + ',' + 'NM' + currentActivity.zipCode;
+                const geocoder = new Geocodio(process.env.GEOCODE_KEY)
+                console.log(address)
+                const response = await geocoder.geocode(address)
+                console.log("geocoderresponse", response.results[0]['location'])
+
                 const activity : Activity = {
                     activityId: uuidv1(),
                     activityCity: currentActivity.city,
@@ -29,8 +37,8 @@ function activityDataDownloader() : Promise<any> {
                     activityGroupName: currentActivity.groupName,
                     activityStreet1: currentActivity.street1,
                     activityStreet2: currentActivity.street2,
-                    activityLat: 89.89,
-                    activityLong: 89.89,
+                    activityLat: response.results[0]['location']['lat'],
+                    activityLong: response.results[0]['location']['lng'],
                     activityTime: currentActivity.whenTheyMeet,
                     activityWebsite: currentActivity.link,
                     activityZipCode: currentActivity.zipCode
