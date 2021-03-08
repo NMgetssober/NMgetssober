@@ -1,7 +1,12 @@
 import {Router} from "express";
-import {activityFavoriteController} from "./activity.controller";
+import {getActivityByProfileIdController, getActivityByActivityId} from "./activity.controller";
+import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
+import {check} from "express-validator";
 
 export const activityRoute = Router();
 
 activityRoute.route('/')
-    .post(activityFavoriteController)
+    .get(getActivityByProfileIdController)
+
+activityRoute.route('/:activityId')
+    .get(asyncValidatorController([check("activityId", "Please provide a valid activityId").isUUID()]),getActivityByActivityId)
