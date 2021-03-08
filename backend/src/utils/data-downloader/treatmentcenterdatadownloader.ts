@@ -44,57 +44,55 @@ function treatmentcenterdatadownloader () : Promise<any> {
 
 
 
+            if (treatmentCenterJson.categories.detoxification === 1)
+                return (TreatmentCenter.treatmentCenterId ++1)
 
-            // if (currentTreatmentCenter.Detoxification === 1) {
+
+
 
 
 
             //Select category by category name (Like 35)
+            onselect("facilityCategoryGroupName")
 
 
 
-            //create insert service provided(weak enitity)
-            // }
-        }
-        catch (error) {
-            throw new Error(error)
-        }
+            //create insert service provided(weak entity)
+                insertServiceProvided()
 
 
-    }
+
+                }
+                catch (error) {
+                    throw new Error(error)
+                }
+             }
 
 
 
 
             async function createcategories() {
                 try {
-                    for (let currentTreatmentCenterCategory of treatmentCenterJson.categories){
-                         const category : TreatmentCenterCategory = {
-                             facilityCategoryGroupName: "update later",
-                             facilityCategoryId: null,
-                             facilityCategoryName: currentTreatmentCenterCategory,
-
-                            }
-                        // Insert Category
-                //     }
-                //     await insertTreatmentCenter(treatmentcenter)----example
-                //
-                // }
+                    for (let currentTreatmentCenterCategory of treatmentCenterJson.categories) {
+                        const category: TreatmentCenterCategory = {
+                            facilityCategoryGroupName: "update later",
+                            facilityCategoryId: null,
+                            facilityCategoryName: currentTreatmentCenterCategory,
                         }
                     }
+                    await ("is this suppose to be a new file - i.e. insertTreatmentCenter.ts")
+                    }
 
+                catch
+                    (error)
+                    {
+                        throw new Error(error)
+                    }
+            }
 
-
-                catch (error) {
-                    throw new Error(error)
-                }
-
-
-
-
-
-    }
 }
+
+
 
 treatmentcenterdatadownloader().catch(error => {
     console.error(error)
