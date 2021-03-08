@@ -65,12 +65,12 @@ CREATE TABLE activityType
 
 CREATE TABLE serviceProvided
 (
-    serviceProvidedFacilityCodeCategoryId BINARY(16) NOT NULL,
+    serviceProvidedFacilityCategoryId BINARY(16) NOT NULL,
     serviceProvidedTreatmentCenterId      BINARY(16) NOT NULL,
-    PRIMARY KEY (serviceProvidedFacilityCodeCategoryId, serviceProvidedTreatmentCenterId),
-    INDEX (serviceProvidedFacilityCodeCategoryId),
+    PRIMARY KEY (serviceProvidedFacilityCategoryId, serviceProvidedTreatmentCenterId),
+    INDEX (serviceProvidedFacilityCategoryId),
     INDEX (serviceProvidedTreatmentCenterId),
-    FOREIGN KEY (serviceProvidedFacilityCodeCategoryId) REFERENCES facilityCodeCategory (facilityCodeCategoryId),
+    FOREIGN KEY (serviceProvidedFacilityCategoryId) REFERENCES facilityCategory (facilityCategoryId),
     FOREIGN KEY (serviceProvidedTreatmentCenterId) REFERENCES treatmentCenter (treatmentCenterId)
 );
 

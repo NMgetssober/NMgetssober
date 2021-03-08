@@ -1,4 +1,4 @@
 export interface ServiceProvided {
-    serviceProvidedFacilityCodeCategoryId: string|null;
+    serviceProvidedFacilityCategoryId: string|null;
     serviceProvidedTreatmentCenterId: string|null;
 }
