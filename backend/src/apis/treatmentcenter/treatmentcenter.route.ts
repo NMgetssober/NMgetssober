@@ -1,10 +1,10 @@
 import {Router} from "express";
-import {activityController, getActivityByActivityId} from "./activity.controller";
+import {treatmentCenterController} from "./treatmentcenter.controller";
 
-export const activityRoute = Router();
+export const treatmentcenterRoute = Router();
 
-activityRoute.route('/')
-    .post(activityController)
+treatmentcenterRoute.route('/')
+    .post(treatmentCenterController)
 
-activityRoute.route('/:activityId')
-    .get(getActivityByActivityId)
+treatmentcenterRoute.route('/:treatmentCenterId')
+    .get(selectTreatmentCenterByTreatmentCenterId)
