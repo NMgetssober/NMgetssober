@@ -5,9 +5,9 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
+        "street2": "7100 Tramway Blvd NE",
         "city": "Albuquerque",
-        "zipCode": 87101,
+        "zipCode": 87122,
         "whenTheyMeet": "Check website calendar",
         "link": "https://communities.trailsisters.net/landing/",
         "description": "A trail running group focused on creating and inclusive and safe environment for women of all ages and fitness levels to run trails together in Albuquerque"
@@ -31,12 +31,12 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
+        "street2": "8920 Holly Ave NE",
         "city": "Albuquerque",
-        "zipCode": 87107,
+        "zipCode": 87122,
         "whenTheyMeet": "Monday & Wednesdays 6pm Saturday &  Sunday 7:30am",
         "link": "https://www.abqroadrunners.com/weekly-workouts.html",
-        "description": "Founded in 1985, ARR is Albuquerque's oldest and largest open running club created for the promotion of health through running and social activity. Check schedule for Saturday runs, Sundays meeet at Sandia Labs Credit Union near Trader Joe's, corner of Paseo del Norte and Venura NE, Monday evening meets at southern Albuquerque Open Sapcse at Indian School trailhead, Wednesday evenings meet at northern Albuquerque Open Spaces at the Michael Emery trailhead"
+        "description": "Founded in 1985, ARR is Albuquerque's oldest and largest open running club created for the promotion of health through running and social activity. Check schedule for Saturday runs, Sundays meet at Sandia Labs Credit Union near Trader Joe's, corner of Paseo del Norte and Venura NE, Monday evening meets at southern Albuquerque Open Sapcse at Indian School trailhead, Wednesday evenings meet at northern Albuquerque Open Spaces at the Michael Emery trailhead"
     },
     {
         "groupName": "Albuquerque Running Meetup",
@@ -44,7 +44,7 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
+        "street2": "6440 Coors Blvd NW",
         "city": "Albuquerque",
         "zipCode": 87120,
         "whenTheyMeet": "Check meetup calendar",
@@ -57,9 +57,9 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
+        "street2": "19 Tres Pistolas Trail NE",
         "city": "Albuquerque",
-        "zipCode": 87125,
+        "zipCode": 87123,
         "whenTheyMeet": "Check meetup calendar",
         "link": "https://www.meetup.com/hiking-204/",
         "description": "Meetup group focused on bringing together local hiking enthusiasts who enjoy the wilderness and hiking in the mountains."
@@ -70,9 +70,9 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": 1,
         "street1": "",
-        "street2": "",
-        "city": "Albuquerque",
-        "zipCode": 87123,
+        "street2": "Continental Divide Trail",
+        "city": "Glenwood",
+        "zipCode": 88039,
         "whenTheyMeet": "Check meetup calendar",
         "link": "https://www.meetup.com/NM-Women-Go-Outdoor-Adventuring/",
         "description": "Meetup group focused on bringing together women who want to get outside to explore New Mexico"
@@ -83,9 +83,9 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
-        "city": "Albuquerque",
-        "zipCode": 87111,
+        "street2": "NM-536",
+        "city": "Sandia Park",
+        "zipCode": 87047,
         "whenTheyMeet": "Check meetup calendar",
         "link": "https://www.meetup.com/New-Mexico-Cross-Country-Ski-Meetup-Group/",
         "description": "Meetup group  that is an offshoot of the NM Cross Country Ski Club  focused on offering lower level outings so anyone can join in on the winder outdoor experience."
@@ -95,10 +95,10 @@ export const activities: any = [
         "isFitness": 1,
         "isSobrietyRelated": "",
         "isWomenFocused": "",
-        "street1": "",
-        "street2": "",
+        "street1": "La Llorona Park",
+        "street2": "3440 W Picacho Ave",
         "city": "Las Cruces",
-        "zipCode": 87110,
+        "zipCode": 88007,
         "whenTheyMeet": "Check meetup calendar",
         "link": "https://www.meetup.com/jornadahikers/",
         "description": "Meetup group focused on connecting hiking and outdoor enthusiasts in the area of Las Cruces, NM (including Gila Wilderness, Deming, Alamogordo, Ruidoso, and Silver City), and El Paso, TX."
@@ -109,9 +109,9 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
+        "street2": "Nature Trail",
         "city": "Albuquerque",
-        "zipCode": 87122,
+        "zipCode": 87114,
         "whenTheyMeet": "Check meetup calendar",
         "link": "https://www.meetup.com/albuquerque-cyclists-club",
         "description": "Meetup group focused on providing biking events where members can meet up with other road or mountain bicyclists to ride roads, paths and trails."
@@ -122,9 +122,9 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
-        "city": "Albuquerque",
-        "zipCode": 87119,
+        "street2": "1101 NM-22",
+        "city": "Cochiti",
+        "zipCode": 87072,
         "whenTheyMeet": "Check meetup calendar",
         "link": "https://www.meetup.com/NM-Stand-Up-Paddle-Boarders/",
         "description": "Meetup group focused on connecting people to the paddling scene by providing year-around events promoting environmental awareness, conservation, good stewardship, as well as an active, healthy, outdoor lifestyle."
@@ -134,10 +134,10 @@ export const activities: any = [
         "isFitness": 1,
         "isSobrietyRelated": "",
         "isWomenFocused": 1,
-        "street1": "",
-        "street2": "",
+        "street1": "Humble Coffee",
+        "street2": "505 Central Ave NW",
         "city": "Albuquerque",
-        "zipCode": 87116,
+        "zipCode": 87102,
         "whenTheyMeet": "Friday",
         "link": "www.instagram.com/wocrunburque",
         "description": "Local women of color running group focused on uplifting, inspiring and motivating each other through. Join us on Fridays for coffee and running."
@@ -148,7 +148,7 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "Online,  check meetup calendar",
-        "street2": "",
+        "street2": "15 Bruins Ln",
         "city": "Las Cruces",
         "zipCode": 88005,
         "whenTheyMeet": "Saturdays 7:45pm & Sundays 7:45am",
@@ -161,9 +161,9 @@ export const activities: any = [
         "isSobrietyRelated": 1,
         "isWomenFocused": "",
         "street1": "",
-        "street2": "",
-        "city": "Santa Fe & online",
-        "zipCode": 87505,
+        "street2": "63 Lincoln Ave",
+        "city": "Santa Fe",
+        "zipCode": 87501,
         "whenTheyMeet": "Check meetup calendar",
         "link": "https://www.namastaysober.com/ https://www.meetup.com/NamaStay-Sober",
         "description": "Our mission is to aid those in recovery by reconnecting their bodies and minds through affordable yoga, fitness, meditation and wellness-focused community events. By becoming a member of our community participants are given access to create a new and healthy lifestyle alongside their peers.�"
@@ -173,13 +173,13 @@ export const activities: any = [
         "isFitness": 1,
         "isSobrietyRelated": "",
         "isWomenFocused": "",
-        "street1": "Email Inessa inessa45ATgmail.com for location",
-        "street2": "",
+        "street1": "",
+        "street2": "490 Old Santa Fe Trail",
         "city": "Santa Fe",
         "zipCode": 87501,
         "whenTheyMeet": "2nd Sundays of the month",
         "link": "https://www.meetup.com/NM-Meditation-Meetup/",
-        "description": "Meetup group focused on supporting the New Mexico Meditation Community by providing medidation events and training."
+        "description": "Email Inessa inessa45ATgmail.com for location. Meetup group focused on supporting the New Mexico Meditation Community by providing meditation events and training."
     },
     {
         "groupName": "Celebrate Recovery",
@@ -191,8 +191,8 @@ export const activities: any = [
         "city": "Albuqerque",
         "zipCode": 87123,
         "whenTheyMeet": "Friday 6:15pm",
-        "link": "Contact: Georgina Fourzan geoduenas@yahoo.com https://www.celebraterecovery.com/",
-        "description": "Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
+        "link": "https://www.celebraterecovery.com/",
+        "description": "Contact: Georgina Fourzan geoduenas@yahoo.com. Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
     },
     {
         "groupName": "Celebrate Recovery",
@@ -204,8 +204,8 @@ export const activities: any = [
         "city": "Rio Rancho",
         "zipCode": 87124,
         "whenTheyMeet": "Friday 6:15pm",
-        "link": "Contact: Miles Melton homesnv@msn.com https://www.celebraterecovery.com/",
-        "description": "Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
+        "link": "https://www.celebraterecovery.com/",
+        "description": "Contact: Miles Melton homesnv@msn.com. Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
     },
     {
         "groupName": "Celebrate Recovery",
@@ -217,8 +217,8 @@ export const activities: any = [
         "city": "Ruidoso",
         "zipCode": 88345,
         "whenTheyMeet": "Monday 6pm",
-        "link": "Contact: Cory Myers myersl95@yahoo.com https://www.celebraterecovery.com/",
-        "description": "Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
+        "link": "https://www.celebraterecovery.com/",
+        "description": "Contact: Cory Myers myersl95@yahoo.com. Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
     },
     {
         "groupName": "Celebrate Recovery",
@@ -230,8 +230,8 @@ export const activities: any = [
         "city": "Carrizozo",
         "zipCode": 88301,
         "whenTheyMeet": "Thursday 6pm",
-        "link": "Contact: Barbara Buttram zozodifference@gmail.com https://www.celebraterecovery.com/",
-        "description": "Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
+        "link": "https://www.celebraterecovery.com/",
+        "description": "Contact: Barbara Buttram zozodifference@gmail.com. Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
     },
     {
         "groupName": "Celebrate Recovery",
@@ -243,8 +243,8 @@ export const activities: any = [
         "city": "Los Alamos",
         "zipCode": 87544,
         "whenTheyMeet": "Thursday 7pm",
-        "link": "Contact: Robert Vigil rvigilpainting@msn.com https://www.celebraterecovery.com/",
-        "description": "Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
+        "link": "https://www.celebraterecovery.com/",
+        "description": "Contact: Robert Vigil rvigilpainting@msn.com. Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
     },
     {
         "groupName": "Celebrate Recovery",
@@ -256,21 +256,21 @@ export const activities: any = [
         "city": "Las Cruces",
         "zipCode": 88005,
         "whenTheyMeet": "Monday 6:30pm",
-        "link": "Contact: Dennis Gallegos psthomas8111@gmail.com https://www.celebraterecovery.com/",
-        "description": "Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
+        "link": "https://www.celebraterecovery.com/",
+        "description": "Contact: Dennis Gallegos psthomas8111@gmail.com. Celebrate Recovery is a Christ-centered, 12 step recovery program, and safe place for anyone struggling with hurt, pain or addiction of any kind."
     },
     {
         "groupName": "Women for Sobriety",
         "isFitness": "",
         "isSobrietyRelated": 1,
         "isWomenFocused": 1,
-        "street1": "Email 1104@womenforsobriety.org for meeting address",
-        "street2": "",
+        "street1": "",
+        "street2": "8100 Eubank Blvd NE",
         "city": "Albuquerque",
-        "zipCode": 87106,
+        "zipCode": 87122,
         "whenTheyMeet": "Wednesday 5:30pm",
         "link": "https://womenforsobriety.org/",
-        "description": "Women for Sobriety, Inc., is a non-profit organization dedicated to helping women discover a happy New Life in recovery from Substance Use Disorders."
+        "description": "Email 1104@womenforsobriety.org for meeting address. Women for Sobriety, Inc., is a non-profit organization dedicated to helping women discover a happy New Life in recovery from Substance Use Disorders."
     },
     {
         "groupName": "SMART Recovery",
