@@ -1,6 +1,7 @@
 import {Router} from "express";
 import {getActivityByProfileIdController, getActivityByActivityId} from "./activity.controller";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
+import {check} from "express-validator";
 
 export const activityRoute = Router();
 

@@ -5,7 +5,7 @@ import {selectActivityByActivityId} from "../../utils/activity/selectActivityByA
 
 export async function getActivityByProfileIdController(request: Request, response: Response) : Promise<Response> {
     try {
-        const {activityId} = request.params;
+        const {profileId} = request.params;
         const mySqlResult = await selectActivityByProfileId(profileId);
         // innerjoin mysql enabled fxn
         const data = mySqlResult ?? null
@@ -25,6 +25,7 @@ export async function getActivityByActivityId(request: Request, response: Respon
         const {activityId} = request.params;
         const mySqlResult = await selectActivityByActivityId(activityId);
         const data = mySqlResult ?? null
+        console.log(await mySqlResult)
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
     } catch (error) {
