@@ -3,25 +3,27 @@
 
 import {treatmentCenterJson} from "../database/treatmentcenterjson"
 import {TreatmentCenter} from "../interfaces/Treatmentcenter";
-import {insertTreatmentCenter} from "../treatmentcenter/insertTreatmentCenter";
-import {TreatmentCenterCategory} from "../interfaces/TreatmentCenterCategory";
+import {insertTreatmentCenter} from "../treatmentCenter/insertTreatmentCenter";
+import {FacilityCategory} from "../interfaces/FacilityCategory";
+import {insertFacilityCategory} from "../facilityCategory/insertFacilityCategory";
 
-function treatmentcenterdatadownloader () : Promise<any> {
+
+function treatmentcenterdatadownloader(): Promise<any> {
     async function main() {
-        try{
-            await createcategories()
-            await gettreatmentcenter()
+        try {
+            await getTreatmentCenter()
         } catch (error) {
             console.error(error)
         }
 
     }
+
     return main()
 
-    async function gettreatmentcenter() {
+    async function getTreatmentCenter() {
         try {
             for (let currentTreatmentCenter of treatmentCenterJson.data) {
-                const treatmentcenter: TreatmentCenter = {
+                const treatmentCenter: TreatmentCenter = {
                     treatmentCenterId: null,
                     treatmentCenterName: currentTreatmentCenter.city,
                     treatmentCenterStreet1: currentTreatmentCenter.street1,
@@ -33,65 +35,57 @@ function treatmentcenterdatadownloader () : Promise<any> {
                     treatmentCenterPhone: currentTreatmentCenter.phone,
                     treatmentCenterWebsite: currentTreatmentCenter.website
                 }
-                await insertTreatmentCenter(treatmentcenter)
+                await insertTreatmentCenter(treatmentCenter)
 
             }
-            //notes from paul
-            // for (each of the categories),
-            // check to see this treatment center has this available
-            // if so then
-           // then insert  service with our current treatment id or into facility category
-
-
-
-            if (treatmentCenterJson.categories.detoxification === 1)
-                return (TreatmentCenter.treatmentCenterId ++1)
-
-
-
-
-
-
-            //Select category by category name (Like 35)
-            onselect("facilityCategoryGroupName")
-
-
-
-            //create insert service provided(weak entity)
-                insertServiceProvided()
-
-
-
+            for (let currentTreatmentCenterCategory of treatmentCenterJson.categories) {
+                const facilityCategory: FacilityCategory = {
+                    facilityCategoryGroupName: "update later",
+                    facilityCategoryId: null,
+                    facilityCategoryName: currentTreatmentCenterCategory,
                 }
-                catch (error) {
-                    throw new Error(error)
-                }
-             }
-
-
-
-
-            async function createcategories() {
-                try {
-                    for (let currentTreatmentCenterCategory of treatmentCenterJson.categories) {
-                        const category: TreatmentCenterCategory = {
-                            facilityCategoryGroupName: "update later",
-                            facilityCategoryId: null,
-                            facilityCategoryName: currentTreatmentCenterCategory,
-                        }
-                    }
-                    await ("is this suppose to be a new file - i.e. insertTreatmentCenter.ts")
-                    }
-
-                catch
-                    (error)
-                    {
-                        throw new Error(error)
-                    }
+                await insertFacilityCategory(facilityCategory)
             }
+
+
+        } catch
+            (error) {
+            throw new Error(error)
+        }
+    }
 
 }
 
+//notes from paul
+// for (each of the categories),
+// check to see this treatment center has this available
+// if so then
+// then insert  service with our current treatment id or into facility category
+
+
+// if (treatmentCenterJson.categories.detoxification === 1)
+//     return (TreatmentCenter.treatmentCenterId ++1)
+//
+//
+//
+//
+//
+//
+// //Select category by category name (Like 35)
+// onselect("facilityCategoryGroupName")
+//
+//
+//
+// //create insert service provided(weak entity)
+//     insertServiceProvided()
+//
+//
+//
+//     }
+//     catch (error) {
+//         throw new Error(error)
+//     }
+//  }
 
 
 treatmentcenterdatadownloader().catch(error => {

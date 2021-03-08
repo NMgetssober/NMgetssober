@@ -1,11 +1,11 @@
 import {Request, Response} from "express";
 import {Status} from "../../utils/interfaces/Status";
-import {selectTreatmentCentersByTreatmentCentersId} from "../../utils/treatmentcenter-category/selectTreatmentCentersByTreatmentCentersId";
+import {selectTreatmentCenterByTreatmentCenterId} from "../../utils/treatmentCenter/selectTreatmentCenterByTreatmentCenterId";
 
-export async function treatmentCenterCategoryController(request: Request, response: Response) : Promise<Response> {
+export async function facilityCategoryController(request: Request, response: Response) : Promise<Response> {
     try {
         const {serviceProvidedFacilityCategoryId} = request.params;
-        const mySqlResult = await selectTreatmentCentersByTreatmentCentersId(serviceProvidedFacilityCategoryId);
+        const mySqlResult = await selectTreatmentCenterByTreatmentCenterId(serviceProvidedFacilityCategoryId);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)

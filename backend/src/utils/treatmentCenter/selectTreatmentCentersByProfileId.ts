@@ -1,6 +1,6 @@
 import {connect} from "../database.utils";
 
-export async function selectTreatmentCenterByProfileId(profileId: string) {
+export async function selectTreatmentCentersByProfileId(profileId: string) {
     try {
         const mysqlConnection = await connect();
 

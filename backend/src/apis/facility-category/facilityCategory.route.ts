@@ -1,6 +1,6 @@
 import {Router} from "express";
-import {treatmentCenterCategoryController} from "./treatmentcenter-category.controller";
-import {selectTreatmentCentersByTreatmentCentersId} from "../../utils/treatmentcenter-category/selectTreatmentCentersByTreatmentCentersId";
+import {treatmentCenterCategoryController} from "./treatmentCenter-category.controller";
+import {selectTreatmentCentersByTreatmentCentersId} from "../../utils/serviceProvided/selectTreatmentCenterByTreatmentCenterId";
 
 
 export const treatmentcCnterCategoryRoute = Router();

@@ -1,12 +1,12 @@
 import {Request, Response} from "express";
 import {Status} from "../../utils/interfaces/Status";
-import {selectTreatmentCenterByProfileId} from "../../utils/treatmentcenter/selectTreatmentCenterByProfileId";
-import {selectTreatmentCentersByTreatmentCentersId} from "../../utils/treatmentcenter/selectTreatmentCentersByTreatmentCentersId";
+import {selectTreatmentCentersByProfileId} from "../../utils/treatmentCenter/selectTreatmentCenterByProfileId";
+import {selectTreatmentCenterByTreatmentCenterId} from "../../utils/treatmentCenter/selectTreatmentCentersByTreatmentCentersId";
 
 export async function treatmentCenterController(request: Request, response: Response) : Promise<Response> {
     try {
         const {treatmentCentersByProfileId} = request.params;
-        const mySqlResult = await selectTreatmentCenterByProfileId(treatmentCentersByProfileId);
+        const mySqlResult = await selectTreatmentCentersByProfileId(treatmentCentersByProfileId);
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
@@ -22,7 +22,7 @@ export async function treatmentCenterController(request: Request, response: Resp
 // export async function treatmentCenterController(request: Request, response: Response) : Promise<Response> {
 //     try {
 //         const {treatmentCentersByTreatmentCentersId} = request.params;
-//         const mySqlResult = await selectTreatmentCentersByTreatmentCentersId(treatmentCentersByTreatmentCentersId);
+//         const mySqlResult = await selectTreatmentCenterByTreatmentCenterId(treatmentCentersByTreatmentCentersId);
 //         const data = mySqlResult ?? null
 //         const status: Status = {status: 200, data, message: null}
 //         return response.json(status)
