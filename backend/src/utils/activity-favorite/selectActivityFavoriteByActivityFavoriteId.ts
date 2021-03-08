@@ -1,12 +1,11 @@
-import {Tweet} from "../interfaces/Tweet";
 import {connect} from "../database.utils";
-import {Like} from "../interfaces/Like";
+import {activityFavorite} from "../interfaces/activityFavorite";
 
-export async function selectLikeByLikeId(like: Like) {
+export async function selectActivityFavoriteByActivityFavoriteId(activityFavorite: activityFavorite) {
     try {
         const mysqlConnection = await connect();
-        const mySqlSelectQuery = 'SELECT BIN_TO_UUID(likeProfileId) as likeProfileId, BIN_TO_UUID(likeTweetId) as likeTweetId, likeDate FROM `like` WHERE likeProfileId = UUID_TO_BIN(:likeProfileId) AND likeTweetId = UUID_TO_BIN(:likeTweetId)'
-        const [rows] = await mysqlConnection.execute(mySqlSelectQuery, like)
+        const mySqlSelectQuery = 'SELECT BIN_TO_UUID(likeProfileId) as activityFavoriteProfileId, activityFavoriteDate FROM `activityFavorite` WHERE activityFavoriteProfileId = UUID_TO_BIN(:activityFavoriteProfileId)'
+        const [rows] = await mysqlConnection.execute(mySqlSelectQuery, activityFavorite)
         return rows;
 
     } catch(error) {

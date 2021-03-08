@@ -1,39 +1,39 @@
 import {connect} from "../database.utils";
-import {Like} from "../interfaces/Like";
+import {treatmentFavorite} from "../interfaces/treatmentFavorite";
 
-export async function toggleLike(like: Like) {
+export async function toggleTreatmentFavorite(treatmentFavorite: treatmentFavorite) {
     try {
-        console.log('like', like)
+        console.log('treatmentFavorite', treatmentFavorite)
         const mysqlConnection = await connect();
-        const mySqlSelectQuery = 'SELECT BIN_TO_UUID(likeProfileId) as likeProfileId, BIN_TO_UUID(likeTweetId) as likeTweetId, likeDate FROM `like` WHERE likeProfileId = UUID_TO_BIN(:likeProfileId)'
+        const mySqlSelectQuery = 'SELECT BIN_TO_UUID(treatmentFavoriteProfileId) as treatmentFavoriteProfileId, treatmentFavoriteDate FROM `treatmentFavorite` WHERE treatmentFavoriteProfileId = UUID_TO_BIN(:treatmentFavoriteProfileId)'
         // const mySqlSelectQuery = 'SELECT EXISTS (SELECT * FROM `like` WHERE likeProfileId = UUID_TO_BIN(:likeProfileId) AND likeTweetId = UUID_TO_BIN(:likeTweetId))'
         // const mySqlSelectQuery = 'SELECT COUNT(*) FROM `like` WHERE likeProfileId = UUID_TO_BIN(:likeProfileId) AND likeTweetId = UUID_TO_BIN(:likeTweetId))'
 
-        const [likeRows] = await mysqlConnection.execute(mySqlSelectQuery, like)
+        const [treatmentFavoriteRows] = await mysqlConnection.execute(mySqlSelectQuery, treatmentFavorite)
         // @ts-ignore
-        console.log('likeRows', likeRows)
+        console.log('treatmentFavoriteRows', treatmentFavoriteRows)
         // @ts-ignore
-        if (likeRows[0]){
+        if (treatmentFavoriteRows[0]){
 
             const mySqlConnection = await connect()
-            const mySqlDelete = 'DELETE FROM `like` WHERE likeProfileId = UUID_TO_BIN(:likeProfileId) AND likeTweetId = UUID_TO_BIN(:likeTweetId)'
-            const [deleteRows] = await mySqlConnection.execute(mySqlDelete, like)
-            console.log('REMOVED LIKE')
+            const mySqlDelete = 'DELETE FROM `treatmentFavorite` WHERE treatmentFavoriteProfileId = UUID_TO_BIN(:treatmentFavoriteProfileId)'
+            const [deleteRows] = await mySqlConnection.execute(mySqlDelete, treatmentFavorite)
+            console.log('REMOVED TREATMENT FAVORITE')
 
 
 
         }else{
 
             const mySqlConnection = await connect()
-            const mySqlQuery = "INSERT INTO `like`(likeProfileId, likeTweetId, likeDate) VALUES(UUID_TO_BIN(:likeProfileId), UUID_TO_BIN(:likeTweetId), NOW())";
+            const mySqlQuery = "INSERT INTO `treatmentFavorite`(treatmentFavoriteProfileId, treatmentFavoriteDate) VALUES(UUID_TO_BIN(:treatmentFavoriteProfileId), NOW())";
 
-            const [rows] = await mySqlConnection.execute(mySqlQuery, like)
-            console.log('ADDED LIKE')
+            const [rows] = await mySqlConnection.execute(mySqlQuery, treatmentFavorite)
+            console.log('ADDED TREATMENT FAVORITE')
 
         }
 
 
-        return "Like toggled successfully"
+        return "Treatment favorite toggled successfully"
     } catch (error) {
         console.log(error)
     }

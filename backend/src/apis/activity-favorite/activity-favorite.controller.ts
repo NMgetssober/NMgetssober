@@ -6,9 +6,9 @@ import {Request, Response} from 'express';
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
 import {activityFavorite} from "../../utils/interfaces/activityFavorite";
-import {selectActivityFavoriteByActivityFavoriteId} from "../../utils/ActivityFavorite/selectActivityFavoriteByActivityFavoriteId";
-import {deleteActivityFavorite} from "../../utils/ActivityFavorite/deleteActivityFavorite";
-import {insertActivityFavorite} from "../../utils/ActivityFavorite/insertActivityFavorite";
+import {selectActivityFavoriteByActivityFavoriteId} from "../../utils/activity-favorite/selectActivityFavoriteByActivityFavoriteId";
+import {deleteActivityFavorite} from "../../utils/activity-favorite/deleteActivityFavorite";
+import {insertActivityFavorite} from "../../utils/activity-favorite/insertActivityFavorite";
 
 
 export async function toggleActivityFavoriteController(request: Request, response: Response) {
@@ -21,7 +21,7 @@ export async function toggleActivityFavoriteController(request: Request, respons
         const activityFavorite: activityFavorite = {
             activityFavoriteProfileId,
             activityFavoriteTweetId,
-            ActivityFavoriteDate: null,
+            activityFavoriteDate: null,
         }
         const select = await selectActivityFavoriteByActivityFavoriteId(activityFavorite)
         // @ts-ignore

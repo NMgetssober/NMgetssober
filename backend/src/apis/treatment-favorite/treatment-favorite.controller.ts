@@ -1,12 +1,8 @@
 import {Request, Response} from 'express';
-
-// DB
-
-// Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
 import {treatmentFavorite} from "../../utils/interfaces/treatmentFavorite";
-import {selectTreatmentFavoriteByTreatmentCenterId} from "../../utils/treatment-favorite/selectTreatmentFavoriteByTreatmentCenterId";
+import {selectTreatmentFavoriteByTreatmentFavoriteId} from "../../utils/treatment-favorite/selectTreatmentFavoriteByTreatmentFavoriteId";
 import {deleteTreatmentFavorite} from "../../utils/treatment-favorite/deleteTreatmentFavorite";
 import {insertTreatmentFavorite} from "../../utils/treatment-Favorite/insertTreatmentFavorite";
 
@@ -20,10 +16,9 @@ export async function toggleTreatmentFavoriteController(request: Request, respon
 
         const treatmentFavorite: treatmentFavorite = {
             treatmentFavoriteProfileId,
-            treatmentFavoriteTweetId,
             TreatmentFavoriteDate: null,
         }
-        const select = await selectTreatmentFavoriteByTreatmentCenterId(treatmentFavorite)
+        const select = await selectTreatmentFavoriteByTreatmentFavoriteId(treatmentFavorite)
         // @ts-ignore
         if (select[0]){
             const result = await deleteTreatmentFavorite(treatmentFavorite)
