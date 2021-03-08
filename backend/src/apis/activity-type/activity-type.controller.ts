@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import {Status} from "../../utils/interfaces/Status";
 import {selectActivityTypeByActivityTypeId} from "../../utils/activty-type/selectActivityTypeByActivityTypeId";
 
-export async function activityTypeController(request: Request, response: Response) : Promise<Response> {
+export async function getActivityTypebyActivityTypeIdController(request: Request, response: Response) : Promise<Response> {
     try {
         const {activityTypeId} = request.params;
         const mySqlResult = await selectActivityTypeByActivityTypeId(activityTypeId);

@@ -6,7 +6,8 @@ import {selectActivityTypeByActivityTypeId} from "../../utils/activty-type/selec
 export const activityTypeRoute = Router();
 
 activityTypeRoute.route('/')
-    .post(activityTypeController)
+    .get(getActivityTypebyActivityTypeIdController)
 
 activityTypeRoute.route('/:activityTypeId')
     .get(selectActivityTypeByActivityTypeId)
+//validated

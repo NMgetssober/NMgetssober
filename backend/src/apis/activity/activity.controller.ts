@@ -3,10 +3,11 @@ import {Status} from "../../utils/interfaces/Status";
 import {selectActivityByProfileId} from "../../utils/activity/selectActivityByProfileId";
 import {selectActivityByActivityId} from "../../utils/activity/selectActivityByActivityId";
 
-export async function activityController(request: Request, response: Response) : Promise<Response> {
+export async function getActivityByProfileIdController(request: Request, response: Response) : Promise<Response> {
     try {
-        const {profileId} = request.params;
+        const {activityId} = request.params;
         const mySqlResult = await selectActivityByProfileId(profileId);
+        // innerjoin mysql enabled fxn
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
