@@ -18,19 +18,19 @@ export async function treatmentCenterController(request: Request, response: Resp
         }))
     }
 }
-
-export async function treatmentCenterController(request: Request, response: Response) : Promise<Response> {
-    try {
-        const {treatmentCentersByTreatmentCentersId} = request.params;
-        const mySqlResult = await selectTreatmentCentersByTreatmentCentersId(treatmentCentersByTreatmentCentersId);
-        const data = mySqlResult ?? null
-        const status: Status = {status: 200, data, message: null}
-        return response.json(status)
-    } catch (error) {
-        return(response.json({
-            status: 400,
-            data: null,
-            message: error.message
-        }))
-    }
-}
+//
+// export async function treatmentCenterController(request: Request, response: Response) : Promise<Response> {
+//     try {
+//         const {treatmentCentersByTreatmentCentersId} = request.params;
+//         const mySqlResult = await selectTreatmentCentersByTreatmentCentersId(treatmentCentersByTreatmentCentersId);
+//         const data = mySqlResult ?? null
+//         const status: Status = {status: 200, data, message: null}
+//         return response.json(status)
+//     } catch (error) {
+//         return(response.json({
+//             status: 400,
+//             data: null,
+//             message: error.message
+//         }))
+//     }
+// }
