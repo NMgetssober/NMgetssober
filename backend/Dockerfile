@@ -23,5 +23,4 @@ WORKDIR ./home/node/app
 COPY package.json package-lock.json ./
 RUN npm install --no-optional && npm cache clean --force
 
-
 CMD ["npm", "run", "dev"]
