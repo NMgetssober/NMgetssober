@@ -1,7 +1,4 @@
 export interface activityFavorite {
-    activityFavoriteActivityId: string;
-
-
-
-
+    activityFavoriteProfileId: string;
+    activityFavoriteDate: string;
 }

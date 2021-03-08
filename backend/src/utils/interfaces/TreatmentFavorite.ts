@@ -1,7 +1,4 @@
 export interface treatmentFavorite {
-    TreatmentFavoriteActivityId: string;
-
-
-
-
+    treatmentFavoriteActivityId: string;
+    treatmentFavoriteDate: string;
 }

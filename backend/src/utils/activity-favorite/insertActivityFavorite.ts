@@ -1,12 +1,11 @@
-import {Tweet} from "../interfaces/Tweet";
 import {connect} from "../database.utils";
-import {activityFavorite} from "../interfaces/ActivityFavorite";
+import {activityFavorite} from "../interfaces/activityFavorite";
 
-export async function insertActivityFavorite(ActivityFavorite: activityFavorite) {
+export async function insertActivityFavorite(activityFavorite: activityFavorite) {
     try {
         const mySqlConnection = await connect()
-        const mySqlQuery = "INSERT INTO `activityFavorite`(activityFavoriteProfileId, activityFavoriteTweetId, activityFavoriteDate) VALUES(UUID_TO_BIN(:activityFavoriteProfileId), UUID_TO_BIN(:activityFavoriteTweetId), NOW())";
-        const [rows] = await mySqlConnection.execute(mySqlQuery, ActivityFavorite)
+        const mySqlQuery = "INSERT INTO `activityFavorite`(activityFavoriteProfileId, activityFavoriteDate) VALUES(UUID_TO_BIN(:activityFavoriteProfileId), NOW())";
+        const [rows] = await mySqlConnection.execute(mySqlQuery, activityFavorite)
         return "Activity favorite successfully inserted"
     } catch(error) {
         console.log(error)

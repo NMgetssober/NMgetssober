@@ -1,7 +1,7 @@
 import {Router} from "express";
-import {ActivityFavoriteController} from "./activity-favorite.controller";
+import {activityFavoriteController} from "./activity-favorite.controller";
 
 export const activityFavoriteRoute = Router();
 
 activityFavoriteRoute.route('/')
-    .get(ActivityFavoriteController)
+    .get(activityFavoriteController)

@@ -6,7 +6,7 @@ import {Request, Response} from 'express';
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
 import {treatmentFavorite} from "../../utils/interfaces/treatmentFavorite";
-import {selectTreatmentFavoriteByTreatmentCenterId} from "../../utils/treatment-favorrite/selectTreatmentFavoriteByTreatmentCenterId";
+import {selectTreatmentFavoriteByTreatmentCenterId} from "../../utils/treatment-favorite/selectTreatmentFavoriteByTreatmentCenterId";
 import {deleteTreatmentFavorite} from "../../utils/treatment-favorite/deleteTreatmentFavorite";
 import {insertTreatmentFavorite} from "../../utils/treatment-Favorite/insertTreatmentFavorite";
 
