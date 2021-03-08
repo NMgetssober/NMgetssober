@@ -79,8 +79,7 @@ CREATE TABLE activityFilter
     activityFilterActivityId     BINARY(16) NOT NULL,
     activityFilterActivityTypeId BINARY(16) NOT NULL,
     PRIMARY KEY (activityFilterActivityId, activityFilterActivityTypeId),
-    INDEX(activityFilterActivityId
-) ,
+    INDEX(activityFilterActivityId) ,
     INDEX(activityFilterActivityTypeId),
     FOREIGN KEY(activityFilterActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFilterActivityTypeId) REFERENCES activityType(activityTypeId)
@@ -91,10 +90,10 @@ CREATE TABLE treatmentFavorite
     treatmentFavoriteTreatmentCenterId BINARY(16) NOT NULL,
     treatmentFavoriteProfileId         BINARY(16) NOT NULL,
     PRIMARY KEY (treatmentFavoriteTreatmentCenterId, treatmentFavoriteProfileId),
-    INDEX(treatmentFavoriteTreatmentCenterId) ,
-    INDEX(treatmentFavoriteProfileId),
-    FOREIGN KEY(treatmentFavoriteTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId),
-    FOREIGN KEY(treatmentFavoriteProfileId) REFERENCES profile(profileId)
+    INDEX (treatmentFavoriteTreatmentCenterId),
+    INDEX (treatmentFavoriteProfileId),
+    FOREIGN KEY (treatmentFavoriteTreatmentCenterId) REFERENCES treatmentCenter (treatmentCenterId),
+    FOREIGN KEY (treatmentFavoriteProfileId) REFERENCES profile (profileId)
 );
 
 CREATE TABLE activityFavorite
@@ -102,7 +101,7 @@ CREATE TABLE activityFavorite
     activityFavoriteActivityId BINARY(16) NOT NULL,
     activityFavoriteProfileId  BINARY(16) NOT NULL,
     PRIMARY KEY (activityFavoriteActivityId, activityFavoriteProfileId),
-    INDEX(activityFavoriteActivityId) ,
+    INDEX(activityFavoriteActivityId),
     INDEX(activityFavoriteProfileId),
     FOREIGN KEY(activityFavoriteActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFavoriteProfileId) REFERENCES profile(profileId)
