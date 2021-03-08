@@ -31,12 +31,12 @@ export const activities: any = [
         "isSobrietyRelated": "",
         "isWomenFocused": "",
         "street1": "",
-        "street2": "8920 Holly Ave NE",
+        "street2": "High Desert St",
         "city": "Albuquerque",
-        "zipCode": 87122,
+        "zipCode": 87111,
         "whenTheyMeet": "Monday & Wednesdays 6pm Saturday &  Sunday 7:30am",
         "link": "https://www.abqroadrunners.com/weekly-workouts.html",
-        "description": "Founded in 1985, ARR is Albuquerque's oldest and largest open running club created for the promotion of health through running and social activity. Check schedule for Saturday runs, Sundays meet at Sandia Labs Credit Union near Trader Joe's, corner of Paseo del Norte and Venura NE, Monday evening meets at southern Albuquerque Open Sapcse at Indian School trailhead, Wednesday evenings meet at northern Albuquerque Open Spaces at the Michael Emery trailhead"
+        "description": "Founded in 1985, ARR is Albuquerque's oldest and largest open running club created for the promotion of health through running and social activity. Check schedule for Saturday runs, Sundays meet at Sandia Labs Credit Union near Trader Joe's, corner of Paseo del Norte and Ventura NE, Monday evening meets at southern Albuquerque Open Space at Indian School trailhead, Wednesday evenings meet at northern Albuquerque Open Spaces at the Michael Emery trailhead"
     },
     {
         "groupName": "Albuquerque Running Meetup",
@@ -187,8 +187,8 @@ export const activities: any = [
         "isSobrietyRelated": 1,
         "isWomenFocused": "",
         "street1": "East Gate Church",
-        "street2": "12120 Copper Ave NE",
-        "city": "Albuqerque",
+        "street2": "12120 Copper Ave",
+        "city": "Albuquerque",
         "zipCode": 87123,
         "whenTheyMeet": "Friday 6:15pm",
         "link": "https://www.celebraterecovery.com/",
