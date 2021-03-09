@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
 import {Activity} from "../interfaces/Activity";
 
-export async function insertActivity(activity: Activity) : Promise<string>{
+export async function selectActivityByActivityTypeOrderByZipCode(activity: Activity) : Promise<string>{
     try {
         console.log("activity", activity)
         const mysqlConnection = await connect()
@@ -14,6 +14,18 @@ export async function insertActivity(activity: Activity) : Promise<string>{
         throw error.message
     }
 }
-
 // order by clause; order by proximity
 // optionally specify a WHERE clause according to categories; if no category, omit the WHERE clause
+// SELECT BIN_TO_UUID(activity) AS activityId,
+//           activityCity,
+//           activityGroupName,
+//           activityStreet1,
+//           activityStreet2,
+//           activityTypeName,
+//           activityTypeId,
+// FROM      activityFilter
+// INNER JOIN activity
+// ON activity.activityId = activityFilter.activityFilterActivityId
+// INNER JOIN activityType
+// ON activityType.activityTypeId = activityFilter.activityFilterActivityTypeId
+// WHERE activityZipCode = :activityZipCode
