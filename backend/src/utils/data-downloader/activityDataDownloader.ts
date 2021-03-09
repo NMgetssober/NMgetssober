@@ -24,7 +24,7 @@ function activityDataDownloader() : Promise<any> {
             for (let currentActivity of activities) {
 
                 // geocoding
-                const address = currentActivity.street2 + ',' + currentActivity.city + ',' + 'NM' + currentActivity.zipCode;
+                const address = currentActivity.street2 + ',' + currentActivity.city + ',' + 'NM, ' + currentActivity.zipCode;
                 const geocoder = new Geocodio(process.env.GEOCODE_KEY)
                 console.log(currentActivity.groupName)
                 console.log(address)
