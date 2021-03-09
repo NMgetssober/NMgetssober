@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import {Status} from "../../utils/interfaces/Status";
 import {selectActivityTypeByActivityTypeId} from "../../utils/activty-type/selectActivityTypeByActivityTypeId";
 import {selectAllActivityType} from "../../utils/activty-type/selectAllActivityType";
-import {selectActivityByActivityId} from "../../utils/activity/selectActivityByActivityId";
+
 
 export async function getAllActivityTypeController(request: Request, response: Response) : Promise<Response> {
     try {

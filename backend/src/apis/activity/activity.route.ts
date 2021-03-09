@@ -5,7 +5,7 @@ import {check} from "express-validator";
 
 export const activityRoute = Router();
 
-activityRoute.route('/')
+activityRoute.route('/:profileId')
     .get(getActivityByProfileIdController)
 
 activityRoute.route('/:activityId')

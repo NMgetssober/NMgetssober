@@ -7,9 +7,8 @@ export async function getActivityByProfileIdController(request: Request, respons
     try {
         const {profileId} = request.params;
         const mySqlResult = await selectActivityByProfileId(profileId);
-        // innerjoin mysql enabled fxn
         const data = mySqlResult ?? null
-        const status: Status = {status: 200, data, message: null}
+        const status: Status = {status: 200, data, message: 'good'}
         return response.json(status)
     } catch (error) {
         return(response.json({
