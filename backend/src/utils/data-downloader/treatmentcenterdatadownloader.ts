@@ -6,6 +6,10 @@ import {TreatmentCenter} from "../interfaces/Treatmentcenter";
 import {insertTreatmentCenter} from "../treatmentCenter/insertTreatmentCenter";
 import {FacilityCategory} from "../interfaces/FacilityCategory";
 import {insertFacilityCategory} from "../facilityCategory/insertFacilityCategory";
+import {selectTreatmentCentersByProfileId} from "../treatmentCenter/selectTreatmentCentersByProfileId";
+import {insertServiceProvided} from "../serviceProvided/insertServiceProvided";
+import {ServiceProvided} from "../interfaces/ServiceProvided";
+import { v1 as uuid } from "uuid";
 
 
 function treatmentcenterdatadownloader(): Promise<any> {
@@ -22,9 +26,19 @@ function treatmentcenterdatadownloader(): Promise<any> {
 
     async function getTreatmentCenter() {
         try {
+
+            for (let currentTreatmentCenterCategory of treatmentCenterJson.categories) {
+                const facilityCategory: FacilityCategory = {
+                    facilityCategoryGroupName: "update later",
+                    facilityCategoryId: null,
+                    facilityCategoryName: currentTreatmentCenterCategory,
+                }
+                await insertFacilityCategory(facilityCategory)
+            }
+
             for (let currentTreatmentCenter of treatmentCenterJson.data) {
                 const treatmentCenter: TreatmentCenter = {
-                    treatmentCenterId: null,
+                    treatmentCenterId: uuid(),
                     treatmentCenterName: currentTreatmentCenter.city,
                     treatmentCenterStreet1: currentTreatmentCenter.street1,
                     treatmentCenterStreet2: currentTreatmentCenter.street2,
@@ -37,15 +51,18 @@ function treatmentcenterdatadownloader(): Promise<any> {
                 }
                 await insertTreatmentCenter(treatmentCenter)
 
-            }
-            for (let currentTreatmentCenterCategory of treatmentCenterJson.categories) {
-                const facilityCategory: FacilityCategory = {
-                    facilityCategoryGroupName: "update later",
-                    facilityCategoryId: null,
-                    facilityCategoryName: currentTreatmentCenterCategory,
+                let treatmentCenterId =
+
+                const serviceProvided: ServiceProvided = {
+                    serviceProvidedFacilityCategoryId: facilityCategoryId,
+                    serviceProvidedTreatmentCenterId: treatmentCenterId
                 }
-                await insertFacilityCategory(facilityCategory)
+
+
+               await insertServiceProvided(serviceProvided)
+
             }
+
 
 
         } catch
@@ -56,36 +73,6 @@ function treatmentcenterdatadownloader(): Promise<any> {
 
 }
 
-//notes from paul
-// for (each of the categories),
-// check to see this treatment center has this available
-// if so then
-// then insert  service with our current treatment id or into facility category
-
-
-// if (treatmentCenterJson.categories.detoxification === 1)
-//     return (TreatmentCenter.treatmentCenterId ++1)
-//
-//
-//
-//
-//
-//
-// //Select category by category name (Like 35)
-// onselect("facilityCategoryGroupName")
-//
-//
-//
-// //create insert service provided(weak entity)
-//     insertServiceProvided()
-//
-//
-//
-//     }
-//     catch (error) {
-//         throw new Error(error)
-//     }
-//  }
 
 
 treatmentcenterdatadownloader().catch(error => {
