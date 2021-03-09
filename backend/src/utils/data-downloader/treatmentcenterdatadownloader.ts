@@ -19,7 +19,6 @@ function treatmentcenterdatadownloader(): Promise<any> {
         } catch (error) {
             console.error(error)
         }
-
     }
 
     return main()
@@ -30,7 +29,7 @@ function treatmentcenterdatadownloader(): Promise<any> {
             for (let currentTreatmentCenterCategory of treatmentCenterJson.categories) {
                 const facilityCategory: FacilityCategory = {
                     facilityCategoryGroupName: "update later",
-                    facilityCategoryId: null,
+                    facilityCategoryId: uuid(),
                     facilityCategoryName: currentTreatmentCenterCategory,
                 }
                 await insertFacilityCategory(facilityCategory)
@@ -50,15 +49,17 @@ function treatmentcenterdatadownloader(): Promise<any> {
                     treatmentCenterWebsite: currentTreatmentCenter.website
                 }
                 await insertTreatmentCenter(treatmentCenter)
+                for (let currentServiceProvided in currentTreatmentCenter) {
+                    console.log("current treatment center", currentTreatmentCenter [currentServiceProvided])
+                    console.log(currentServiceProvided)
+                    const serviceProvided: ServiceProvided = {
+                        serviceProvidedFacilityCategoryId: null,
+                        serviceProvidedTreatmentCenterId: treatmentCenter.treatmentCenterId
+                    }
+                    await insertServiceProvided(serviceProvided)
+
             }
 
-            for (let currentServiceProvided of treatmentCenterJson.data) {
-
-                const serviceProvided: ServiceProvided = {
-                    serviceProvidedFacilityCategoryId: null,
-                    serviceProvidedTreatmentCenterId: null
-                }
-                await insertServiceProvided(serviceProvided)
             }
 
         } catch
