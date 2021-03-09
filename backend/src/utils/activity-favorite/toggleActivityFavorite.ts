@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
-import {activityFavorite} from "../interfaces/activityFavorite";
+import {ActivityFavorite} from "../interfaces/activityFavorite";
 
-export async function toggleActivityFavorite(activityFavorite: activityFavorite) {
+export async function toggleActivityFavorite(activityFavorite: ActivityFavorite) {
     try {
         console.log('activityFavorite', activityFavorite)
         const mysqlConnection = await connect();

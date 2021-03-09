@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS treatmentFavorite;
 DROP TABLE IF EXISTS activityFilter;
 DROP TABLE IF EXISTS serviceProvided;
 DROP TABLE IF EXISTS activityType;
-DROP TABLE IF EXISTS facilityCodeCategory;
+DROP TABLE IF EXISTS facilityCategory;
 DROP TABLE IF EXISTS activity;
 DROP TABLE IF EXISTS treatmentCenter;
 DROP TABLE IF EXISTS profile;
@@ -48,12 +48,12 @@ CREATE TABLE activity (
     PRIMARY KEY(activityId)
 );
 
-CREATE TABLE facilityCodeCategory (
-    facilityCodeCategoryId BINARY(16) NOT NULL,
-    facilityCodeCategoryAcronym VARCHAR(6) NOT NULL,
-    facilityCodeCategoryGroupName VARCHAR(255) NOT NULL,
-    facilityCodeCategoryName VARCHAR(255) NOT NULL,
-    PRIMARY KEY(facilityCodeCategoryId)
+CREATE TABLE facilityCategory (
+    facilityCategoryId BINARY(16) NOT NULL,
+    facilityCategoryName VARCHAR(40) NOT NULL,
+    facilityCategoryGroupName VARCHAR(40),
+    #will manually come back and set group name using webstorm database integration
+    PRIMARY KEY(facilityCategoryId)
 );
 
 CREATE TABLE activityType (
@@ -63,12 +63,12 @@ CREATE TABLE activityType (
 );
 
 CREATE TABLE serviceProvided (
-    serviceProvidedFacilityCodeCategoryId BINARY(16) NOT NULL,
+    serviceProvidedFacilityCategoryId BINARY(16) NOT NULL,
     serviceProvidedTreatmentCenterId BINARY(16) NOT NULL,
-    PRIMARY KEY(serviceProvidedFacilityCodeCategoryId, serviceProvidedTreatmentCenterId),
-    INDEX(serviceProvidedFacilityCodeCategoryId),
+    PRIMARY KEY(serviceProvidedFacilityCategoryId, serviceProvidedTreatmentCenterId),
+    INDEX(serviceProvidedFacilityCategoryId),
     INDEX(serviceProvidedTreatmentCenterId),
-    FOREIGN KEY(serviceProvidedFacilityCodeCategoryId) REFERENCES facilityCodeCategory(facilityCodeCategoryId),
+    FOREIGN KEY(serviceProvidedFacilityCategoryId) REFERENCES facilityCategory(facilityCategoryId),
     FOREIGN KEY(serviceProvidedTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId)
 );
 
@@ -101,3 +101,14 @@ CREATE TABLE activityFavorite (
     FOREIGN KEY(activityFavoriteActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFavoriteProfileId) REFERENCES profile(profileId)
 );
+
+INSERT INTO activityType (activityTypeId, activityTypeName)
+VALUES (UUID_TO_BIN('7d33b74b-ebc1-4db4-8088-1e279630cbd5'), 'Fitness');
+
+INSERT INTO activityType (activityTypeId, activityTypeName)
+VALUES (UUID_TO_BIN('e07f978c-bbf0-44e5-b38c-c562d597fc83'), 'Sobriety Related');
+
+INSERT INTO activityType (activityTypeId, activityTypeName)
+VALUES (UUID_TO_BIN('3eb2bd46-ef8f-44c2-b2b2-87e300cd6bc5'), 'Women Focused');
+
+SELECT * FROM activityType;

@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
-import {treatmentFavorite} from "../interfaces/treatmentFavorite";
+import {TreatmentFavorite} from "../interfaces/TreatmentFavorite";
 
-export async function insertTreatmentFavorite(treatmentFavorite: treatmentFavorite) {
+export async function insertTreatmentFavorite(treatmentFavorite: TreatmentFavorite) {
     try {
         const mySqlConnection = await connect()
         const mySqlQuery = "INSERT INTO `treatmentFavorite`(treatmentFavoriteProfileId, treatmentFavoriteDate) VALUES(UUID_TO_BIN(:treatmentFavoriteProfileId), NOW())";

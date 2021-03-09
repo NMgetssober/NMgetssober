@@ -1,4 +1,4 @@
-export interface treatmentFavorite {
-    treatmentFavoriteActivityId: string;
-    treatmentFavoriteDate: string;
+export interface TreatmentFavorite {
+    treatmentFavoriteTreatmentCenterId: string|null;
+    treatmentFavoriteProfileId: string|null;
 }

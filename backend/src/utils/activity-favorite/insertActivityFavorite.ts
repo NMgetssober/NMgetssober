@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
-import {activityFavorite} from "../interfaces/activityFavorite";
+import {ActivityFavorite} from "../interfaces/ActivityFavorite";
 
-export async function insertActivityFavorite(activityFavorite: activityFavorite) {
+export async function insertActivityFavorite(activityFavorite: ActivityFavorite) {
     try {
         const mySqlConnection = await connect()
         const mySqlQuery = "INSERT INTO `activityFavorite`(activityFavoriteProfileId, activityFavoriteDate) VALUES(UUID_TO_BIN(:activityFavoriteProfileId), NOW())";

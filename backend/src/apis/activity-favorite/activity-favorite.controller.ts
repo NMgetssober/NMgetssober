@@ -5,23 +5,23 @@ import {Request, Response} from 'express';
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
-import {activityFavorite} from "../../utils/interfaces/activityFavorite";
+import {ActivityFavorite} from "../../utils/interfaces/ActivityFavorite";
 import {selectActivityFavoriteByActivityFavoriteId} from "../../utils/activity-favorite/selectActivityFavoriteByActivityFavoriteId";
 import {deleteActivityFavorite} from "../../utils/activity-favorite/deleteActivityFavorite";
 import {insertActivityFavorite} from "../../utils/activity-favorite/insertActivityFavorite";
-
+//add profile to interfaces
 
 export async function toggleActivityFavoriteController(request: Request, response: Response) {
 
     try {
-        const {activityFavoriteTweetId} = request.body;
+        const {activityFavoriteActivityId} = request.body;
         const profile: Profile = request.session?.profile
         const activityFavoriteProfileId = <string>profile.profileId
 
-        const activityFavorite: activityFavorite = {
+        const activityFavorite: ActivityFavorite = {
             activityFavoriteProfileId,
-            activityFavoriteTweetId,
-            activityFavoriteDate: null,
+            activityFavoriteActivityId,
+
         }
         const select = await selectActivityFavoriteByActivityFavoriteId(activityFavorite)
         // @ts-ignore
