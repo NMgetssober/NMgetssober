@@ -9,7 +9,7 @@ import {insertFacilityCategory} from "../facilityCategory/insertFacilityCategory
 import {selectTreatmentCentersByProfileId} from "../treatmentCenter/selectTreatmentCentersByProfileId";
 import {insertServiceProvided} from "../serviceProvided/insertServiceProvided";
 import {ServiceProvided} from "../interfaces/ServiceProvided";
-import { v1 as uuid } from "uuid";
+import {v1 as uuid} from "uuid";
 
 
 function treatmentcenterdatadownloader(): Promise<any> {
@@ -50,30 +50,23 @@ function treatmentcenterdatadownloader(): Promise<any> {
                     treatmentCenterWebsite: currentTreatmentCenter.website
                 }
                 await insertTreatmentCenter(treatmentCenter)
-
-                let treatmentCenterId =
-
-                const serviceProvided: ServiceProvided = {
-                    serviceProvidedFacilityCategoryId: facilityCategoryId,
-                    serviceProvidedTreatmentCenterId: treatmentCenterId
-                }
-
-
-               await insertServiceProvided(serviceProvided)
-
             }
 
+            for (let currentServiceProvided of treatmentCenterJson.data) {
 
+                const serviceProvided: ServiceProvided = {
+                    serviceProvidedFacilityCategoryId: null,
+                    serviceProvidedTreatmentCenterId: null
+                }
+                await insertServiceProvided(serviceProvided)
+            }
 
         } catch
             (error) {
             throw new Error(error)
         }
     }
-
 }
-
-
 
 treatmentcenterdatadownloader().catch(error => {
     console.error(error)
