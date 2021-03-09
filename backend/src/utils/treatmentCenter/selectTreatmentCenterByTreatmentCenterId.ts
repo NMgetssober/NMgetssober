@@ -4,7 +4,7 @@ export async function selectTreatmentCenterByTreatmentCenterId(treatmentCenterId
     try {
         const mysqlConnection = await connect();
 
-        const [rows] = await mysqlConnection.execute('SELECT treatmentCenter.treatmentCenterId, treatmentCenter.treatmentCenterName, treatmentCenter.treatmentCenterStreet1, treatmentCenter.treatmentCenterStreet2, treatmentCenter.treatmentCenterLat, treatmentCenter.treatmentCenterLong, treatmentCenter.treatmentCenterCity, treatmentCenter.treatmentCenterZipCode, treatmentCenter.treatmentCenterPhone, treatmentCenter.treatmentCenterWebsite FROM treatment-center WHERE treatmentCenterId = UUID_TO_BIN(:treatmentCenterId)', {treatmentCenterId});
+        const [rows] = await mysqlConnection.execute('SELECT treatmentCenter.treatmentCenterId, treatmentCenter.treatmentCenterName, treatmentCenter.treatmentCenterStreet1, treatmentCenter.treatmentCenterStreet2, treatmentCenter.treatmentCenterLat, treatmentCenter.treatmentCenterLong, treatmentCenter.treatmentCenterCity, treatmentCenter.treatmentCenterZipCode, treatmentCenter.treatmentCenterPhone, treatmentCenter.treatmentCenterWebsite FROM treatmentCenter WHERE treatmentCenterId = UUID_TO_BIN(:treatmentCenterId)', {treatmentCenterId});
 
 
         // @ts-ignore

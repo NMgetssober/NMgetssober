@@ -8,6 +8,8 @@ export async function insertFacilityCategory(facilityCategory: FacilityCategory)
         const mysqlConnection = await connect()
         const query: string = "INSERT INTO facilityCategory (facilityCategoryId, facilityCategoryName, facilityCategoryGroupName) VALUES (UUID_TO_BIN(UUID()), :facilityCategoryName, :facilityCategoryGroupName)"
         const [rows] = await mysqlConnection.execute(query, facilityCategory)
+
+        await mysqlConnection.end()
         console.log("resultfrommysql", rows)
         return "facility category successfully inserted"
     } catch (error) {

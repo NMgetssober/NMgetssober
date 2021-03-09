@@ -6,10 +6,10 @@ import {TreatmentCenter} from "../interfaces/Treatmentcenter";
 import {insertTreatmentCenter} from "../treatmentCenter/insertTreatmentCenter";
 import {FacilityCategory} from "../interfaces/FacilityCategory";
 import {insertFacilityCategory} from "../facilityCategory/insertFacilityCategory";
-import {selectTreatmentCentersByProfileId} from "../treatmentCenter/selectTreatmentCentersByProfileId";
 import {insertServiceProvided} from "../serviceProvided/insertServiceProvided";
 import {ServiceProvided} from "../interfaces/ServiceProvided";
 import {v1 as uuid} from "uuid";
+import {selectFacilityCategoryByFacilityCategoryName} from "../facilityCategory/selectFacilityCategoryByFacilityCategoryName";
 
 
 function treatmentcenterdatadownloader(): Promise<any> {
@@ -50,24 +50,111 @@ function treatmentcenterdatadownloader(): Promise<any> {
                 }
                 await insertTreatmentCenter(treatmentCenter)
                 for (let currentServiceProvided in currentTreatmentCenter) {
-                    console.log("current treatment center", currentTreatmentCenter [currentServiceProvided])
-                    console.log(currentServiceProvided)
-                    const serviceProvided: ServiceProvided = {
-                        serviceProvidedFacilityCategoryId: null,
-                        serviceProvidedTreatmentCenterId: treatmentCenter.treatmentCenterId
+
+                    if (currentServiceProvided === "Detoxification" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
                     }
-                    await insertServiceProvided(serviceProvided)
+                    if (currentServiceProvided === "SAMHSA-certifiedOpioidTreatmentProgram" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                     await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
 
+                    if (currentServiceProvided === "HospitalInpatient" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Residential" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Outpatient" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "NoPaymentAccepted" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "CashOrSelf-payment" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Medicaid" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Medicare" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "StateFinancedInsurance_OtherThanMedicaid" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "PrivateHealthInsurance" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "MilitaryInsurance" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Veterans" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "ActiveDutyMilitary" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "MilitaryFamilies" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "AdultWomen" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "AdultMen" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Female" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Male" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "LesbianGayBisexualTransgender(LGBT)" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Navajo" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+
+                    if (currentServiceProvided === "Spanish" && currentTreatmentCenter[currentServiceProvided] === 1) {
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                    }
+                }
             }
-
-            }
-
         } catch
             (error) {
             throw new Error(error)
         }
     }
+   async function createServiceProvided (serviceProvidedName: string, treatmentCenterId: string) {
+        const category = await selectFacilityCategoryByFacilityCategoryName(serviceProvidedName)
+        console.log("category", category)
+        const serviceProvided: ServiceProvided = {
+            serviceProvidedFacilityCategoryId: category.facilityCategoryId,
+            serviceProvidedTreatmentCenterId: treatmentCenterId
+        }
+        await insertServiceProvided(serviceProvided)
+    }
 }
+
 
 treatmentcenterdatadownloader().catch(error => {
     console.error(error)

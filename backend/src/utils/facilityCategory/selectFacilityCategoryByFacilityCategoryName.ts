@@ -4,9 +4,9 @@ export async function selectFacilityCategoryByFacilityCategoryName(facilityCateg
     try {
         const mysqlConnection = await connect();
 
-        const [rows] = await mysqlConnection.execute('SELECT facilityCategoryId, facilityCategoryName, facilityCategoryGroup FROM facilityCategory WHERE facilityCategoryName = : faclilityCategoryName', {facilityCategoryName});
+        const [rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(facilityCategoryId) AS facilityCategoryId, facilityCategoryGroupName, facilityCategoryName FROM facilityCategory WHERE facilityCategoryName = :facilityCategoryName', {facilityCategoryName});
 
-
+        await mysqlConnection.end()
         // @ts-ignore
         return rows.length !== 0 ? {...rows[0]} : undefined;
     } catch (e) {

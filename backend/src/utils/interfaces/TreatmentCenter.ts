@@ -1,5 +1,5 @@
 export interface TreatmentCenter {
-    treatmentCenterId: string|null;
+    treatmentCenterId: string;
     treatmentCenterName: string;
     treatmentCenterStreet1: string;
     treatmentCenterStreet2: string|null;
