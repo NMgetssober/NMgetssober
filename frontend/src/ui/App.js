@@ -6,10 +6,14 @@ import React from 'react'
 import {NavBar} from './NavBar'
 import { Footer } from './Footer'
 import {AboutUs} from "./AboutUs";
+import {MapPage} from "./Map";
+
+import {Provider} from "react-redux";
 
 
-export const App = () => (
+export const App = (store) => (
     <>
+        {/*<Provider store={store}>*/}
         <BrowserRouter>
 
             <NavBar/>
@@ -19,10 +23,11 @@ export const App = () => (
                 <Route exact path='/AboutUs' component={AboutUs} />
                 <Route exact path='/navbar' component={NavBar}/>
                 <Route exact path='/footer' component={Footer}/>
+                <Route exact path='/map' component={MapPage}/>
                 <Route component={FourOhFour} />
             </Switch>
             <Footer/>
         </BrowserRouter>
-
+        {/*</Provider>*/}
     </>
 )
