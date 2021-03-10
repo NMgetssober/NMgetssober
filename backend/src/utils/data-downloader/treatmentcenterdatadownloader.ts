@@ -55,7 +55,7 @@ function treatmentcenterdatadownloader(): Promise<any> {
                         await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
                     }
                     if (currentServiceProvided === "SAMHSA-certifiedOpioidTreatmentProgram" && currentTreatmentCenter[currentServiceProvided] === 1) {
-                     await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
+                        await createServiceProvided(currentServiceProvided, treatmentCenter.treatmentCenterId)
                     }
 
                     if (currentServiceProvided === "HospitalInpatient" && currentTreatmentCenter[currentServiceProvided] === 1) {
@@ -144,7 +144,8 @@ function treatmentcenterdatadownloader(): Promise<any> {
             throw new Error(error)
         }
     }
-   async function createServiceProvided (serviceProvidedName: string, treatmentCenterId: string) {
+
+    async function createServiceProvided(serviceProvidedName: string, treatmentCenterId: string) {
         const category = await selectFacilityCategoryByFacilityCategoryName(serviceProvidedName)
         console.log("category", category)
         const serviceProvided: ServiceProvided = {
@@ -154,7 +155,6 @@ function treatmentcenterdatadownloader(): Promise<any> {
         await insertServiceProvided(serviceProvided)
     }
 }
-
 
 treatmentcenterdatadownloader().catch(error => {
     console.error(error)

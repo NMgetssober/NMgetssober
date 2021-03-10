@@ -1,6 +1,6 @@
 import {Schema} from "express-validator";
 
-export const serviceProvidedValidator : Schema = {
+export const facilityCategoryValidator : Schema = {
     serviceProvidedFacilityCategoryId: {
         isUUID: {
             errorMessage: 'Please provide a valid serviceProvidedId'

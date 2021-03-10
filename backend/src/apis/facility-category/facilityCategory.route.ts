@@ -1,12 +1,12 @@
 import {Router} from "express";
-import {treatmentCenterCategoryController} from "./treatmentCenter-category.controller";
-import {selectTreatmentCentersByTreatmentCentersId} from "../../utils/serviceProvided/selectTreatmentCenterByTreatmentCenterId";
+import {facilityCategoryController} from "./facilityCategory.controller";
+import {selectFacilityCategoryByFacilityCategoryName} from "../../utils/facilityCategory/selectFacilityCategoryByFacilityCategoryName";
 
 
-export const treatmentcCnterCategoryRoute = Router();
+export const facilityCategoryRoute = Router();
 
-treatmentcCnterCategoryRoute.route('/')
-    .post(treatmentCenterCategoryController)
+facilityCategoryRoute.route('/')
+    .post(facilityCategoryController)
 
-treatmentcCnterCategoryRoute.route('/:activityTypeId')
-    .get(selectTreatmentCentersByTreatmentCentersId)
+facilityCategoryRoute.route('/:facilityCategory')
+    .get(selectFacilityCategoryByFacilityCategoryName)
