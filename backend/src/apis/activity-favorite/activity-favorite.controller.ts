@@ -5,7 +5,8 @@ import {deleteActivityFavorite} from "../../utils/activity-favorite/deleteActivi
 import {insertActivityFavorite} from "../../utils/activity-favorite/insertActivityFavorite";
 import {Profile} from "../../utils/interfaces/Profile";
 import {Status} from "../../utils/interfaces/Status";
-import {selectActivityFavoriteByActivityProfileId} from "../../utils/activity-favorite/selectActivityFavoriteByActivityFavoriteId";
+import {selectActivityFavoriteByActivityFavoriteId,
+} from "../../utils/activity-favorite/selectActivityFavoriteByActivityFavoriteId";
 
 
 export async function toggleActivityFavoriteController(request: Request, response: Response) {
@@ -17,11 +18,11 @@ export async function toggleActivityFavoriteController(request: Request, respons
         const activityFavoriteProfileId = <string>profile.profileId
 
         const activityFavorite: ActivityFavorite = {
-            activityFavoriteProfileId,
             activityFavoriteActivityId,
+            activityFavoriteProfileId,
 
         }
-        const select = await selectActivityFavoriteByActivityProfileId(activityFavorite)
+        const select = await selectActivityFavoriteByActivityFavoriteId(activityFavorite)
         // @ts-ignore
         if (select[0]){
             const result = await deleteActivityFavorite(activityFavorite)
