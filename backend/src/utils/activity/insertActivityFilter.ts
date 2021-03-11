@@ -4,6 +4,7 @@ import {ActivityFilter} from "../interfaces/ActivityFilter";
 export async function insertActivityFilter(activityFilter: ActivityFilter) : Promise<string>{
 
     try {
+
         const mysqlConnection = await connect()
 
         const query : string="INSERT INTO activityFilter (activityFilterActivityId,activityFilterActivityTypeId) VALUES (UUID_TO_BIN(:activityFilterActivityId), UUID_TO_BIN(:activityFilterActivityTypeId))"

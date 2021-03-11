@@ -24,12 +24,13 @@ function activityDataDownloader() : Promise<any> {
             for (let currentActivity of activities) {
 
                 // geocoding
-                const address = currentActivity.street1 + currentActivity.street2 + ',' + currentActivity.city + ',' + 'NM' + currentActivity.zipCode;
+                const address = currentActivity.street2 + ',' + currentActivity.city + ',' + 'NM, ' + currentActivity.zipCode;
                 const geocoder = new Geocodio(process.env.GEOCODE_KEY)
+                console.log(currentActivity.groupName)
                 console.log(address)
                 const response = await geocoder.geocode(address)
                 console.log("geocoderresponse", response.results[0]['location'])
-                // "name" "address" zip "city" "state" ?"type"
+
 
                 const activity : Activity = {
                     activityId: uuidv1(),
@@ -46,6 +47,7 @@ function activityDataDownloader() : Promise<any> {
                 }
                 await insertActivity(activity)
 
+
 //grab activityID from activityobject & use it as an argument to create activity filter
 //build out activityFilter object and pass to insertactivityfilter
 
@@ -54,7 +56,6 @@ function activityDataDownloader() : Promise<any> {
                         activityFilterActivityId: activity.activityId,
                         activityFilterActivityTypeId: '7d33b74b-ebc1-4db4-8088-1e279630cbd5'
                     }
-                    console.log(activityFilter)
                     await insertActivityFilter(activityFilter)
                 }
                 if (currentActivity.isWomenFocused  === 1) {
