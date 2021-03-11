@@ -17,7 +17,7 @@ export const MapPage = () => {
     const [viewport, setViewport] = React.useState({
         latitude: 35.33,
         longitude: -106.65,
-        zoom: 12
+        zoom: 9
     });
 
 
