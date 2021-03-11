@@ -20,7 +20,7 @@ export async function getTreatmentCenterByProfileIdController(request: Request, 
     }
 }
 
-export async function getTreatmentCenterByTreatmentCenterId(request: Request, response: Response) : Promise<Response> {
+export async function getTreatmentCenterByTreatmentCenterIdController(request: Request, response: Response) : Promise<Response> {
     try {
         const {treatmentCenterId} = request.params;
         const mySqlResult = await selectTreatmentCenterByTreatmentCenterId(treatmentCenterId);
@@ -36,7 +36,7 @@ export async function getTreatmentCenterByTreatmentCenterId(request: Request, re
     }
 }
 
-export async function getTreatmentCentersByFacilityCategoryOrderByZipCode(request: Request, response: Response) : Promise<Response> {
+export async function getTreatmentCentersByFacilityCategoryOrderByZipCodeController(request: Request, response: Response) : Promise<Response> {
     try {
         const {treatmentCenterZipCode} = request.params;
         const mySqlResult = await selectTreatmentCentersByFacilityCategoryOrderByZipCode(treatmentCenterZipCode);
