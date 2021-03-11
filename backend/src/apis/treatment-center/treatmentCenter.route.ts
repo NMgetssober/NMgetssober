@@ -1,16 +1,17 @@
 import {Router} from "express";
-import {getTreatmentCenterByProfileIdController} from "./treatmentcenter.controller";
-import {getTreatmentCenterByTreatmentCenterIdController} from "./treatmentcenter.controller";
-import {getTreatmentCentersByFacilityCategoryOrderByZipCodeController} from "./treatmentcenter.controller";
+import {getTreatmentCenterByProfileIdController, getTreatmentCenterByTreatmentCenterId, getTreatmentCentersByFacilityCategoryOrderByZipCode} from "./treatmentcenter.controller";
+import {check} from "express-validator";
+import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 
 
 export const treatmentCenterRoute = Router();
 
-treatmentCenterRoute.route('/:profileId')
+treatmentCenterRoute.route('/:')
     .post(getTreatmentCenterByProfileIdController)
 
 treatmentCenterRoute.route('/:treatmentCenterId')
-    .get(getTreatmentCenterByTreatmentCenterIdController)
+    .get(asyncValidatorController([check("treatmentCenterId", "Please provide a valid treatmentCenterId").isUUID()]),getTreatmentCenterByTreatmentCenterId)
 
 treatmentCenterRoute.route('/:treatmentCenterZipCode')
-    .get(getTreatmentCentersByFacilityCategoryOrderByZipCodeController)
+    .get(asyncValidatorController([check("treatmentCenterZipCode", "Please provide a valid treatmentCenterZipCode")]),getTreatmentCentersByFacilityCategoryOrderByZipCode)
+
