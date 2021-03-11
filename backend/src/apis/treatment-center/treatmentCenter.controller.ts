@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import {Status} from "../../utils/interfaces/Status";
 import {selectTreatmentCenterByProfileId} from "../../utils/treatmentCenter/selectTreatmentCenterByProfileId";
 import {selectTreatmentCenterByTreatmentCenterId} from "../../utils/treatmentCenter/selectTreatmentCenterByTreatmentCenterId";
-import {insertTreatmentCenter} from "../../utils/treatmentCenter/selectTreatmentCentersByFacilityCategoryOrderByZipCode";
+import {selectTreatmentCentersByFacilityCategoryOrderByZipCode} from "../../utils/treatmentCenter/selectTreatmentCentersByFacilityCategoryOrderByZipCode";
 
 export async function getTreatmentCenterByProfileIdController(request: Request, response: Response) : Promise<Response> {
     try {
