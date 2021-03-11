@@ -8,13 +8,12 @@ DROP TABLE IF EXISTS activity;
 DROP TABLE IF EXISTS treatmentCenter;
 DROP TABLE IF EXISTS profile;
 
-CREATE TABLE profile
-(
-    profileId                BINARY(16)   NOT NULL,
+CREATE TABLE profile (
+    profileId BINARY(16) NOT NULL,
     profileAuthenticationKey CHAR(32),
-    profileEmail             VARCHAR(128) NOT NULL,
-    profilePassword          CHAR(97)     NOT NULL,
-    profileUsername          VARCHAR(32)  NOT NULL,
+    profileEmail VARCHAR(128) NOT NULL,
+    profilePassword CHAR(97) NOT NULL,
+    profileUsername VARCHAR(32) NOT NULL,
     UNIQUE (profileEmail),
     UNIQUE (profileUsername),
     PRIMARY KEY (profileId)
@@ -57,8 +56,7 @@ CREATE TABLE facilityCategory (
     PRIMARY KEY(facilityCategoryId)
 );
 
-CREATE TABLE activityType
-(
+CREATE TABLE activityType (
     activityTypeId   BINARY(16)   NOT NULL,
     activityTypeName VARCHAR(255) NOT NULL,
     PRIMARY KEY (activityTypeId)
@@ -74,9 +72,8 @@ CREATE TABLE serviceProvided (
     FOREIGN KEY(serviceProvidedTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId)
 );
 
-CREATE TABLE activityFilter
-(
-    activityFilterActivityId     BINARY(16) NOT NULL,
+CREATE TABLE activityFilter (
+    activityFilterActivityId BINARY(16) NOT NULL,
     activityFilterActivityTypeId BINARY(16) NOT NULL,
     PRIMARY KEY (activityFilterActivityId, activityFilterActivityTypeId),
     INDEX(activityFilterActivityId) ,
@@ -85,10 +82,9 @@ CREATE TABLE activityFilter
     FOREIGN KEY(activityFilterActivityTypeId) REFERENCES activityType(activityTypeId)
 );
 
-CREATE TABLE treatmentFavorite
-(
+CREATE TABLE treatmentFavorite (
     treatmentFavoriteTreatmentCenterId BINARY(16) NOT NULL,
-    treatmentFavoriteProfileId         BINARY(16) NOT NULL,
+    treatmentFavoriteProfileId BINARY(16) NOT NULL,
     PRIMARY KEY (treatmentFavoriteTreatmentCenterId, treatmentFavoriteProfileId),
     INDEX (treatmentFavoriteTreatmentCenterId),
     INDEX (treatmentFavoriteProfileId),
@@ -96,8 +92,7 @@ CREATE TABLE treatmentFavorite
     FOREIGN KEY (treatmentFavoriteProfileId) REFERENCES profile (profileId)
 );
 
-CREATE TABLE activityFavorite
-(
+CREATE TABLE activityFavorite (
     activityFavoriteActivityId BINARY(16) NOT NULL,
     activityFavoriteProfileId  BINARY(16) NOT NULL,
     PRIMARY KEY (activityFavoriteActivityId, activityFavoriteProfileId),

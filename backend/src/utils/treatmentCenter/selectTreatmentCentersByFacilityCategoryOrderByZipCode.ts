@@ -1,17 +1,15 @@
 import {connect} from "../database.utils";
-import {TreatmentCenter} from "../interfaces/Treatmentcenter";
 
-export async function insertTreatmentCenter(treatmentcenter: TreatmentCenter) : Promise<string>{
+export async function selectTreatmentCentersByFacilityCategoryOrderByZipCode(facilityCategoryId: string) {
     try {
-        console.log("treatmentCenter", treatmentcenter)
-        const mysqlConnection = await connect()
-        const query : string="SELECT treatmentCenter (treatmentCenterId, treatmentCenterName, treatmentCenterStreet1, treatmentCenterStreet2, treatmentCenterLat, treatmentCenterLong, treatmentCenterCity, treatmentCenterZipCode, treatmentCenterPhone, treatmentCenterWebsite) VALUES (UUID_TO_BIN(UUID()), :treatmentCenterName, :treatmentCenterStreet1, :treatmentCenterStreet2, :treatmentCenterLat, :treatmentCenterLong, :treatmentCenterCity, :treatmentCenterZipCode, :treatmentCenterPhone, :treatmentCenterWebsite)"
-        const [rows] = await mysqlConnection.execute(query, treatmentcenter)
-        console.log("resultfrommysql",rows)
-        return "Treatment Center successfully inserted"
-    } catch (error) {
-        console.error(error)
-        throw error.message
+        console.log('start')
+        const mysqlConnection = await connect();
+        const [rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(treatmentCenterId) AS treatmentCenterId, treatmentCenter.treatmentCenterCity, treatmentCenter.treatmentCenterName, treatmentCenter.treatmentCenterStreet1, treatmentCenter.treatmentCenterStreet2, BIN_TO_UUID(serviceProvidedFacilityCategoryId) AS facilityCategoryId, BIN_TO_UUID(servicePRovidedTreatmentCenterId) AS treatmentCenterId, treatmentCenterZipCode FROM serviceProvided INNER JOIN treatmentCenter ON serviceProvided.serviceProvidedTreatmentCenterId = treatmentCenter.treatmentCenterId  WHERE serviceProvided.serviceProvidedFacilityCategoryId = UUID_TO_BIN(:facilityCategoryId) ORDER BY treatmentCenterZipCode', {facilityCategoryId});
+        // @ts-ignore mismatch w/ session in typescript
+        console.log('rows', rows)
+        return rows
+    } catch(e) {
+        console.error(e)
+        return undefined
     }
 }
-

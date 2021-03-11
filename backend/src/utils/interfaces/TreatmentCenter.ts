@@ -1,12 +1,12 @@
 export interface TreatmentCenter {
     treatmentCenterId: string;
-    treatmentCenterName: string;
-    treatmentCenterStreet1: string;
-    treatmentCenterStreet2: string|null;
+    treatmentCenterCity: string;
     treatmentCenterLat: number;
     treatmentCenterLong: number;
-    treatmentCenterCity: string;
-    treatmentCenterZipCode: string;
+    treatmentCenterName: string;
     treatmentCenterPhone: string;
+    treatmentCenterStreet1: string;
+    treatmentCenterStreet2: string|null;
     treatmentCenterWebsite: string|null;
+    treatmentCenterZipCode: string;
 }

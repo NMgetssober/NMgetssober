@@ -1,9 +1,9 @@
 import {Schema} from "express-validator";
 
-export const treatmentCenterValidator : Schema = {
+export const treatmentCenter : Schema = {
     treatmentCenterId: {
         isUUID: {
-            errorMessage: 'Please provide a valid activityId'
+            errorMessage: 'Please provide a valid treatment center'
         }
     },
 }
