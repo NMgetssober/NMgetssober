@@ -1,5 +1,4 @@
 import {Request, Response} from 'express';
-
 import {ActivityFavorite} from "../../utils/interfaces/ActivityFavorite";
 import {deleteActivityFavorite} from "../../utils/activity-favorite/deleteActivityFavorite";
 import {insertActivityFavorite} from "../../utils/activity-favorite/insertActivityFavorite";
