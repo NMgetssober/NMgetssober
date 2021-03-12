@@ -1,9 +1,9 @@
 import {Request, Response} from "express";
 import {Status} from "../../utils/interfaces/Status";
-import {selectTreatmentCenterByProfileId} from "../../utils/treatmentCenter/selectTreatmentCenterByProfileId";
-import {selectTreatmentCenterByTreatmentCenterId} from "../../utils/treatmentCenter/selectTreatmentCenterByTreatmentCenterId";
-import {selectTreatmentCentersByFacilityCategoryOrderByZipCode} from "../../utils/treatmentCenter/selectTreatmentCentersByFacilityCategoryOrderByZipCode";
-import {selectTreatmentCenterByAllTreatmentCenters} from "../../utils/treatmentCenter/selectTreatmentCenterByAllTreatmentCenters";
+import {selectTreatmentCenterByProfileId} from "../../utils/treatment-center/selectTreatmentCenterByProfileId";
+import {selectTreatmentCenterByTreatmentCenterId} from "../../utils/treatment-center/selectTreatmentCenterByTreatmentCenterId";
+import {selectTreatmentCentersByFacilityCategoryOrderByZipCode} from "../../utils/treatment-center/selectTreatmentCentersByFacilityCategoryOrderByZipCode";
+import {selectTreatmentCenterByAllTreatmentCenters} from "../../utils/treatment-center/selectTreatmentCenterByAllTreatmentCenters";
 
 
 export async function getTreatmentCenterByProfileIdController(request: Request, response: Response) : Promise<Response> {

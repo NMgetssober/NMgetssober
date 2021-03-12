@@ -4,7 +4,7 @@ import {connect} from "../database.utils";
 
 export async function insertFacilityCategory(facilityCategory: FacilityCategory): Promise<string> {
     try {
-        console.log("facilityCategory", facilityCategory)
+        console.log("facility-category", facilityCategory)
         const mysqlConnection = await connect()
         const query: string = "INSERT INTO facilityCategory (facilityCategoryId, facilityCategoryName, facilityCategoryGroupName) VALUES (UUID_TO_BIN(UUID()), :facilityCategoryName, :facilityCategoryGroupName)"
         const [rows] = await mysqlConnection.execute(query, facilityCategory)

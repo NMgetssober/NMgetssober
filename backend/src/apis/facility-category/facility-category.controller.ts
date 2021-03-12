@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import {Status} from '../../utils/interfaces/Status';
-import {selectFacilityCategoryByFacilityCategoryName} from "../../utils/facilityCategory/selectFacilityCategoryByFacilityCategoryName";
+import {selectFacilityCategoryByFacilityCategoryName} from "../../utils/facility-category/selectFacilityCategoryByFacilityCategoryName";
 
 export async function facilityCategoryController(request: Request, response: Response) : Promise<Response> {
     try {

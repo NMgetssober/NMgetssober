@@ -4,12 +4,12 @@
 import {treatmentCenterJson} from "../database/treatmentcenterjson"
 import {TreatmentCenter} from "../interfaces/TreatmentCenter";
 import {ServiceProvided} from "../interfaces/ServiceProvided";
-import {insertTreatmentCenter} from "../treatmentCenter/insertTreatmentCenter";
+import {insertTreatmentCenter} from "../treatment-center/insertTreatmentCenter";
 import {FacilityCategory} from "../interfaces/FacilityCategory";
-import {insertFacilityCategory} from "../facilityCategory/insertFacilityCategory";
-import {insertServiceProvided} from "../serviceProvided/insertServiceProvided";
+import {insertFacilityCategory} from "../facility-category/insertFacilityCategory";
+import {insertServiceProvided} from "../service-provided/insertServiceProvided";
 import {v1 as uuid} from "uuid";
-import {selectFacilityCategoryByFacilityCategoryName} from "../facilityCategory/selectFacilityCategoryByFacilityCategoryName";
+import {selectFacilityCategoryByFacilityCategoryName} from "../facility-category/selectFacilityCategoryByFacilityCategoryName";
 const Geocodio = require('geocodio-library-node');
 
 

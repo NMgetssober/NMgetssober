@@ -1,6 +1,6 @@
 import {Router} from "express";
-import {facilityCategoryController} from "./facilityCategory.controller";
-import {selectFacilityCategoryByFacilityCategoryName} from "../../utils/facilityCategory/selectFacilityCategoryByFacilityCategoryName";
+import {facilityCategoryController} from "./facility-category.controller";
+import {selectFacilityCategoryByFacilityCategoryName} from "../../utils/facility-category/selectFacilityCategoryByFacilityCategoryName";
 
 export const facilityCategoryRoute = Router();
 

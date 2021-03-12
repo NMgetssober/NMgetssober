@@ -4,7 +4,7 @@ import {
     getTreatmentCenterByProfileIdController,
     getTreatmentCenterByTreatmentCenterId,
     getTreatmentCentersByFacilityCategoryOrderByZipCode
-} from "./treatmentcenter.controller";
+} from "./treatment-center.controller";
 import {check} from "express-validator";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 
