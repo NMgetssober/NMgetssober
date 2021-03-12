@@ -8,6 +8,7 @@ import { Footer } from './Footer'
 import {AboutUs} from "./AboutUs";
 import {MapPage} from "./Map";
 import {ActivityTypeComponent} from "./ActivityType";
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 import {Provider} from "react-redux";
 

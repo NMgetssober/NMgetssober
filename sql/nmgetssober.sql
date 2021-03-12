@@ -111,4 +111,36 @@ VALUES (UUID_TO_BIN('e07f978c-bbf0-44e5-b38c-c562d597fc83'), 'Sobriety Related')
 INSERT INTO activityType (activityTypeId, activityTypeName)
 VALUES (UUID_TO_BIN('3eb2bd46-ef8f-44c2-b2b2-87e300cd6bc5'), 'Women Focused');
 
-SELECT * FROM activityType;
+
+DELIMITER $$
+DROP FUNCTION IF EXISTS haversine;
+
+CREATE FUNCTION haversine(originX FLOAT, originY FLOAT, destinationX FLOAT, destinationY FLOAT) RETURNS FLOAT
+    DETERMINISTIC
+BEGIN
+
+    DECLARE radius FLOAT;
+    DECLARE latitudeAngle1 FLOAT;
+    DECLARE latitudeAngle2 FLOAT;
+    DECLARE latitudePhase FLOAT;
+    DECLARE longitudePhase FLOAT;
+    DECLARE alpha FLOAT;
+    DECLARE corner FLOAT;
+    DECLARE distance FLOAT;
+
+    SET radius = 3958.7613;
+    SET latitudeAngle1 = RADIANS(originY);
+    SET latitudeAngle2 = RADIANS(destinationY);
+    SET latitudePhase = RADIANS(destinationY - originY);
+    SET longitudePhase = RADIANS(destinationX - originX);
+
+    SET alpha = POW(SIN(latitudePhase / 2), 2)
+        + POW(SIN(longitudePhase / 2), 2)
+                    * COS(latitudeAngle1) * COS(latitudeAngle2);
+    SET corner = 2 * ASIN(SQRT(alpha));
+    SET distance = radius * corner;
+
+    RETURN distance;
+END
+    $$
+DELIMITER ;
