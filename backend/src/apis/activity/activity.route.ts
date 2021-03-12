@@ -10,11 +10,13 @@ import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 
 export const activityRoute = Router();
 
+//create route for get all activity
+
 activityRoute.route('/profileId/:profileId')
     .get(isLoggedIn, asyncValidatorController([check("profileId", "Please provide a valid profileId").isUUID()]), getActivityByProfileIdController)
 
 activityRoute.route('/:activityId')
     .get(asyncValidatorController([check("activityId", "Please provide a valid activityId").isUUID()]),getActivityByActivityId)
 
-activityRoute.route('/activityTypeId/:activityTypeId')
-    .get(asyncValidatorController([check("activityTypeId", "Please provide a valid activityId").isUUID()]),getActivityByActivityTypeIdOrderByZipCode)
+activityRoute.route('/activityTypeId/:activityTypeId/activityZip/:activityZip')
+    .get(asyncValidatorController([check("activityTypeId", "Please provide a valid activityId").isUUID(), check("activityZip", "Please provide a valid zipcode.").isPostalCode("US")]),getActivityByActivityTypeIdOrderByZipCode)
