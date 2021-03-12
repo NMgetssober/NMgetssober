@@ -2,14 +2,15 @@
 //axios is from the express spin up
 
 import {treatmentCenterJson} from "../database/treatmentcenterjson"
-import {TreatmentCenter} from "../interfaces/Treatmentcenter";
+import {TreatmentCenter} from "../interfaces/TreatmentCenter";
+import {ServiceProvided} from "../interfaces/ServiceProvided";
 import {insertTreatmentCenter} from "../treatmentCenter/insertTreatmentCenter";
 import {FacilityCategory} from "../interfaces/FacilityCategory";
 import {insertFacilityCategory} from "../facilityCategory/insertFacilityCategory";
 import {insertServiceProvided} from "../serviceProvided/insertServiceProvided";
-import {ServiceProvided} from "../interfaces/ServiceProvided";
 import {v1 as uuid} from "uuid";
 import {selectFacilityCategoryByFacilityCategoryName} from "../facilityCategory/selectFacilityCategoryByFacilityCategoryName";
+const Geocodio = require('geocodio-library-node');
 
 
 function treatmentcenterdatadownloader(): Promise<any> {
@@ -21,10 +22,15 @@ function treatmentcenterdatadownloader(): Promise<any> {
         }
     }
 
+
     return main()
 
     async function getTreatmentCenter() {
         try {
+
+            // geocoding
+
+            const geocoder = new Geocodio(process.env.GEOCODE_KEY)
 
             for (let currentTreatmentCenterCategory of treatmentCenterJson.categories) {
                 const facilityCategory: FacilityCategory = {
@@ -36,13 +42,17 @@ function treatmentcenterdatadownloader(): Promise<any> {
             }
 
             for (let currentTreatmentCenter of treatmentCenterJson.data) {
+
+                const address = currentTreatmentCenter.street1 + ',' + currentTreatmentCenter.street2 + ',' + currentTreatmentCenter.city + ',' + 'NM, ' + currentTreatmentCenter.zipCode;
+                const response = await geocoder.geocode(address)
+                console.log("geocoderresponse", response.results[0]['location'])
                 const treatmentCenter: TreatmentCenter = {
                     treatmentCenterId: uuid(),
                     treatmentCenterName: currentTreatmentCenter.city,
                     treatmentCenterStreet1: currentTreatmentCenter.street1,
                     treatmentCenterStreet2: currentTreatmentCenter.street2,
-                    treatmentCenterLat: 89.89,
-                    treatmentCenterLong: 89.89,
+                    treatmentCenterLat: response.results[0]['location']['lat'],
+                    treatmentCenterLong: response.results[0]['location']['lng'],
                     treatmentCenterCity: currentTreatmentCenter.city,
                     treatmentCenterZipCode: currentTreatmentCenter.zipcode,
                     treatmentCenterPhone: currentTreatmentCenter.phone,

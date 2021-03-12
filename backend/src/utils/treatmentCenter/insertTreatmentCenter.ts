@@ -1,4 +1,4 @@
-import {TreatmentCenter} from "../interfaces/Treatmentcenter";
+import {TreatmentCenter} from "../interfaces/TreatmentCenter";
 import {connect} from "../database.utils";
 
 
