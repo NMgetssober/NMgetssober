@@ -2,7 +2,7 @@ import {Router} from "express";
 import {
     getActivityByProfileIdController,
     getActivityByActivityId,
-    getActivityByActivityTypeIdOrderByZipCode
+    getActivityByActivityTypeIdOrderByZipCode, getAllActivityController
 } from "./activity.controller";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {check} from "express-validator";
@@ -10,7 +10,8 @@ import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 
 export const activityRoute = Router();
 
-//create route for get all activity
+activityRoute.route('/')
+    .get(getAllActivityController)
 
 activityRoute.route('/profileId/:profileId')
     .get(isLoggedIn, asyncValidatorController([check("profileId", "Please provide a valid profileId").isUUID()]), getActivityByProfileIdController)

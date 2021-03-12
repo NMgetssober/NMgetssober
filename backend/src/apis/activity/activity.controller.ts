@@ -3,7 +3,22 @@ import {Status} from "../../utils/interfaces/Status";
 import {selectActivityByProfileId} from "../../utils/activity/selectActivityByProfileId";
 import {selectActivityByActivityId} from "../../utils/activity/selectActivityByActivityId";
 import {selectActivityByActivityTypeIdOrderByZipCode} from "../../utils/activity/selectActivityByActivityTypeIdOrderByZipCode";
+import {selectAllActivity} from "../../utils/activity/selectAllActivity";
 const Geocodio = require('geocodio-library-node');
+
+export async function getAllActivityController(request: Request, response: Response) : Promise<Response> {
+    try {
+        const data = await selectAllActivity();
+        const status: Status = {status: 200, data, message: null}
+        return response.json(status)
+    } catch (error) {
+        return(response.json({
+            status: 400,
+            data: null,
+            message: error.message
+        }))
+    }
+}
 
 export async function getActivityByProfileIdController(request: Request, response: Response) : Promise<Response> {
     try {
