@@ -1,31 +1,36 @@
-import React from "react"
-import ReactMapGL from 'react-map-gl';
+import React, {useState} from "react"
+import ReactMapGL, {Popup} from "react-map-gl";
 import {Container} from "react-bootstrap";
 import {Pin} from "./Pin";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllActivities, fetchAllActivitiesByActivityId} from "../store/activity";
+import {ActivityName} from "../activity-name";
 
 
 export const MapPage = () => {
 
-    const [points, setPoints] = React.useState([
-        {lat: 35.332, lng: -106.652},
-        {lat: 35.339, lng: -106.656},
-        {lat: 35.40, lng: -106.666},
-        {lat: 35.23, lng: -106.4444}
-    ]);
-    // center={[-106.65, 35.33]}
+    const activities = useSelector((state) => state.activity ? state.activity :[])
+
+    const dispatch = useDispatch()
+    const initialEffects = () => {
+        dispatch(fetchAllActivities())
+    }
+
+    React.useEffect(initialEffects, [dispatch])
 
     const [viewport, setViewport] = React.useState({
         latitude: 35.33,
         longitude: -106.65,
         zoom: 9
     });
+    const [popupInfo, setPopupInfo] = useState(null);
 
 
     return (
         <>
             <h1>Map Page</h1>
             <Container>
-                <h1>Here is the map</h1>
+
                 <ReactMapGL
                     {...viewport}
                     width="50vw"
@@ -33,7 +38,28 @@ export const MapPage = () => {
                     onViewportChange={(viewport) => setViewport(viewport)}
                     mapStyle="mapbox://styles/mapbox/dark-v9"
                 >
-                    {points.map((point, index) => <Pin lat={point.lat} lng={point.lng} index={index} key={index}/>)}
+
+                    {activities.map((activity, index) =>
+                        <Pin
+                            activity = {activity}
+                            index={index} key={index}
+                            onClick={setPopupInfo}
+
+                        />
+                        )}
+
+                    {popupInfo && (
+                        <Popup
+                            tipSize={5}
+                            anchor="top"
+                            longitude={popupInfo.activityLong}
+                            latitude={popupInfo.activityLat}
+                            closeOnClick={false}
+                            onClose={setPopupInfo}
+                        >
+                            <ActivityName activity={popupInfo} />
+                        </Popup>
+                    )}
                 </ReactMapGL>
 
             </Container>
