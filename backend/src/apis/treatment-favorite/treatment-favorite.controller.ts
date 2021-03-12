@@ -1,7 +1,5 @@
 import {Request, Response} from 'express';
-
 import {TreatmentFavorite} from "../../utils/interfaces/TreatmentFavorite";
-
 import {Profile} from "../../utils/interfaces/Profile";
 import {Status} from "../../utils/interfaces/Status";
 import {selectTreatmentFavoriteByTreatmentCenterId} from "../../utils/treatment-favorite/selectTreatmentFavoriteByTreatmentCenterId";
