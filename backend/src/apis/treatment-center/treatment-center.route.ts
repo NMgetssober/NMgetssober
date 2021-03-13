@@ -22,4 +22,4 @@ treatmentCenterRoute.route('/:treatmentCenterId')
 
 treatmentCenterRoute.route('/:treatmentCenterZipCode')
     .get(asyncValidatorController([check("treatmentCenterZipCode", "Please provide a valid treatmentCenterZipCode")]),getTreatmentCentersByFacilityCategoryOrderByZipCode)
-
+//
