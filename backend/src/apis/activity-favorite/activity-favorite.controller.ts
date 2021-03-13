@@ -21,6 +21,8 @@ export async function toggleActivityFavoriteController(request: Request, respons
             activityFavoriteProfileId,
 
         }
+        console.log("activityFavorite",activityFavorite)
+
         const select = await selectActivityFavoriteByActivityFavoriteId(activityFavorite)
         // @ts-ignore
         if (select[0]){
