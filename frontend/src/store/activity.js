@@ -13,25 +13,41 @@ const activitySlice = createSlice({
         },
         getActivityByActivityTypeIdOrderByZipCode: (activities, action) => {
             activities.push(action.payload)
+        },
+        getActivitiesByActivityTypeId: (activities, action) => {
+            return action.payload
+        },
+        getActivityOrderByZipCode: (activities, action) => {
+            activities.push(action.payload)
         }
         }
     })
 
-export const {getAllActivities, getActivityByActivityId, getActivityByActivityTypeIdOrderByZipCode} = activitySlice.actions
+export const {getAllActivities, getActivityByActivityId, getActivityByActivityTypeIdOrderByZipCode, getActivitiesByActivityTypeId, getActivityOrderByZipCode} = activitySlice.actions
 
 export const fetchAllActivities = () => async (dispatch) => {
     const {data} = await httpConfig.get("apis/activity")
     dispatch(getAllActivities(data))
 }
 
-export const fetchAllActivitiesByActivityId = () => async (dispatch) => {
-    const {data} = await httpConfig.get("apis/activity/${activityId}")
+export const fetchActivitiesByActivityId = (activityId) => async (dispatch) => {
+    const {data} = await httpConfig.get(`apis/activity/${activityId}`)
     dispatch(getActivityByActivityId(data))
 }
 
-export const fetchActivitiesByActivityTypeOrderByZipCode = () => async (dispatch) => {
-    const {data} = await httpConfig.get("apis/activity/activityTypeId/${activityTypeId}/activityZip/${activityZip}")
+export const fetchActivitiesByActivityTypeOrderByZipCode = (activityTypeId, activityZip) => async (dispatch) => {
+    const {data} = await httpConfig.get(`apis/activity/activityTypeId/${activityTypeId}/activityZip/${activityZip}`)
     dispatch(getActivityByActivityTypeIdOrderByZipCode(data))
+}
+
+export const fetchActivitiesByActivityTypeId = (activityTypeId) => async (dispatch) => {
+    const {data} = await httpConfig.get(`apis/activity/activityTypeId/${activityTypeId}`)
+    dispatch(getActivitiesByActivityTypeId(data))
+}
+
+export const fetchActivitiesByZipCode = (activityZip) => async (dispatch) => {
+    const {data} = await httpConfig.get(`apis/activity/activityZip/${activityZip}`)
+    dispatch(getActivityOrderByZipCode(data))
 }
 
 export default activitySlice.reducer

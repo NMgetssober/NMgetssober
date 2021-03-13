@@ -1,21 +1,27 @@
 import React, {useState} from "react"
 import ReactMapGL, {Popup} from "react-map-gl";
-import {Button, Col, Container, Form, FormControl, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import {Pin} from "./Pin";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllActivities} from "../store/activity";
+import {fetchActivitiesByZipCode, fetchAllActivities} from "../store/activity";
 import {ActivityName} from "../activity-name";
+import {fetchAllActivityType} from "../store/activityType";
+import {SearchBarForm} from "./shared/components/searchBar/SearchBarForm";
 
 export const MapPage = () => {
 
     const activities = useSelector((state) => state.activity ? state.activity : [])
+    const activityTypes = useSelector((state) => state.activityType ? state.activityType : [])
 
     const dispatch = useDispatch()
     const initialEffects = () => {
         dispatch(fetchAllActivities())
+        dispatch(fetchAllActivityType())
+        dispatch(fetchActivitiesByZipCode())
     }
 
     React.useEffect(initialEffects, [dispatch])
+    console.log(activityTypes)
 
     const [viewport, setViewport] = React.useState({
         latitude: 35.15,
@@ -30,11 +36,11 @@ export const MapPage = () => {
             <Container>
                 <Row className="my-4">
                     <Col>
+                    <SearchBarForm/>
 
-                        <Form inline className="my-3">
-                            <FormControl type="text" placeholder="Please insert zip code" className="mr-sm-2"/>
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
+
+                                {/*{activityTypes.map((activityType, index) => <option value="activityType.activityTypeId" key={index}>{activityType.activityTypeName}</option> )}*/}
+
 
                         <ReactMapGL
                             {...viewport}
