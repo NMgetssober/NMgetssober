@@ -30,7 +30,7 @@ export const fetchAllActivitiesByActivityId = () => async (dispatch) => {
 }
 
 export const fetchActivitiesByActivityTypeOrderByZipCode = () => async (dispatch) => {
-    const {data} = await httpConfig.get("apis/activity/activityTypeId/:activityTypeId/activityZip/:activityZip")
+    const {data} = await httpConfig.get("apis/activity/activityTypeId/${activityTypeId}/activityZip/${activityZip}")
     dispatch(getActivityByActivityTypeIdOrderByZipCode(data))
 }
 

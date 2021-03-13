@@ -3,10 +3,8 @@ import ReactMapGL, {Popup} from "react-map-gl";
 import {Button, Col, Container, Form, FormControl, Row} from "react-bootstrap";
 import {Pin} from "./Pin";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllActivities, fetchAllActivitiesByActivityId} from "../store/activity";
+import {fetchAllActivities} from "../store/activity";
 import {ActivityName} from "../activity-name";
-import {SearchBar} from "./shared/components/searchBar/SearchBar";
-
 
 export const MapPage = () => {
 
@@ -20,20 +18,23 @@ export const MapPage = () => {
     React.useEffect(initialEffects, [dispatch])
 
     const [viewport, setViewport] = React.useState({
-        latitude: 35.33,
+        latitude: 35.15,
         longitude: -106.65,
         zoom: 9
     });
     const [popupInfo, setPopupInfo] = useState(null);
-
+    // const {showResults} = props;
 
     return (
         <>
             <Container>
-                <Row>
+                <Row className="my-4">
                     <Col>
 
-                        <SearchBar/>
+                        <Form inline className="my-3">
+                            <FormControl type="text" placeholder="Please insert zip code" className="mr-sm-2"/>
+                            <Button variant="outline-success">Search</Button>
+                        </Form>
 
                         <ReactMapGL
                             {...viewport}
@@ -48,7 +49,6 @@ export const MapPage = () => {
                                     activity={activity}
                                     index={index} key={index}
                                     onClick={setPopupInfo}
-
                                 />
                             )}
 

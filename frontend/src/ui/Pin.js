@@ -1,6 +1,5 @@
 import {Marker} from "react-map-gl";
 import React from "react";
-import {ActivityName} from "../activity-name";
 
 export function Pin(props) {
     const {onClick, activity} = props
