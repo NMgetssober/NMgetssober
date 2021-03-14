@@ -18,7 +18,7 @@ const activitySlice = createSlice({
             return action.payload
         },
         getActivityOrderByZipCode: (activities, action) => {
-            activities.push(action.payload)
+            return action.payload
         }
         }
     })
@@ -35,8 +35,8 @@ export const fetchActivitiesByActivityId = (activityId) => async (dispatch) => {
     dispatch(getActivityByActivityId(data))
 }
 
-export const fetchActivitiesByActivityTypeOrderByZipCode = (activityTypeId, activityZip) => async (dispatch) => {
-    const {data} = await httpConfig.get(`apis/activity/activityTypeId/${activityTypeId}/activityZip/${activityZip}`)
+export const fetchActivitiesByActivityTypeOrderByZipCode = (activityTypeId, activityZipCode) => async (dispatch) => {
+    const {data} = await httpConfig.get(`apis/activity/activityTypeId/${activityTypeId}/activityZipCode/${activityZipCode}`)
     dispatch(getActivityByActivityTypeIdOrderByZipCode(data))
 }
 
@@ -45,8 +45,9 @@ export const fetchActivitiesByActivityTypeId = (activityTypeId) => async (dispat
     dispatch(getActivitiesByActivityTypeId(data))
 }
 
-export const fetchActivitiesByZipCode = (activityZip) => async (dispatch) => {
-    const {data} = await httpConfig.get(`apis/activity/activityZip/${activityZip}`)
+export const fetchActivitiesByZipCode = (activityZipCode) => async (dispatch) => {
+    const {data} = await httpConfig.get(`apis/activity/activityZipCode/${activityZipCode}`)
+    console.log(activityZipCode)
     dispatch(getActivityOrderByZipCode(data))
 }
 

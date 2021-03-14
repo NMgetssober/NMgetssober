@@ -1,5 +1,4 @@
 import React from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {FormDebugger} from "../../utils/FormDebugger";
 
 export const SearchBarFormContent = (props) => {
@@ -24,7 +23,6 @@ export const SearchBarFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="envelope"/>
                             </div>
                         </div>
                         <input

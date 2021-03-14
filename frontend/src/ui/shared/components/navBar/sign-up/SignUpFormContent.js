@@ -47,6 +47,35 @@ export const SignUpFormContent = (props) => {
 
                     }
                 </div>
+
+                <div className="form-group">
+                    <label htmlFor="profileUsername">Username</label>
+                    <div className="input-group">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
+                                <FontAwesomeIcon icon="dog"/>
+                            </div>
+                        </div>
+                        <input
+                            className="form-control"
+                            name="profileUsername"
+                            type="text"
+                            value={values.profileUsername}
+                            placeholder="Username"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+
+                        />
+                    </div>
+                    {
+                        errors.profileUsername && touched.profileUsername && (
+                            <div className="alert alert-danger">
+                                {errors.profileUsername}
+                            </div>
+                        )
+                    }
+                </div>
+
                 {/*controlId must match what is defined by the initialValues object*/}
                 <div className="form-group">
                     <label htmlFor="profilePassword">Password</label>
@@ -95,33 +124,7 @@ export const SignUpFormContent = (props) => {
                 </div>
 
 
-                <div className="form-group">
-                    <label htmlFor="profileUsername">Username</label>
-                    <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text">
-                                <FontAwesomeIcon icon="dog"/>
-                            </div>
-                        </div>
-                        <input
-                            className="form-control"
-                            name="profileUsername"
-                            type="text"
-                            value={values.profileUsername}
-                            placeholder="Username"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
 
-                        />
-                    </div>
-                    {
-                        errors.profileUsername && touched.profileUsername && (
-                            <div className="alert alert-danger">
-                                {errors.profileUsername}
-                            </div>
-                        )
-                    }
-                </div>
 
                 <div className="form-group">
                     <button className="btn btn-primary mb-2" type="submit">Submit</button>

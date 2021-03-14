@@ -14,11 +14,13 @@ export async function selectActivityByActivityTypeIdOrderByZipCode(activityTypeI
                 });
                 return rows
             } else {
-            const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(activityId) AS activityId, activity.activityCity, activity.activityGroupName, activity.activityStreet1, activity.activityStreet2, activityZipCode FROM activity ORDER BY haversine(:userLng, :userLat, activityLong, activityLat) < 25', {
+            const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(activityId) AS activityId, activity.activityCity, activity.activityGroupName, activity.activityStreet1, activity.activityStreet2, activityZipCode FROM activity ORDER BY haversine(:userLng, :userLat, activityLong, activityLat) limit 1', {
                     userLng,
                     userLat
                 });
-                return rows
+                console.log('zipCoderows', rows)
+            return rows
+
             }
         } catch(e) {
             console.error(e)

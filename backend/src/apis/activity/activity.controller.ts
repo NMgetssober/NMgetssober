@@ -73,9 +73,9 @@ export async function getActivityByActivityId(request: Request, response: Respon
 export async function getActivityByActivityTypeIdOrderByZipCode(request: Request, response: Response) : Promise<Response> {
     try {
         console.log('start')
-        const {activityTypeId, activityZip} = request.params;
+        const {activityTypeId, activityZipCode} = request.params;
         const geocoder = new Geocodio(process.env.GEOCODE_KEY)
-        const geoResponse = await geocoder.geocode(activityZip)
+        const geoResponse = await geocoder.geocode(activityZipCode)
         if (geoResponse.results[0] === undefined) {
             throw new Error("Please provide a valid zipcode.")
         }
@@ -96,9 +96,9 @@ export async function getActivityByActivityTypeIdOrderByZipCode(request: Request
 export async function getActivityOrderByZipCode(request: Request, response: Response) : Promise<Response> {
     try {
 
-        const {activityZip} = request.params;
+        const {activityZipCode} = request.params;
         const geocoder = new Geocodio(process.env.GEOCODE_KEY)
-        const geoResponse = await geocoder.geocode(activityZip)
+        const geoResponse = await geocoder.geocode(activityZipCode)
         if (geoResponse.results[0] === undefined) {
             throw new Error("Please provide a valid zipcode.")
         }

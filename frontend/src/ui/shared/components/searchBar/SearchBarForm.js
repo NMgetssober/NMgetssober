@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import * as Yup from "yup";
 import {Formik} from "formik";
 import {SearchBarFormContent} from "./SearchBarFormContent";
-import {httpConfig} from "../../utils/httpConfig";
-import {fetchActivitiesByActivityTypeOrderByZipCode} from "../../../../store/activity";
+
 import {useDispatch} from "react-redux";
+import {fetchActivitiesByZipCode} from "../../../../store/activity";
 
 
 export const SearchBarForm = () => {
@@ -12,6 +12,7 @@ export const SearchBarForm = () => {
         activityZipCode: ""
     };
     const dispatch = useDispatch()
+
     const validator = Yup.object().shape({
         activityZipCode: Yup.number()
             .min(501, "Invalid zip code.")
@@ -20,9 +21,13 @@ export const SearchBarForm = () => {
     });
 
     const submitSearchBar = (values, {resetForm, setStatus}) => {
-        dispatch(fetchActivitiesByActivityTypeOrderByZipCode(undefined, values.activityZipCode))
+        dispatch(fetchActivitiesByZipCode(values.activityZipCode))
     };
 
+    // <button
+    //     aria-label="Increment value"
+    //     onClick={() => dispatch(fetchActivities?)}
+    // >
 
     return (
 
