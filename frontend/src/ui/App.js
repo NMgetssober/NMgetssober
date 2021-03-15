@@ -10,6 +10,8 @@ import {MapPage} from "./Map";
 import {ActivityTypeComponent} from "./ActivityType";
 import 'mapbox-gl/dist/mapbox-gl.css'
 
+
+
 import {Provider} from "react-redux";
 
 
@@ -17,9 +19,7 @@ export const App = (store) => (
     <>
         <Provider store={store}>
         <BrowserRouter>
-
             <NavBar/>
-
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/AboutUs' component={AboutUs} />

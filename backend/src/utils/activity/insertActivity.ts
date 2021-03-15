@@ -5,7 +5,7 @@ export async function insertActivity(activity: Activity) : Promise<string>{
     try {
 
         const mysqlConnection = await connect()
-        const query : string="INSERT INTO activity (activityId, activityCity, activityDescription, activityGroupName, activityStreet1, activityStreet2, activityTime, activityWebsite, activityZipCode) VALUES (UUID_TO_BIN(:activityId), :activityCity, :activityDescription, :activityGroupName, :activityStreet1, :activityStreet2, :activityTime, :activityWebsite, :activityZipCode)"
+        const query : string="INSERT INTO activity (activityId, activityCity, activityDescription, activityGroupName, activityLat, activityLong,activityStreet1, activityStreet2, activityTime, activityWebsite, activityZipCode) VALUES (UUID_TO_BIN(:activityId), :activityCity, :activityDescription, :activityGroupName, :activityLat, :activityLong,:activityStreet1, :activityStreet2, :activityTime, :activityWebsite, :activityZipCode)"
         const [rows] = await mysqlConnection.execute(query, activity)
 
         return "activity successfully inserted"

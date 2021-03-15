@@ -1,8 +1,8 @@
 import {Marker} from "react-map-gl";
-
+import React from "react";
 
 export function Pin(props) {
-    const {lat, lng, index} = props
+    const {onClick, activity} = props
 
 
     const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,4.5,2,10c0,2,0.6,3.9,1.6,5.4c0,0.1,0.1,0.2,0.2,0.3
@@ -11,8 +11,8 @@ export function Pin(props) {
 
     const SIZE = 20;
 
-    return(
-        <Marker key={`marker-${index}`} longitude={lng} latitude={lat}>
+    return (
+        <Marker longitude={activity.activityLong} latitude={activity.activityLat}>
             <svg
                 height={SIZE}
                 viewBox="0 0 24 24"
@@ -22,6 +22,7 @@ export function Pin(props) {
                     stroke: 'none',
                     transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
                 }}
+                onClick={() => onClick(activity)}
             >
                 <path d={ICON} />
             </svg>
