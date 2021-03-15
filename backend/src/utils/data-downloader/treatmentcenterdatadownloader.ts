@@ -9,7 +9,7 @@ import {FacilityCategory} from "../interfaces/FacilityCategory";
 import {insertFacilityCategory} from "../facility-category/insertFacilityCategory";
 import {insertServiceProvided} from "../service-provided/insertServiceProvided";
 import {v1 as uuid} from "uuid";
-import {selectFacilityCategoryByFacilityCategoryName} from "../facility-category/selectFacilityCategoryByFacilityCategoryName";
+import {selectAllFacilityCategories} from "../facility-category/selectFacilityCategoryByFacilityCategoryName";
 const Geocodio = require('geocodio-library-node');
 
 
@@ -156,7 +156,7 @@ function treatmentcenterdatadownloader(): Promise<any> {
     }
 
     async function createServiceProvided(serviceProvidedName: string, treatmentCenterId: string) {
-        const category = await selectFacilityCategoryByFacilityCategoryName(serviceProvidedName)
+        const category = await selectAllFacilityCategories(serviceProvidedName)
         console.log("category", category)
         const serviceProvided: ServiceProvided = {
             serviceProvidedFacilityCategoryId: category.facilityCategoryId,

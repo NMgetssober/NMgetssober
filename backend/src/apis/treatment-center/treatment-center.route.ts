@@ -1,9 +1,8 @@
 import {Router} from "express";
 import {
-    getTreatmentCenterByAllTreatmentCenters,
-    getTreatmentCenterByProfileIdController,
+    getAllTreatmentCenters, getTreatmentCenterByProfileId,
     getTreatmentCenterByTreatmentCenterId,
-    getTreatmentCentersByFacilityCategoryOrderByZipCode
+    // getTreatmentCentersByFacilityCategoryOrderByZipCode
 } from "./treatment-center.controller";
 import {check} from "express-validator";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
@@ -11,15 +10,15 @@ import {asyncValidatorController} from "../../utils/controllers/asyncValidator.c
 
 export const treatmentCenterRoute = Router();
 
-treatmentCenterRoute.route('/:')
-    .post(getTreatmentCenterByProfileIdController)
+treatmentCenterRoute.route('/')
+    .get(getAllTreatmentCenters)
 
-treatmentCenterRoute.route('/:allTreatmentCenters')
-    .get(asyncValidatorController([check("allTreatmentCenters", "Please provide all treatment centers")]),getTreatmentCenterByAllTreatmentCenters)
+treatmentCenterRoute.route('/profileId/:profileId')
+    .get(asyncValidatorController([check("profiled", "Please provide a valid profileId").isUUID()]),getTreatmentCenterByProfileId)
 
-treatmentCenterRoute.route('/:treatmentCenterId')
+treatmentCenterRoute.route('/treatmentCenterId/:treatmentCenterId')
     .get(asyncValidatorController([check("treatmentCenterId", "Please provide a valid treatmentCenterId").isUUID()]),getTreatmentCenterByTreatmentCenterId)
-
-treatmentCenterRoute.route('/:treatmentCenterZipCode')
-    .get(asyncValidatorController([check("treatmentCenterZipCode", "Please provide a valid treatmentCenterZipCode")]),getTreatmentCentersByFacilityCategoryOrderByZipCode)
 //
+// treatmentCenterRoute.route('facilityCategoryId/:facilityCategoryId/treatmentCenterZipCode/:treatmentCenterZipCode')
+//     .get(asyncValidatorController([check("treatmentCenterZipCode", "Please provide a valid treatmentCenterZipCode")]),getTreatmentCentersByFacilityCategoryOrderByZipCode)
+

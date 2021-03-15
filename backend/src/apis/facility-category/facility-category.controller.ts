@@ -1,15 +1,16 @@
 import {Request, Response} from "express";
 import {Status} from '../../utils/interfaces/Status';
-import {selectFacilityCategoryByFacilityCategoryName} from "../../utils/facility-category/selectFacilityCategoryByFacilityCategoryName";
+import {selectAllFacilityCategories} from "../../utils/facility-category/selectAllFacilityCategories";
 
-export async function facilityCategoryController(request: Request, response: Response) : Promise<Response> {
+;
+
+export async function getAllFacilityCategories(request: Request, response: Response) : Promise<Response>{
     try {
-        const {facilityCategoryName} = request.params;
-        const mySqlResult = await selectFacilityCategoryByFacilityCategoryName(facilityCategoryName);
-        const data = mySqlResult ?? null
-        const status: Status = {status: 200, data, message: null}
-        return response.json(status)
 
+        const mySqlResult = await selectAllFacilityCategories();
+        const data = mySqlResult ?? null
+        const status: Status = {status: 200, data, message: 'good'}
+        return response.json(status)
     } catch (error) {
         return(response.json({
             status: 400,
