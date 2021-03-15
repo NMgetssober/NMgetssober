@@ -52,15 +52,15 @@ export const MapPage = () => {
                         {/*</Form.Group>*/}
                         {/*</Form>*/}
 
-                        <Form className="my-3">
-                            <Form.Label>Activity</Form.Label>
-                            <Form.Control as="select">
-                                {activityTypes.map((activityType, index) => <option value="activityType.activityTypeId" key={index}>{activityType.activityTypeName}</option> )}
-                            </Form.Control>
-                            <FormControl type="text" placeholder="Please insert zip code" className="mr-sm-2"/>
-                            <Button variant="outline-success" type={"searchBar"}>Search</Button>
-                        </Form>
-                        {/*SearchBarForm*/}
+                        {/*<SearchBarForm className="my-3">*/}
+                        {/*    <Form.Label>Activity</Form.Label>*/}
+                        {/*    <Form.Control as="select">*/}
+                        {/*        {activityTypes.map((activityType, index) => <option value="activityType.activityTypeId" key={index}>{activityType.activityTypeName}</option> )}*/}
+                        {/*    </Form.Control>*/}
+                        {/*    <FormControl type="text" placeholder="Please insert zip code" className="mr-sm-2"/>*/}
+                        {/*    <Button variant="outline-success" type={"searchBar"}>Search</Button>*/}
+                        {/*</SearchBarForm>*/}
+                        <SearchBarForm activityTypes={activityTypes}  />
 
 
                         <ReactMapGL

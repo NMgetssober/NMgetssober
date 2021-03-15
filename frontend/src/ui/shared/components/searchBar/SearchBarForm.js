@@ -3,12 +3,14 @@ import * as Yup from "yup";
 import {Formik} from "formik";
 import {SearchBarFormContent} from "./SearchBarFormContent";
 
-import {useDispatch} from "react-redux";
-import {fetchActivitiesByZipCode} from "../../../../store/activity";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchActivitiesByActivityTypeOrderByZipCode, fetchActivitiesByZipCode} from "../../../../store/activity";
 
 
 export const SearchBarForm = () => {
+
     const searchBar = {
+        activityType: "3eb2bd46-ef8f-44c2-b2b2-87e300cd6bc5",
         activityZipCode: ""
     };
     const dispatch = useDispatch()
@@ -21,13 +23,8 @@ export const SearchBarForm = () => {
     });
 
     const submitSearchBar = (values, {resetForm, setStatus}) => {
-        dispatch(fetchActivitiesByZipCode(values.activityZipCode))
+        dispatch(fetchActivitiesByActivityTypeOrderByZipCode(values.activityType, values.activityZipCode))
     };
-
-    // <button
-    //     aria-label="Increment value"
-    //     onClick={() => dispatch(fetchActivities?)}
-    // >
 
     return (
 

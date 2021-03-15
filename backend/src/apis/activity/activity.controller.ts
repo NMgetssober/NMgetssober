@@ -80,7 +80,7 @@ export async function getActivityByActivityTypeIdOrderByZipCode(request: Request
             throw new Error("Please provide a valid zipcode.")
         }
         const mySqlResult = await selectActivityByActivityTypeIdOrderByZipCode(activityTypeId, <number> geoResponse.results[0]['location']['lat'], <number> geoResponse.results[0]['location']['lng']);
-
+        console.log('georesponse', geoResponse.results[0]['location'])
         const data = mySqlResult ?? null
         const status: Status = {status: 200, data, message: null}
         return response.json(status)

@@ -7,18 +7,18 @@ export async function selectActivityByActivityTypeIdOrderByZipCode(activityTypeI
 
             if (activityTypeId) {
 
-            const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(activityId) AS activityId, activity.activityCity, activity.activityGroupName, activity.activityStreet1, activity.activityStreet2, BIN_TO_UUID(activityFilterActivityTypeId) AS activityTypeId, BIN_TO_UUID(activityFilterActivityId) AS activityId, activityZipCode FROM activityFilter INNER JOIN activity ON activityFilter.activityFilterActivityId = activity.activityId WHERE activityFilter.activityFilterActivityTypeId = UUID_TO_BIN(:activityTypeId) ORDER BY haversine(:userLng, :userLat, activityLong, activityLat) < 25', {
+            const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(activityId) AS activityId, activity.activityCity, activity.activityGroupName, activity.activityLat, activity.activityLong, activity.activityStreet1, activity.activityStreet2, BIN_TO_UUID(activityFilterActivityTypeId) AS activityTypeId, BIN_TO_UUID(activityFilterActivityId) AS activityId, activityZipCode FROM activityFilter INNER JOIN activity ON activityFilter.activityFilterActivityId = activity.activityId WHERE activityFilter.activityFilterActivityTypeId = UUID_TO_BIN(:activityTypeId) AND haversine(:userLng, :userLat, activity.activityLong, activity.activityLat) < 25 ORDER BY haversine(:userLng, :userLat, activity.activityLong, activity.activityLat)', {
                     userLng,
                     userLat,
                     activityTypeId
                 });
+            console.log('mysqlrows', rows)
                 return rows
             } else {
-            const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(activityId) AS activityId, activity.activityCity, activity.activityGroupName, activity.activityStreet1, activity.activityStreet2, activityZipCode FROM activity ORDER BY haversine(:userLng, :userLat, activityLong, activityLat) limit 1', {
+            const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(activityId) AS activityId, activity.activityCity, activity.activityGroupName, activity.activityLat, activity.activityLong, activity.activityStreet1, activity.activityStreet2, activityZipCode FROM activity ORDER BY haversine(:userLng, :userLat, activityLong, activityLat) < 25', {
                     userLng,
                     userLat
                 });
-                console.log('zipCoderows', rows)
             return rows
 
             }

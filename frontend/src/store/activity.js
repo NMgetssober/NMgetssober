@@ -12,7 +12,7 @@ const activitySlice = createSlice({
             activities.push(action.payload)
         },
         getActivityByActivityTypeIdOrderByZipCode: (activities, action) => {
-            activities.push(action.payload)
+            return action.payload
         },
         getActivitiesByActivityTypeId: (activities, action) => {
             return action.payload
