@@ -3,7 +3,7 @@ import React from 'react';
 export function ActivityName(props) {
     const {activity} = props;
 
-    return (
+        return (
         <div>
             <small>
                 <p>{activity.activityGroupName}</p>
