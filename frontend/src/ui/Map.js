@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import './Map.css'
 import ReactMapGL, {Popup} from "react-map-gl";
 import {Col, Container, Row} from "react-bootstrap";
 import {Pin} from "./Pin";

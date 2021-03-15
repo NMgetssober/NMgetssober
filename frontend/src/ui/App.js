@@ -1,10 +1,10 @@
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from 'react-router'
-import { Home } from './Home'
-import { FourOhFour } from './FourOhFour'
+import {Home} from './Home'
+import {FourOhFour} from './FourOhFour'
 import React from 'react'
 import {NavBar} from './shared/components/navBar/NavBar'
-import { Footer } from './Footer'
+import {Footer} from './Footer'
 import {AboutUs} from "./AboutUs";
 import {MapPage} from "./Map";
 import {ActivityTypeComponent} from "./ActivityType";
