@@ -7,7 +7,3 @@ export const facilityCategoryRoute = Router();
 facilityCategoryRoute.route('/')
     .get(getAllFacilityCategories)
 
-
-
-
-

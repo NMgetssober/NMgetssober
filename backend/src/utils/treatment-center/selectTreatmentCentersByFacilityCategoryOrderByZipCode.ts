@@ -1,17 +1,23 @@
 import {connect} from "../database.utils";
 
 
-export async function selectTreatmentCentersByFacilityCategoryOrderByZipCode(treatmentCenterZipCode: string) {
+export async function selectTreatmentCentersByFacilityCategoryOrderByZipCode(facilityCategoryId: string, resultElementElement: number, resultElementElement1: number) {
     try {
 
-        const mySqlConnection = await connect();
-        const mySqlQuery = 'SELECT BIN_TO_UUID(treatmentCenterId) AS treatmentCenterId, treatmentCenterCity, treatmentCenterName, treatmentCenterStreet1, treatmentCenterStreet2, BIN_TO_UUID(serviceProvidedFacilityCategoryId) AS facilityCategoryId, BIN_TO_UUID(servicePRovidedTreatmentCenterId) AS treatmentCenterId, treatmentCenterZipCode FROM serviceProvided INNER JOIN treatmentCenter ON serviceProvided.serviceProvidedTreatmentCenterId = treatmentCenterId  WHERE serviceProvidedFacilityCategoryId = UUID_TO_BIN(:facilityCategoryId) ORDER BY treatmentCenterZipCode'
-        const [rows] = await mySqlConnection.execute(mySqlQuery, {treatmentCenterZipCode})
-       // @ts-ignore mismatch w/ session in typescript
+        const mysqlConnection = await connect();
 
-        return rows;
+        if (facilityCategoryId) {
+
+        const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(treatmentCenterId) AS treatmentCenterId, treatmentCenterCity, treatmentCenterLat, treatmentCenterLong, treatmentCenterName, treatmentCenterPhone, treatmentCenterStreet1, treatmentCenterStreet2, treatmentCenterWebsite, BIN_TO_UUID(serviceProvidedTreatmentCenterId) AS facilityCategoryId, BIN_TO_UUID(serviceProvidedFacilityCategoryId) AS treatmentCenterId, treatmentCenterZipCode FROM serviceProvided INNER JOIN treatmentCenter ON serviceProvidedFacilityCategoryId = treatmentCenterId WHERE serviceProvided.serviceProvidedTreatmentCenterId = UUID_TO_BIN(:activityTypeId)')
+
+            return rows
+        } else {
+            const[rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(treatmentCenterId) AS treatmentCenterId, treatmentCenterCity, treatmentCenterLat, treatmentCenterLong, treatmentCenterName, treatmentCenterPhone, treatmentCenterStreet1, treatmentCenterStreet2, treatmentCenterWebsite, treatmentCenterZipCode FROM treatmentCenter')
+
+            return rows
+        }
     } catch(e) {
         console.error(e)
-        return undefined
+        return e.message
     }
 }
