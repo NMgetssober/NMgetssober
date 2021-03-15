@@ -2,6 +2,7 @@ import {Request, Response} from "express";
 import {Status} from '../../utils/interfaces/Status';
 import {selectAllFacilityCategories} from "../../utils/facility-category/selectAllFacilityCategories";
 
+
 ;
 
 export async function getAllFacilityCategories(request: Request, response: Response) : Promise<Response>{
@@ -19,3 +20,4 @@ export async function getAllFacilityCategories(request: Request, response: Respo
         }))
     }
 }
+
