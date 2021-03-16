@@ -17,7 +17,7 @@ import {facilityCategoryRoute} from "./apis/facility-category/facility-category.
 
 
 
-const helmet = require("helmet");
+// const helmet = require("helmet");
 const MemoryStore = require('memorystore')(session);
 
 
@@ -58,7 +58,7 @@ export class App {
         this.app.use(passport.initialize());
         this.app.use(passport.session());
         passport.use(passportStrategy)
-        this.app.use(helmet())
+        // this.app.use(helmet())
     }
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)

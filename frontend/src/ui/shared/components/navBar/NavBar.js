@@ -43,16 +43,15 @@ export const NavBar = (props) => {
                     <Nav.Link id="black" href="/">Home</Nav.Link>
                     <Nav.Link id="black" href="/map">Map</Nav.Link>
                     <Nav.Link id="black" href="/aboutus">About Us</Nav.Link>
-                    {/*<NavDropdown id="basic-nav-dropdown" title="More">*/}
                     <SignUpModal/>
                     {/* conditional render if user has jwt / is logged in */}
                     {auth !== null && (
                         <>
                             <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
-                    <Nav.Link id="black" title={auth?.profileUsername ?? ""}>
-                        Profile
-                            <Link to={`/profile/${auth?.profileId}`}/>
-                        </Nav.Link>
+                    {/*<Nav.Link id="black" title={auth?.profileUsername ?? ""}>*/}
+                    {/*    Profile*/}
+                    {/*        <Link to={`/profile/${auth?.profileId}`}/>*/}
+                    {/*    </Nav.Link>*/}
                     <SignOutComponent/>
                         </>
                     )}
