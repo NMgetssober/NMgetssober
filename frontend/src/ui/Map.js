@@ -34,10 +34,9 @@ export const MapPage = () => {
         <>
             <Container>
                 <Row className="my-4">
-                    <Col>
+                    <Col md={6}>
 
                         <SearchBarForm activityTypes={activityTypes}  />
-
 
                         <ReactMapGL
                             {...viewport}
@@ -57,7 +56,7 @@ export const MapPage = () => {
 
                             {popupInfo && (
                                 <Popup
-                                    tipSize={6}
+                                    tipSize={10}
                                     anchor="top"
                                     longitude={popupInfo.activityLong}
                                     latitude={popupInfo.activityLat}
@@ -71,15 +70,24 @@ export const MapPage = () => {
                             )}
                         </ReactMapGL>
                     </Col>
-                    <Col>
-                        <h1>Results</h1>
+                    <Col md={6}>
+
                         {popupInfo && (
                             <>
-                        <p>{popupInfo.activityGroupName}</p>
-                        <p>{popupInfo.activityDescription}</p>
-                        <p>{popupInfo.activityStreet1} {popupInfo.activityStreet2}</p>
-                        <p>{popupInfo.activityTime}</p>
-                        <p>{popupInfo.activityWebsite}</p>
+                                <Container>
+                                    <h1>Results</h1>
+                                    <p className="my-2 font-weight-bold">{popupInfo.activityGroupName}</p>
+                                    <p className="my-0 font-weight-bold">Description:</p>
+                                    <p>{popupInfo.activityDescription}</p>
+                                    <p className="my-0 font-weight-bold">Address:</p>
+                                    <p className="my-0">{popupInfo.activityStreet1}</p>
+                                    <p>{popupInfo.activityStreet2}</p>
+                                    <p className="my-0 font-weight-bold">When they meet:</p>
+                                    <p>{popupInfo.activityTime}</p>
+                                    <p className="my-0 font-weight-bold">Website:</p>
+                                    {/*<p>{popupInfo.activityWebsite}</p>*/}
+                                    <a href={popupInfo.activityWebsite}>{popupInfo.activityWebsite}</a>
+                                </Container>
                             </>
                         )}
                     </Col>
