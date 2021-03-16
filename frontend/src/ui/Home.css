@@ -8,13 +8,13 @@
 }
 
 #logo {
-    height: 250px;
-    width: 250px;
+    height: 20rem;
+    width: 20rem;
     margin-top: 5%;
 }
 #largeButton {
-    height: 100px;
-    width: 240px;
+    height: 8rem;
+    width: 20rem;
     border: 2px white solid;
     background-color: #FFF206;
 }
