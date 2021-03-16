@@ -61,15 +61,16 @@ export async function getTreatmentCenterByTreatmentCenterId(request: Request, re
 export async function getTreatmentCentersByFacilityCategoryOrderByZipCode(request: Request, response: Response) : Promise<Response> {
     try {
         console.log('start')
-        const {activityTypeId, activityZipCode} = request.params;
+        const {facilityCategoryId, treatmentCenterZipCode} = request.params;
         const geocoder = new Geocodio(process.env.GEOCODE_KEY)
-        const geoResponse = await geocoder.geocode(activityZipCode)
+        const geoResponse = await geocoder.geocode(treatmentCenterZipCode)
         if (geoResponse.results[0] === undefined) {
             throw new Error("Please provide a valid zipcode.")
         }
-        const mySqlResult = await selectTreatmentCentersByFacilityCategoryOrderByZipCode(activityTypeId, <number> geoResponse.results[0]['location']['lat'], <number> geoResponse.results[0]['location']['lng']);
+        const mySqlResult = await selectTreatmentCentersByFacilityCategoryOrderByZipCode(facilityCategoryId, <number> geoResponse.results[0]['location']['lat'], <number> geoResponse.results[0]['location']['lng']);
         console.log('georesponse', geoResponse.results[0]['location'])
         const data = mySqlResult ?? null
+
         const status: Status = {status: 200, data, message: null}
         return response.json(status)
     } catch (error) {
