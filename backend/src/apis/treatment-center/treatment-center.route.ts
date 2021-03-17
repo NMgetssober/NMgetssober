@@ -23,5 +23,3 @@ treatmentCenterRoute.route('/treatmentCenterId/:treatmentCenterId')
 treatmentCenterRoute.route('/facilityCategoryId/:facilityCategoryId/treatmentCenterZipCode/:treatmentCenterZipCode')
     .get(asyncValidatorController([check("facilityCategoryId", "Please provide a valid treatmentCenterZipCode").isUUID()]),
             getTreatmentCentersByFacilityCategoryOrderByZipCode)
-
-// Cannot GET /apis/treatment-center/facilityCategoryId/01043648-8360-11eb-bb64-0242ac180002/treatmentCenterZipCode/87123
