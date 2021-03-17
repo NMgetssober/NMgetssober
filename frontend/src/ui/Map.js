@@ -73,7 +73,7 @@ export const MapPage = () => {
                         </ReactMapGL>
                     </Col>
                     <Col>
-                        <h1>Results</h1>
+                        <h1 className= "results">Results</h1>
                         {popupInfo && (
                             <>
                         <p>{popupInfo.activityGroupName}</p>

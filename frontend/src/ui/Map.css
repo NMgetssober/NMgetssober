@@ -2,8 +2,10 @@
     background-color: #e5d4c4;
 }
 
-h1 {
+.results {
+    font-size: 50px;
+    text-align: center;
     font-weight: bold;
-    font-size: 20px;
-
+    color: white;
 }
+
