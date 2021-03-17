@@ -3,9 +3,10 @@ import activityType from "./activityType";
 import activity from "./activity";
 import treatmentCenter from "./treatmentCenter";
 import facilityCategory from "./facilityCategory";
+import activityFavorite from "./activityFavorite";
 
 
-const reducer = combineReducers({activityType, activity, facilityCategory, treatmentCenter})
+const reducer = combineReducers({activityType,activityFavorite, activity, facilityCategory, treatmentCenter})
 
 export const store = configureStore({reducer})
 
