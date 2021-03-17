@@ -90,25 +90,33 @@ export const MapPage = () => {
                                 <Container>
                                     <h1>Results</h1>
                                     <p className="my-2 font-weight-bold">{popupInfo.activityGroupName ?? popupInfo.treatmentCenterName}</p>
-                                    <p className="my-0 font-weight-bold">Description:</p>
-                                    <p>{popupInfo.activityDescription}</p>
+                                    {popupInfo.activityDescription ?
+                                    <>
+                                        <p className="my-0 font-weight-bold">Description:</p>
+                                        <p>{popupInfo.activityDescription}</p>
+                                    </>
+                                    :""}
                                     <p className="my-0 font-weight-bold">Address:</p>
                                     <p className="my-0">{popupInfo.activityStreet1 ?? popupInfo.treatmentCenterStreet1}</p>
                                     <p>{popupInfo.activityStreet2 ?? popupInfo.treatmentCenterStreet2}</p>
                                     <p className="my-0 font-weight-bold">City:</p>
                                     <p>{popupInfo.activityCity ?? popupInfo.treatmentCenterCity}</p>
                                     <p className="my-0 font-weight-bold">ZipCode:</p>
-                                    <p>{popupInfo.activityCity ?? popupInfo.treatmentCenterCity}</p>
-                                    <p className="my-0 font-weight-bold">Phone Number:</p>
-                                    <p>{popupInfo.treatmentCenterCity}</p>
+                                    <p>{popupInfo.activityZipCode ?? popupInfo.treatmentCenterZipCode}</p>
+                                    {popupInfo.treatmentCenterPhone ?
+                                    <>
+                                        <p className="my-0 font-weight-bold">Phone Number:</p>
+                                        <p>{popupInfo.treatmentCenterPhone}</p>
+                                    </>
+                                    :""}
+                                    {popupInfo.activityTime ?
+                                        <>
                                     <p className="my-0 font-weight-bold">When they meet:</p>
                                     <p>{popupInfo.activityTime}</p>
+                                        </>
+                                    : ""}
                                     <p className="my-0 font-weight-bold">Website:</p>
-                                    {/*<p>{popupInfo.activityWebsite}</p>*/}
-                                    <a href={popupInfo.activityWebsite}>{popupInfo.activityWebsite}</a>
-                                    <p className="my-0 font-weight-bold">Website:</p>
-                                    {/*<p>{popupInfo.treatmentCenterWebsite}</p>*/}
-                                    <a href={popupInfo.treatmentCenterWebsite}>{popupInfo.treatmentCenterWebsite}</a>
+                                    <a href={popupInfo.activityWebsite ?? popupInfo.treatmentCenterWebsite}>{popupInfo.activityWebsite ?? popupInfo.treatmentCenterWebsite}</a>
                                 </Container>
 
 
