@@ -12,8 +12,12 @@ import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {activityRoute} from "./apis/activity/activity.route";
 import {activityTypeRoute} from "./apis/activity-type/activity-type.route";
 import activityFavoriteRoute from "./apis/activity-favorite/activity-favorite.route";
+import {treatmentCenterRoute} from "./apis/treatment-center/treatment-center.route";
+import {facilityCategoryRoute} from "./apis/facility-category/facility-category.route";
 
 
+
+const helmet = require("helmet");
 const MemoryStore = require('memorystore')(session);
 
 
@@ -54,6 +58,7 @@ export class App {
         this.app.use(passport.initialize());
         this.app.use(passport.session());
         passport.use(passportStrategy)
+        this.app.use(helmet())
     }
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
@@ -66,6 +71,8 @@ export class App {
         this.app.use('/apis/activity', activityRoute)
         this.app.use('/apis/activity-favorite', activityFavoriteRoute)
         this.app.use('/apis/activity-type', activityTypeRoute)
+        this.app.use('/apis/treatment-center', treatmentCenterRoute)
+        this.app.use('/apis/facility-category', facilityCategoryRoute)
 
 
     }

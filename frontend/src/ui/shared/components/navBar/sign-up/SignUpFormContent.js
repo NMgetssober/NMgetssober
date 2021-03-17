@@ -22,17 +22,16 @@ export const SignUpFormContent = (props) => {
                 <div className="form-group">
                     <label htmlFor="profileEmail">Email Address</label>
                     <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text">
-                                <FontAwesomeIcon icon="envelope"/>
-                            </div>
-                        </div>
+                        {/*<div className="input-group-prepend">*/}
+                        {/*    <div className="input-group-text">*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <input
                             className="form-control"
                             name="profileEmail"
                             type="email"
                             value={values.profileEmail}
-                            placeholder="Enter email"
+                            placeholder="Email"
                             onChange={handleChange}
                             onBlur={handleBlur}
 
@@ -51,11 +50,11 @@ export const SignUpFormContent = (props) => {
                 <div className="form-group">
                     <label htmlFor="profileUsername">Username</label>
                     <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text">
-                                <FontAwesomeIcon icon="dog"/>
-                            </div>
-                        </div>
+                        {/*<div className="input-group-prepend">*/}
+                        {/*    <div className="input-group-text">*/}
+                        {/*        <FontAwesomeIcon icon="dog"/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <input
                             className="form-control"
                             name="profileUsername"
@@ -80,11 +79,11 @@ export const SignUpFormContent = (props) => {
                 <div className="form-group">
                     <label htmlFor="profilePassword">Password</label>
                     <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text">
-                                <FontAwesomeIcon icon="key"/>
-                            </div>
-                        </div>
+                        {/*<div className="input-group-prepend">*/}
+                        {/*    <div className="input-group-text">*/}
+                        {/*        <FontAwesomeIcon icon="key"/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <input
                             name="profilePassword"
                             className="form-control"
@@ -102,11 +101,11 @@ export const SignUpFormContent = (props) => {
                 <div className="form-group">
                     <label htmlFor="profilePasswordConfirm">Confirm Your Password</label>
                     <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text">
-                                <FontAwesomeIcon icon="key"/>
-                            </div>
-                        </div>
+                        {/*<div className="input-group-prepend">*/}
+                        {/*    <div className="input-group-text">*/}
+                        {/*        <FontAwesomeIcon icon="key"/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <input
 
                             className="form-control"
@@ -123,21 +122,17 @@ export const SignUpFormContent = (props) => {
                     )}
                 </div>
 
-
-
-
                 <div className="form-group">
                     <button className="btn btn-primary mb-2" type="submit">Submit</button>
-                    <button
-                        className="btn btn-danger mb-2"
-                        onClick={handleReset}
-                        disabled={!dirty || isSubmitting}
-                    >Reset
-                    </button>
+                    {/*<button*/}
+                    {/*    className="btn btn-danger mb-2"*/}
+                    {/*    onClick={handleReset}*/}
+                    {/*    disabled={!dirty || isSubmitting}*/}
+                    {/*>Reset*/}
+                    {/*</button>*/}
                 </div>
 
-
-                <FormDebugger {...props} />
+                {/*<FormDebugger {...props} />*/}
             </form>
             {
                 status && (<div className={status.type}>{status.message}</div>)

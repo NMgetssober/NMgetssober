@@ -14,9 +14,9 @@ CREATE TABLE profile (
     profileEmail VARCHAR(128) NOT NULL,
     profilePassword CHAR(97) NOT NULL,
     profileUsername VARCHAR(32) NOT NULL,
-    UNIQUE(profileEmail),
-    UNIQUE(profileUsername),
-    PRIMARY KEY(profileId)
+    UNIQUE (profileEmail),
+    UNIQUE (profileUsername),
+    PRIMARY KEY (profileId)
 );
 
 CREATE TABLE treatmentCenter (
@@ -29,8 +29,8 @@ CREATE TABLE treatmentCenter (
     treatmentCenterStreet1 VARCHAR(255) NOT NULL,
     treatmentCenterStreet2 VARCHAR(255),
     treatmentCenterWebsite VARCHAR(255),
-    treatmentCenterZipCode VARCHAR(16) NOT NULL,
-    PRIMARY KEY(treatmentCenterId)
+    treatmentCenterZipCode VARCHAR(16)  NOT NULL,
+    PRIMARY KEY (treatmentCenterId)
 );
 
 CREATE TABLE activity (
@@ -57,9 +57,9 @@ CREATE TABLE facilityCategory (
 );
 
 CREATE TABLE activityType (
-    activityTypeId BINARY(16) NOT NULL,
+    activityTypeId   BINARY(16)   NOT NULL,
     activityTypeName VARCHAR(255) NOT NULL,
-    PRIMARY KEY(activityTypeId)
+    PRIMARY KEY (activityTypeId)
 );
 
 CREATE TABLE serviceProvided (
@@ -75,8 +75,8 @@ CREATE TABLE serviceProvided (
 CREATE TABLE activityFilter (
     activityFilterActivityId BINARY(16) NOT NULL,
     activityFilterActivityTypeId BINARY(16) NOT NULL,
-    PRIMARY KEY(activityFilterActivityId, activityFilterActivityTypeId),
-    INDEX(activityFilterActivityId),
+    PRIMARY KEY (activityFilterActivityId, activityFilterActivityTypeId),
+    INDEX(activityFilterActivityId) ,
     INDEX(activityFilterActivityTypeId),
     FOREIGN KEY(activityFilterActivityId) REFERENCES activity(activityId),
     FOREIGN KEY(activityFilterActivityTypeId) REFERENCES activityType(activityTypeId)
@@ -85,17 +85,17 @@ CREATE TABLE activityFilter (
 CREATE TABLE treatmentFavorite (
     treatmentFavoriteTreatmentCenterId BINARY(16) NOT NULL,
     treatmentFavoriteProfileId BINARY(16) NOT NULL,
-    PRIMARY KEY(treatmentFavoriteTreatmentCenterId, treatmentFavoriteProfileId),
-    INDEX(treatmentFavoriteTreatmentCenterId),
-    INDEX(treatmentFavoriteProfileId),
-    FOREIGN KEY(treatmentFavoriteTreatmentCenterId) REFERENCES treatmentCenter(treatmentCenterId),
-    FOREIGN KEY(treatmentFavoriteProfileId) REFERENCES profile(profileId)
+    PRIMARY KEY (treatmentFavoriteTreatmentCenterId, treatmentFavoriteProfileId),
+    INDEX (treatmentFavoriteTreatmentCenterId),
+    INDEX (treatmentFavoriteProfileId),
+    FOREIGN KEY (treatmentFavoriteTreatmentCenterId) REFERENCES treatmentCenter (treatmentCenterId),
+    FOREIGN KEY (treatmentFavoriteProfileId) REFERENCES profile (profileId)
 );
 
 CREATE TABLE activityFavorite (
     activityFavoriteActivityId BINARY(16) NOT NULL,
-    activityFavoriteProfileId BINARY(16) NOT NULL,
-    PRIMARY KEY(activityFavoriteActivityId, activityFavoriteProfileId),
+    activityFavoriteProfileId  BINARY(16) NOT NULL,
+    PRIMARY KEY (activityFavoriteActivityId, activityFavoriteProfileId),
     INDEX(activityFavoriteActivityId),
     INDEX(activityFavoriteProfileId),
     FOREIGN KEY(activityFavoriteActivityId) REFERENCES activity(activityId),
@@ -110,7 +110,6 @@ VALUES (UUID_TO_BIN('e07f978c-bbf0-44e5-b38c-c562d597fc83'), 'Sobriety Related')
 
 INSERT INTO activityType (activityTypeId, activityTypeName)
 VALUES (UUID_TO_BIN('3eb2bd46-ef8f-44c2-b2b2-87e300cd6bc5'), 'Women Focused');
-
 
 DELIMITER $$
 DROP FUNCTION IF EXISTS haversine;

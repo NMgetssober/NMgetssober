@@ -15,15 +15,15 @@ export const SignUpForm = () => {
 
     const validator = Yup.object().shape({
         profileEmail: Yup.string()
-            .email("email must be a valid email")
-            .required('email is required'),
+            .email("Please enter a valid email")
+            .required('Email is required'),
         profileUsername: Yup.string()
-            .required('username is required'),
+            .required('Please enter a username'),
         profilePassword: Yup.string()
             .required("Password is required")
             .min(8, "Password must be at least eight characters"),
         profilePasswordConfirm: Yup.string()
-            .required("Password Confirm is required")
+            .required("Password confirm is required")
             .min(8, "Password must be at least eight characters"),
     });
 

@@ -4,7 +4,6 @@ export interface Profile {
     profileEmail: string,
     profilePassword: string,
     profileUsername: string,
-
 }
 
 export interface PartialProfile {
