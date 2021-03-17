@@ -62,6 +62,7 @@ function treatmentCenterDataDownloader(): Promise<any> {
 
                 await insertTreatmentCenter(treatmentCenter)
 
+                // @ts-ignore mismatch
                 for (let currentServiceProvided of facilityCategories) {
 
                     console.log(currentServiceProvided.facilityCategoryName)

@@ -101,7 +101,7 @@ export const MapPage = () => {
                                     <p>{popupInfo.activityStreet2 ?? popupInfo.treatmentCenterStreet2}</p>
                                     <p className="my-0 font-weight-bold">City:</p>
                                     <p>{popupInfo.activityCity ?? popupInfo.treatmentCenterCity}</p>
-                                    <p className="my-0 font-weight-bold">ZipCode:</p>
+                                    <p className="my-0 font-weight-bold">Zip code:</p>
                                     <p>{popupInfo.activityZipCode ?? popupInfo.treatmentCenterZipCode}</p>
                                     {popupInfo.treatmentCenterPhone ?
                                     <>
