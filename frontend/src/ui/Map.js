@@ -4,7 +4,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import {Pin} from "./Pin";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllActivities} from "../store/activity";
-import {ActivityName} from "../activity-name";
+import {ActivityAndTreatmentCenterPopup} from "./activity-and-treatment-center-popup";
 import {fetchAllActivityType} from "../store/activityType";
 import {SearchBarForm} from "./shared/components/searchBar/SearchBarForm";
 import {fetchAllTreatmentCenters} from "../store/treatmentCenter";
@@ -75,7 +75,7 @@ export const MapPage = () => {
                                     closeOnClick={false}
                                     onClose={setPopupInfo}
                                 >
-                                    <ActivityName activity={popupInfo}
+                                    <ActivityAndTreatmentCenterPopup popupInfo={popupInfo}
                                                   // insertActivityResults={insertActivityResults}
                                     />
                                 </Popup>
