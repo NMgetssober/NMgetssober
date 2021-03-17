@@ -5,7 +5,7 @@ import {Pin} from "./Pin";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllActivities} from "../store/activity";
 import {ActivityAndTreatmentCenterPopup} from "./activity-and-treatment-center-popup";
-import {fetchAllActivityType} from "../store/activityType";
+import activityType, {fetchAllActivityType} from "../store/activityType";
 import {SearchBarForm} from "./shared/components/searchBar/SearchBarForm";
 import {fetchAllTreatmentCenters} from "../store/treatmentCenter";
 
@@ -25,7 +25,6 @@ export const MapPage = () => {
     }
 
     React.useEffect(initialEffects, [dispatch])
-    // console.log(activities)
 
     const [viewport, setViewport] = React.useState({
         latitude: 35.15,
@@ -36,7 +35,7 @@ export const MapPage = () => {
 
     return (
         <>
-            <Container>
+            <Container fluid>
                 <Row className="my-4">
                     <Col md={6}>
 
@@ -76,26 +75,25 @@ export const MapPage = () => {
                                     onClose={setPopupInfo}
                                 >
                                     <ActivityAndTreatmentCenterPopup popupInfo={popupInfo}
-                                                  // insertActivityResults={insertActivityResults}
                                     />
                                 </Popup>
                             )}
                         </ReactMapGL>
                     </Col>
-                    <Col md={6}>
-
+                    <Col md={5} className="mx-3">
+                        <h1 className="mx-2">Results</h1>
                         {popupInfo && (
                             <>
 
                                 <Container>
-                                    <h1>Results</h1>
-                                    <p className="my-2 font-weight-bold">{popupInfo.activityGroupName ?? popupInfo.treatmentCenterName}</p>
+
+                                    <p className="my-2 font-weight-bold ">{popupInfo.activityGroupName ?? popupInfo.treatmentCenterName}</p>
                                     {popupInfo.activityDescription ?
-                                    <>
-                                        <p className="my-0 font-weight-bold">Description:</p>
-                                        <p>{popupInfo.activityDescription}</p>
-                                    </>
-                                    :""}
+                                        <>
+                                            <p className="my-0 font-weight-bold">Description:</p>
+                                            <p>{popupInfo.activityDescription}</p>
+                                        </>
+                                        : ""}
                                     <p className="my-0 font-weight-bold">Address:</p>
                                     <p className="my-0">{popupInfo.activityStreet1 ?? popupInfo.treatmentCenterStreet1}</p>
                                     <p>{popupInfo.activityStreet2 ?? popupInfo.treatmentCenterStreet2}</p>
@@ -104,17 +102,17 @@ export const MapPage = () => {
                                     <p className="my-0 font-weight-bold">Zip code:</p>
                                     <p>{popupInfo.activityZipCode ?? popupInfo.treatmentCenterZipCode}</p>
                                     {popupInfo.treatmentCenterPhone ?
-                                    <>
-                                        <p className="my-0 font-weight-bold">Phone Number:</p>
-                                        <p>{popupInfo.treatmentCenterPhone}</p>
-                                    </>
-                                    :""}
+                                        <>
+                                            <p className="my-0 font-weight-bold">Phone Number:</p>
+                                            <p>{popupInfo.treatmentCenterPhone}</p>
+                                        </>
+                                        : ""}
                                     {popupInfo.activityTime ?
                                         <>
-                                    <p className="my-0 font-weight-bold">When they meet:</p>
-                                    <p>{popupInfo.activityTime}</p>
+                                            <p className="my-0 font-weight-bold">When they meet:</p>
+                                            <p>{popupInfo.activityTime}</p>
                                         </>
-                                    : ""}
+                                        : ""}
                                     <p className="my-0 font-weight-bold">Website:</p>
                                     <a href={popupInfo.activityWebsite ?? popupInfo.treatmentCenterWebsite}>{popupInfo.activityWebsite ?? popupInfo.treatmentCenterWebsite}</a>
                                 </Container>
