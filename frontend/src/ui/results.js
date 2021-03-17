@@ -32,7 +32,7 @@ export const Results = ({popupInfo}) => {
         <>
 
             <Container>
-                <h1>Results</h1>
+
                 <p className="my-2 font-weight-bold">{popupInfo.activityGroupName ?? popupInfo.treatmentCenterName}</p>
 
                 {authorization && (popupInfo.activityGroupName && (activityFavorites.find(activityFavorite => activityFavorite?.activityFavoriteActivityId == popupInfo.activityId) ? <button onClick={clickFavorite}>Unfavorite</button> : <button onClick={clickFavorite}>Favorite</button>))}

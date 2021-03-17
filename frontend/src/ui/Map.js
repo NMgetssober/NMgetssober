@@ -5,7 +5,7 @@ import {Pin} from "./Pin";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllActivities} from "../store/activity";
 import {ActivityAndTreatmentCenterPopup} from "./activity-and-treatment-center-popup";
-import {fetchAllActivityType} from "../store/activityType";
+import activityType, {fetchAllActivityType} from "../store/activityType";
 import {SearchBarForm} from "./shared/components/searchBar/SearchBarForm";
 import {fetchAllTreatmentCenters} from "../store/treatmentCenter";
 import {fetchActivityFavoritesByProfileId, getActivityFavoritesByProfileId} from "../store/activityFavorite";
@@ -27,7 +27,6 @@ export const MapPage = () => {
     }
 
     React.useEffect(initialEffects, [dispatch])
-    // console.log(activities)
 
     const [viewport, setViewport] = React.useState({
         latitude: 35.15,
@@ -39,7 +38,7 @@ export const MapPage = () => {
 
     return (
         <>
-            <Container>
+            <Container fluid>
                 <Row className="my-4">
                     <Col md={6}>
 
@@ -79,15 +78,16 @@ export const MapPage = () => {
                                     onClose={setPopupInfo}
                                 >
                                     <ActivityAndTreatmentCenterPopup popupInfo={popupInfo}
-                                                  // insertActivityResults={insertActivityResults}
                                     />
                                 </Popup>
                             )}
                         </ReactMapGL>
                     </Col>
-                    <Col md={6}>
 
+                <Col md={5} className="mx-3">
+                    <h1 className="mx-2">Results</h1>
                         {popupInfo && <Results popupInfo={popupInfo}/>}
+
                     </Col>
                 </Row>
             </Container>

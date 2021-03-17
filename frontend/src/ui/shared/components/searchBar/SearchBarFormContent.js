@@ -24,7 +24,7 @@ export const SearchBarFormContent = (props) => {
                 {/*controlId must match what is passed to the initialValues prop*/}
 
                 <div className="form-group">
-                    <label htmlFor="activityType">Activity Types</label>
+                    <label htmlFor="activityType">Activity Type</label>
                     <div className="input-group">
 
                         <Field as="select" name="activityType" >
@@ -54,10 +54,10 @@ export const SearchBarFormContent = (props) => {
                 <div className="form-group">
                     <label htmlFor="activityZipCode">Zip Code</label>
                     <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text">
-                            </div>
-                        </div>
+                        {/*<div className="input-group-prepend">*/}
+                        {/*    <div className="input-group-text">*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
 
                         <input
                             className="form-control"
@@ -69,6 +69,7 @@ export const SearchBarFormContent = (props) => {
                             onBlur={handleBlur}
 
                         />
+                        <button className="btn btn-primary mb-2 ml-2" type="submit">Submit</button>
                     </div>
                     {
                         errors.activityZipCode && touched.activityZipCode && (
@@ -79,17 +80,7 @@ export const SearchBarFormContent = (props) => {
                     }
                 </div>
 
-                <div className="form-group">
-                    <button className="btn btn-primary mb-2" type="submit">Submit</button>
-                    <button
-                        className="btn btn-danger mb-2"
-                        onClick={handleReset}
-                        disabled={!dirty || isSubmitting}
-                    >Reset
-                    </button>
-                </div>
-
-                <FormDebugger {...props} />
+                {/*<FormDebugger {...props} />*/}
             </form>
             {
                 status && (<div className={status.type}>{status.message}</div>)
