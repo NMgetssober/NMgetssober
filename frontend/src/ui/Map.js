@@ -88,8 +88,10 @@ export const MapPage = () => {
                         {popupInfo && (
                             <>
                         <p>{popupInfo.activityGroupName ?? popupInfo.treatmentCenterName}</p>
-                        <p>{popupInfo.activityDescription ?? popupInfo.treatmentCenterZipCode}</p>
                         <p>{popupInfo.activityStreet1 ?? popupInfo.treatmentCenterStreet1} {popupInfo.activityStreet2 ?? popupInfo.treatmentCenterStreet2}</p>
+                        <p>{popupInfo.activityCity ?? popupInfo.treatmentCenterCity}</p>
+                        <p>{popupInfo.activityZipCode ?? popupInfo.treatmentCenterZipCode}</p>
+                         <p>{popupInfo.activityDescription}</p>
                         <p>{popupInfo.activityTime ?? popupInfo.treatmentCenterPhone}</p>
                         <p>{popupInfo.activityWebsite ?? popupInfo.treatmentCenterWebsite}</p>
                             </>
