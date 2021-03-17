@@ -45,8 +45,8 @@ export const AboutUs = () => {
                             <Image src={cindyprofile} alt="man" fluid/>
                             <Card.Title>Cindy Chen</Card.Title>
                         </Col>
-                        <Col md="9">
-                            <p>  Hi everyone! My name is Cindy Chen and I am a pharmacist turned software engineer.  I just moved to Albuquerque in September from Boston and decided to use this transition in my life to invest in myself – so I enrolled in Deep Dive Coding. I was seeking new ways to challenge myself and I’ve always loved tinkering with computers and solving puzzles. Pursuing this boot camp has not only taught me to problem solve creatively but it also satisfied the itch for new challenges every day and allowed me to create tangible outputs. Seeing that healthcare is moving towards automation and digital health, I hope to be able to make a larger impact on patient care by combining my new technical skills along with my clinical background.
+                        <Col md="10">
+                            <p>  Hi everyone! My name is Cindy Chen and I am a pharmacist turned software engineer.  I just moved to Albuquerque in September from Boston and decided to use this transition in my life to invest in myself – so I enrolled in Deep Dive Coding. I was seeking new ways to challenge myself and to grow. Pursuing this boot camp has not only taught me to problem solve creatively but it also satisfied the itch for new challenges every day and allowed me to create tangible outputs.
                             </p>
                         </Col>
                     </Row>
