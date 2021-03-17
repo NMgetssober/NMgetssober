@@ -8,15 +8,17 @@ import {ActivityAndTreatmentCenterPopup} from "./activity-and-treatment-center-p
 import activityType, {fetchAllActivityType} from "../store/activityType";
 import {SearchBarForm} from "./shared/components/searchBar/SearchBarForm";
 import {fetchAllTreatmentCenters} from "../store/treatmentCenter";
+import {fetchActivityFavoritesByProfileId, getActivityFavoritesByProfileId} from "../store/activityFavorite";
+import {fetchAuth} from "../store/auth";
+import {httpConfig} from "./shared/utils/httpConfig";
+import {Results} from "./results";
 
 
 
 export const MapPage = () => {
-
     const activities = useSelector((state) => state.activity ? state.activity : [])
     const activityTypes = useSelector((state) => state.activityType ? state.activityType : [])
     const treatmentCenters = useSelector((state) => state.treatmentCenter ? state.treatmentCenter : [])
-
     const dispatch = useDispatch()
     const initialEffects = () => {
         dispatch(fetchAllActivities())
@@ -32,6 +34,7 @@ export const MapPage = () => {
         zoom: 9
     });
     const [popupInfo, setPopupInfo] = useState(null);
+
 
     return (
         <>
@@ -80,46 +83,11 @@ export const MapPage = () => {
                             )}
                         </ReactMapGL>
                     </Col>
-                    <Col md={5} className="mx-3">
-                        <h1 className="mx-2">Results</h1>
-                        {popupInfo && (
-                            <>
 
-                                <Container>
+                <Col md={5} className="mx-3">
+                    <h1 className="mx-2">Results</h1>
+                        {popupInfo && <Results popupInfo={popupInfo}/>}
 
-                                    <p className="my-2 font-weight-bold ">{popupInfo.activityGroupName ?? popupInfo.treatmentCenterName}</p>
-                                    {popupInfo.activityDescription ?
-                                        <>
-                                            <p className="my-0 font-weight-bold">Description:</p>
-                                            <p>{popupInfo.activityDescription}</p>
-                                        </>
-                                        : ""}
-                                    <p className="my-0 font-weight-bold">Address:</p>
-                                    <p className="my-0">{popupInfo.activityStreet1 ?? popupInfo.treatmentCenterStreet1}</p>
-                                    <p>{popupInfo.activityStreet2 ?? popupInfo.treatmentCenterStreet2}</p>
-                                    <p className="my-0 font-weight-bold">City:</p>
-                                    <p>{popupInfo.activityCity ?? popupInfo.treatmentCenterCity}</p>
-                                    <p className="my-0 font-weight-bold">Zip code:</p>
-                                    <p>{popupInfo.activityZipCode ?? popupInfo.treatmentCenterZipCode}</p>
-                                    {popupInfo.treatmentCenterPhone ?
-                                        <>
-                                            <p className="my-0 font-weight-bold">Phone Number:</p>
-                                            <p>{popupInfo.treatmentCenterPhone}</p>
-                                        </>
-                                        : ""}
-                                    {popupInfo.activityTime ?
-                                        <>
-                                            <p className="my-0 font-weight-bold">When they meet:</p>
-                                            <p>{popupInfo.activityTime}</p>
-                                        </>
-                                        : ""}
-                                    <p className="my-0 font-weight-bold">Website:</p>
-                                    <a href={popupInfo.activityWebsite ?? popupInfo.treatmentCenterWebsite}>{popupInfo.activityWebsite ?? popupInfo.treatmentCenterWebsite}</a>
-                                </Container>
-
-
-                            </>
-                        )}
                     </Col>
                 </Row>
             </Container>

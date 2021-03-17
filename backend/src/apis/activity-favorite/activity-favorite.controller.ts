@@ -7,6 +7,7 @@ import {Profile} from "../../utils/interfaces/Profile";
 import {Status} from "../../utils/interfaces/Status";
 import {selectActivityFavoriteByActivityFavoriteId,
 } from "../../utils/activity-favorite/selectActivityFavoriteByActivityFavoriteId";
+import {selectActivityFavoritesByProfileId} from "../../utils/activity-favorite/selectActivityFavoritesByProfileId";
 
 
 export async function toggleActivityFavoriteController(request: Request, response: Response) {
@@ -22,7 +23,11 @@ export async function toggleActivityFavoriteController(request: Request, respons
             activityFavoriteProfileId,
 
         }
+        console.log(activityFavorite)
         const select = await selectActivityFavoriteByActivityFavoriteId(activityFavorite)
+
+        // @ts-ignore
+        console.log(select[0])
         // @ts-ignore
         if (select[0]){
             const result = await deleteActivityFavorite(activityFavorite)
@@ -39,5 +44,24 @@ export async function toggleActivityFavoriteController(request: Request, respons
 
     } catch(error) {
         console.log(error);
+    }
+}
+
+
+export async function getActivityFavoriteByProfileIdController(request: Request, response: Response) : Promise<Response> {
+    try {
+        // @ts-ignore mis-match with session.
+        const profile: Profile = request.session?.profile
+        const profileId = <string>profile.profileId
+        const mySqlResult = await selectActivityFavoritesByProfileId(profileId);
+        const data = mySqlResult ?? null
+        const status: Status = {status: 200, data, message: null}
+        return response.json(status)
+    } catch (error) {
+        return(response.json({
+            status: 400,
+            data: null,
+            message: error.message
+        }))
     }
 }

@@ -11,7 +11,7 @@ import passport from "passport";
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {activityRoute} from "./apis/activity/activity.route";
 import {activityTypeRoute} from "./apis/activity-type/activity-type.route";
-import activityFavoriteRoute from "./apis/activity-favorite/activity-favorite.route";
+import {activityFavoriteRoute} from "./apis/activity-favorite/activity-favorite.route";
 import {treatmentCenterRoute} from "./apis/treatment-center/treatment-center.route";
 import {facilityCategoryRoute} from "./apis/facility-category/facility-category.route";
 
