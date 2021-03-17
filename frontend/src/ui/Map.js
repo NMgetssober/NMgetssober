@@ -33,9 +33,9 @@ export const MapPage = () => {
 
     return (
         <>
-            <Container>
-                <Row className="my-4">
-                    <Col>
+            <Container fluid className= "map-bg my-0">
+                <Row className="">
+                    <Col className= "my-4">
 
                         <SearchBarForm activityTypes={activityTypes}  />
 
