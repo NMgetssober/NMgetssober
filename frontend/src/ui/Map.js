@@ -12,6 +12,10 @@ import {fetchActivityFavoritesByProfileId, getActivityFavoritesByProfileId} from
 import {fetchAuth} from "../store/auth";
 import {httpConfig} from "./shared/utils/httpConfig";
 import {Results} from "./results";
+import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
+
 
 
 
@@ -50,6 +54,7 @@ export const MapPage = () => {
                             height="50vh"
                             onViewportChange={(viewport) => setViewport(viewport)}
                             mapStyle="mapbox://styles/mapbox/dark-v9"
+                            mapboxApiAccessToken={"pk.eyJ1IjoiY2ljaGVuNTgiLCJhIjoiY2ttM25wOWdsMTQxNzJxcXRlZDYxcm5saSJ9.wdnJVaMM3kOfsCuMeoB-vA"}
                         >
 
                             {activities.map((activity, index) =>
