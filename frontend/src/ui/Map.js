@@ -5,12 +5,10 @@ import {Pin} from "./Pin";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllActivities} from "../store/activity";
 import {ActivityAndTreatmentCenterPopup} from "./activity-and-treatment-center-popup";
-import activityType, {fetchAllActivityType} from "../store/activityType";
+import {fetchAllActivityType} from "../store/activityType";
 import {SearchBarForm} from "./shared/components/searchBar/SearchBarForm";
 import {fetchAllTreatmentCenters} from "../store/treatmentCenter";
-import {fetchActivityFavoritesByProfileId, getActivityFavoritesByProfileId} from "../store/activityFavorite";
-import {fetchAuth} from "../store/auth";
-import {httpConfig} from "./shared/utils/httpConfig";
+import {fetchAllFacilityCategories} from "../store/facilityCategory";
 import {Results} from "./results";
 
 
@@ -19,11 +17,13 @@ export const MapPage = () => {
     const activities = useSelector((state) => state.activity ? state.activity : [])
     const activityTypes = useSelector((state) => state.activityType ? state.activityType : [])
     const treatmentCenters = useSelector((state) => state.treatmentCenter ? state.treatmentCenter : [])
+    const facilityCategory = useSelector((state) => state.facilityCategory ? state.facilityCategory : [])
     const dispatch = useDispatch()
     const initialEffects = () => {
         dispatch(fetchAllActivities())
         dispatch(fetchAllActivityType())
         dispatch(fetchAllTreatmentCenters())
+        dispatch(fetchAllFacilityCategories())
     }
 
     React.useEffect(initialEffects, [dispatch])
@@ -42,7 +42,10 @@ export const MapPage = () => {
                 <Row className="my-4">
                     <Col md={6}>
 
-                        <SearchBarForm activityTypes={activityTypes}  />
+                        <SearchBarForm
+                            activityTypes={activityTypes}
+
+                        />
 
                         <ReactMapGL
                             {...viewport}

@@ -14,7 +14,7 @@ const facilityCategorySlice = createSlice({
 
 export const {getAllFacilityCategories} = facilityCategorySlice.actions
 
-export const fetchAllActivityType = () => async (dispatch) => {
+export const fetchAllFacilityCategories = () => async (dispatch) => {
     const {data} = await httpConfig.get("apis/facility-category");
     dispatch(getAllFacilityCategories(data));
 };
